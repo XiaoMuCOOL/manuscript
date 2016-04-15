@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>像163网站顶部展出的大幅广告</title>
+   <script type="text/javascript" language="javascript">
+    var time = 500;
+    var h = 0;
+    function addCount()
+    {
+        if(time>0)
+        {
+            time--;
+            h = h+5;
+        }
+        else
+        {
+            return;
+        }
+        if(h>260)  //高度
+        {
+            return;
+        }
+        document.getElementById("ads").style.display = "";
+        document.getElementById("ads").style.height = h+"px";
+        setTimeout("addCount()",30); 
+    }
+    
+    window.onload = function showAds()
+    {
+        addCount();
+        setTimeout("noneAds()",4000); //停留时间自己适当调整
+    }
+    </script>
+    
+    <script type="text/javascript" language="javascript">
+    var T = 260;
+    var N = 260; //高度
+    function noneAds()
+    {
+        if(T>0)
+        {
+            T--;
+            N = N-5;
+        }
+        else
+        {
+            return;
+        }
+        if(N<0)
+        {
+            document.getElementById("ads").style.display = "none";
+            return;
+        }
+        
+        document.getElementById("ads").style.height = N+"px";
+        setTimeout("noneAds()",30); 
+    }
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /><style type="text/css">
+<!--
+body,td,th {
+    font-size: 12px;
+    color: #999999;
+line-height:20px}
+.STYLE1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF0000;
+}
+.STYLE2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3333CC;
+}
+-->
+</style></head>
+<body>
+    <div id="ads" style="margin:auto; display:none; width:900px; top:0px; height:0px; border:solid 1px #000; background-color:#fafafa; overflow:hidden; text-align:center;">
+<td width="900" height="280"><a href="http://www.lvtao.net"><img src="site.png" border="0"></a></td>
+    </div>
+    <div style="margin:auto; width:900px; height:200px; border:solid 1px #000; background-color:#fafafa; text-align:center;">
+        <div align="left"><br>
+          <span class="STYLE1">以下是网站主体内容</span><br>
+        </div>
+    </div>
+</body>
+</html>

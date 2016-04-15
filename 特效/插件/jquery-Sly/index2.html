@@ -1,0 +1,33 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/sly.js"></script>
+	<script src="js/infinite.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/plugins.js.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/ospb.css" />
+	<link rel="stylesheet" type="text/css" href="css/infinite.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<!--<script src="js/index.js"></script>-->
+	<script type="text/javascript">
+		$(function(){
+			var sly = new Sly("#frame");
+		});
+	</script>
+</head>
+<body>
+	<div id="scrollbar" class="scrollbar">
+		<div class="handle">
+			<div class="mousearea"></div>
+		</div>
+	</div>
+
+	<div id="frame" class="frame">
+		<ul id="items" class="items clearfix"></ul>
+	</div>
+</body>
+</html>

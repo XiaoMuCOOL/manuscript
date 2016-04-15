@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+	<myMenu>        
+	<myItem   pic="images/01.jpg" url="http://www.php100.com" />
+	<myItem   pic="images/02.jpg" url="http://www.php100.com" />
+	<myItem   pic="images/03.jpg" url="http://www.php100.com" />
+	<myItem   pic="images/04.jpg" url="http://www.php100.com" />
+        <myItem   pic="images/05.jpg" url="http://www.php100.com" />
+</myMenu>

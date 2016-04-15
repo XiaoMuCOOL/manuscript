@@ -1,0 +1,97 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>Kindeditor</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/kindeditor-all.js"></script>
+	<script src="js/zh_CN.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		var editor;
+		$(function(){
+			editor = KindEditor.create($('#editor'),{
+				minWidth : '900px',
+				minHeight : '100px',
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : false,
+				/*items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist','background'],*/
+				/*afterBlur : function(){
+					alert("aa");
+				}*/
+			});
+			/*KindEditor.extend(".ke-content",{
+				blur : function(){
+					alert('a');
+				}
+			});*/
+		});
+		function textVal(){
+			editor.sync();
+			// html = editor.html();
+			html = document.getElementById('editor').value;
+			alert(html);
+		}
+
+		$(function(){
+			var editor2 = KindEditor.create('#txt',{
+				minWidth : '200px',
+				minHeight : '100px',
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : false,
+				items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist',"source"]
+			});
+			/*$("iframe").on("blur",".ke-edit-textarea",function(){
+	            alert('ke-edit-textarea');
+	            //alert($div.find("#" + bindObj1).value);
+	        });*/
+	        /*//$("form").find("#testValue").blur(function(){
+	        $("#testValue").blur(function(){
+	        	//"this" 是js 对象 
+	        	alert(this.value);
+	        	//"$(this)" 是JQuery 对象
+	        	alert($(this).val());
+	        });*/
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Kindeditor</h1>
+	</header>
+	<section>
+		<form action="" id="myForm">
+			<textarea id="editor" style="width:900px;height:200px;"></textarea>
+			<input id="txt" type="text"/>
+			<input id="testValue" type="text" />
+		</form>
+		<a href="#" onclick="textVal();">点击我</a>
+		<iframe scrolling="ture" width="200" height="200" src="a.html">
+			#document
+			<html> 
+			<head> 
+				<meta charset="utf-8">
+				<title>ssss</title>
+				<script src="js/jquery-1.9.1.js"></script>
+				<link rel="stylesheet" type="text/css" href="css/index.css" />
+				<script src="js/index.js"></script>
+			</head>
+			<body>
+				<span>AAAAAAAA</span>
+			</body>
+			</html>
+		</iframe>
+	</section>
+	<footer></footer>
+</body>
+</html>

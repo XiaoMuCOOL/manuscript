@@ -1,0 +1,108 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>效果 淡入</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		img{
+			width: 180px;
+			height: 180px;
+		}
+		#img2{
+			position: relative;
+			left: -190px;
+			display:none;
+			/* opacity: 0; */
+		}
+		#w{
+			width: 200.5px;
+			height: 200px;
+			border: 1px solid red;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			/*$("#img2").fadeIn(2000,function(){
+				$("#img1").attr("src",$("#img2").attr("src"));
+				$("#img2").hide();
+			});*/
+			var str = "AAA";
+			$("#btn").click(function(){
+				var sp = $("#div1 span").clone();
+				$("#div1").text(str).prepend(sp);
+			});
+			alert($("#w").width());
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：效果 淡入</h1>
+	</header>
+	<section>
+		<!-- <img src="img/1.png" id="img1"/>
+		<img src="img/2.png" id="img2"/> -->
+		<div id="div1"><span>ss</span>新建控件#1</div>
+		<input type="button" value="点击修改" id="btn">
+		<div id="w"></div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>It is prefect.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

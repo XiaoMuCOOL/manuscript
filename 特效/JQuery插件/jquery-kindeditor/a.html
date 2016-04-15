@@ -1,0 +1,85 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>Kindeditor</title>
+	<style>
+	    .ke-icon-backgroundDiv {
+	            background-image: url(../skins/default/default.gif);
+	            background-position: 0px -1008px;
+	            width: 16px;
+	            height: 16px;
+	    }
+	</style>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/kindeditor-all.js"></script>
+	<script src="js/zh_CN.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		var editor;
+		$(function(){
+			KindEditor.plugin('backgroundDiv', function(K) {
+		        var editor = this, name = 'backgroundDiv';
+		        // 点击图标时执行
+		        editor.clickToolbar(name, function() {
+		        	/*editor.createMenu({
+						selectedColor : 'default',
+						click : function(color) {
+							editor.hideMenu();
+						}
+					});*/
+		        	var ac = K.colorpicker({
+				        x : 100,
+				        y : 200,
+				        z : 1000,
+				        selectedColor : 'default',
+				        click : function(color) {
+			                //alert(color);
+			                editor.sync();
+			                if(editor.html().indexOf("backDiv") > -1){
+			                	var indexColor = editor.html().indexOf("background");
+			                	var str = editor.html();
+			                	var s = str.substring(36,43);
+			                	var newStr = str.replace(s,color);
+			                	editor.html(newStr);
+			                }else{
+			                	editor.html("<div id='backDiv' style='height:100px;background:"+ color +";'>" + editor.html() + "</div>");
+			                }
+			                alert(editor.html());
+			                ac.hide();
+				            }
+				    });
+		        });
+			});
+			KindEditor.lang({
+                backgroundDiv : '背景颜色'
+            });
+			editor = KindEditor.create('#editor',{
+				minWidth : '900px',
+				minHeight : '100px',
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : false,
+				items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist','backgroundDiv'
+					]
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Kindeditor</h1>
+	</header>
+	<section>
+		<form action="" id="myForm">
+			<textarea id="editor" style="width:900px;height:200px;"></textarea>
+		</form>
+	</section>
+	<footer></footer>
+</body>
+</html>

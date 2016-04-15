@@ -1,0 +1,132 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<style type="text/css">
+	/**
+	 * test1
+	 */
+	.wrap {
+	    display: -webkit-box;
+	    -webkit-box-orient: horizontal;
+	    border: 1px solid red;
+	}
+	.child {
+	    min-height: 200px;
+	    border: 2px solid #666;
+	    margin: 10px;
+	    font-size: 100px;
+	    font-weight: bold;
+	    font-family: Georgia;
+	    -webkit-box-flex: 1;
+	    -webkit-box-align: center;
+	}
+	/**
+	 * test2
+	 * 自己写的
+	 */
+	.wrap2 {
+	    border: 1px solid red;
+	    min-height: 225px;
+	}
+	.child2 {
+		width: 31%;
+		float: left;
+	    min-height: 200px;
+	    border: 2px solid #666;
+	    margin: 10px;
+	    font-size: 100px;
+	    font-weight: bold;
+	    font-family: Georgia;
+	}
+	/**
+	 * test3
+	 */
+	.wrap3 {
+	    display: -webkit-box;
+	    -webkit-box-orient: horizontal;
+	}
+	.child3 {
+	    min-height: 200px;
+	    border: 2px solid #666;
+	    margin: 10px;
+	    font-size: 40px;
+	    font-weight: bold;
+	    font-family: Georgia;
+	    -webkit-box-align: center;
+	}
+	.w200 {width: 200px}
+	.flex1 {-webkit-box-flex: 1}
+	.flex2 {-webkit-box-flex: 2}
+
+	/**
+	 * test3
+	 */
+	#doc header, #doc footer, #doc section {
+	    border: 10px solid #333;
+	    font-family: Georgia;
+	    font-size: 40px;
+	    text-align: center;
+	    margin: 10px;
+	}
+	#doc {
+	    width: 80%;
+	    min-width: 320px;
+	    height: 100%;
+	    display: -webkit-box; 
+	    -webkit-box-orient: vertical;
+	    margin: 0 auto;
+	}
+	#doc header,#doc footer {
+	    min-height: 100px;
+	    -webkit-box-flex: 1;
+	}
+	#doc #content {
+	    min-height: 400px;
+	    display: -webkit-box;
+	    -webkit-box-orient: horizontal;
+	}
+	#doc .w200 {width: 200px}
+	#doc .flex1 {-webkit-box-flex: 1}
+	#doc .flex2 {-webkit-box-flex: 2}
+	#doc .flex3 {-webkit-box-flex: 3}
+</style>
+<body>
+	<!-- test1 -->
+	<div class="wrap">
+		<div class="child">1</div>
+		<div class="child">2</div>
+		<div class="child">3</div>
+	</div>
+	<hr />
+	<!-- test2 -->
+	<div class="wrap2">
+		<div class="child2">1</div>
+		<div class="child2">2</div>
+		<div class="child2">3</div>
+	</div>
+	<hr />
+	<!-- test3 -->
+	<div class="wrap3">
+		<div class="child3 w200">200px</div>
+		<div class="child3 flex1">比例1</div>
+		<div class="child3 flex2">比例2</div>
+	</div>
+	<hr />
+
+	<!-- test4 -->
+	<div id="doc">
+	    <header>Header</header>
+	    <div id="content">
+	        <section class="w200">定宽200</section>
+	        <section class="flex3">比例3</section>
+	        <section class="flex1">比例1</section>
+	    </div>
+	    <footer>Footer</footer>
+	</div>
+</body>
+</html>

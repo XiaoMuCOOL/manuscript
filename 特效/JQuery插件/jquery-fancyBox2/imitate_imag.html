@@ -1,0 +1,111 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>模拟IMAG，只有一张图，有一组图片地址</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" />
+	<script src="js/jquery.fancybox-thumbs.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css" />
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#fancy_box img{
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var data = ["img/1_b.jpg","img/2_b.jpg","img/3_b.jpg","img/4_b.jpg"];
+			var obj = {"data":data};
+			/* //方法一
+			for(var i=0;i<data.length;i++){
+				$("<a>").attr("rel","group").attr("href",data[i]).appendTo($("#fancy_box"));
+			}
+			$("#fancy_box a").attr("rel","group").fancybox();
+			*/
+			$("#img1").click(function(){
+				$.fancybox.open(data, {
+			        padding : 0,
+					helpers	: {
+						thumbs	: {
+							width	: 50,
+							height	: 50,
+							position : "bottom"
+						}
+					},
+			    });
+		    	return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：模拟IMAG，只有一张图，有一组图片地址</h1>
+	</header>
+	<section>
+		<div id="fancy_box">
+			<img src="img/do.jpg" id="img1" alt="" />
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

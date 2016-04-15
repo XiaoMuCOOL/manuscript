@@ -1,0 +1,11 @@
+img{border:0px}
+.php100{width:380px;height:60px}
+#page_left_1 {WIDTH: 378px; }
+#page_left_2 {WIDTH: 380px}
+#page_left_2_1 {FONT-WEIGHT: normal; FLOAT: left; BACKGROUND-IMAGE: url(../images/p_12_02.jpg); WIDTH: 74px; COLOR: #000000; MARGIN-RIGHT: 2px; TEXT-ALIGN: center}
+#page_left_2_1_1 {FONT-WEIGHT: normal; WIDTH: 100%; CURSOR: hand; PADDING-TOP: 5px; TEXT-ALIGN: center}
+#page_left_2_1_2 {FONT-WEIGHT: normal; WIDTH: 74px; COLOR: #ffffff; PADDING-TOP: 5px; TEXT-ALIGN: center}
+#page_left_2_2 {FONT-WEIGHT: normal; FLOAT: left; BACKGROUND-IMAGE: url(../images/p_12_04.jpg); WIDTH: 74px; COLOR: #ffffff; MARGIN-RIGHT: 2px; TEXT-ALIGN: center}
+.sty20 {FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; BACKGROUND-IMAGE: url(../images/p_12_02.jpg); WIDTH: 74px; COLOR: #000000; LINE-HEIGHT: 20px; MARGIN-RIGHT: 2px; FONT-FAMILY: "宋体"; TEXT-ALIGN: center}
+.sty21 {FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; BACKGROUND-IMAGE: url(../images/p_12_05.jpg); WIDTH: 74px; COLOR: #ffffff; LINE-HEIGHT: 20px; MARGIN-RIGHT: 2px; FONT-FAMILY: "宋体"; TEXT-ALIGN: center}
+.sty21 #page_left_2_1_1 {	BACKGROUND-POSITION: center top; BACKGROUND-IMAGE: url(../images/p_12_03.gif); BACKGROUND-REPEAT: no-repeat}

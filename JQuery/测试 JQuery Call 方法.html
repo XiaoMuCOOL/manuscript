@@ -1,0 +1,164 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>测试 JQuery Call 方法</title>
+	<!--<script src="js/jquery-1.9.1.js"></script>-->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+			position: relative;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			/*function person(){
+				this.aa = 1;
+				this.bb = 2;
+			}
+			function son(){
+				person.call(this);
+				alert(this.aa+" "+this.bb);
+			}
+			son();*/
+
+			/*
+			 * 问题：
+			 * 这里怎么写 才能 clearInterval(base.timer)
+			 * 本来我是想取到 base.timer的，用call
+			 */
+
+			/*$("h1").per();
+			$(window).resize(function() {
+				$("h1").per();
+			});*/
+
+			/*
+			 * 方法一：
+			 * JQuery 的 call 方法 
+			 */
+			/*$("h1").per.call(this,{
+				width : 300,
+				height : 300
+			});
+			 var self = this;
+			$(window).resize(function() {
+				self.clearTimer();
+				$("h1").per.call(self,{
+				 	width : 400,
+				 	height : 300
+				 });
+			});*/
+
+			/*
+			 * 方法二：
+			 * JQuery 插件要返回对象 this 
+			 */
+
+			var obj = $("h1").per();
+			$(window).resize(function() {
+				obj.clearTimer();
+				obj = $("h1").per({width : 600});
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		(function($) {       
+			$.fn.per = function(options) {
+				var defaults = {
+					width: 500,
+					height: 400
+				}
+				var opts = $.extend("",defaults, options);
+				var base = this;
+				var i = 0;
+				base.init = function(){
+					base.clearTimer();
+					base.timer = window.setInterval(function(){
+						if(i < 80){
+							$("#div").css({
+								width : opts.width,
+								height : opts.height,
+								left : i+=10
+							}).html("每秒移动10，共80，现在是：" + i);
+						}
+					}, 1000);
+				}
+				base.clearTimer = function(){
+					if(base.timer) window.clearInterval(base.timer);
+				};
+				base.init();
+				return this;
+			};     
+		})(jQuery);
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：测试 JQuery Call 方法</h1>
+	</header>
+	<section>
+		<div id="div"></div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

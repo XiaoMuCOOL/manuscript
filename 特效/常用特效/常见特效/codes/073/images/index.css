@@ -1,0 +1,1145 @@
+#Content .Layer1 {
+	height: 405px;
+	width: 954px;
+	margin-bottom:10px;
+}
+#Content .Layer2 {
+	height: 440px;
+	width: 954px;
+}
+#Content .Layer3 {
+	height: 325px;
+	width: 954px;
+}
+#Content .Layer4 {
+	height: 555px;
+	width: 954px;
+}
+#Content .Layer5 {
+	height: 415px;
+	width: 954px;
+}
+#Content .Layer6 {
+	height: 280px;
+	width: 954px;
+}
+#Content .LayerLeft{
+	width:210px;
+	float:left;
+}
+#Content .LayerMiddle{
+	width:470px;
+	float:left;
+}
+#Content .LayerRight{
+	width:247px;
+	float:right;
+}
+#Content .LayerLeftBig{
+	width:695px;
+	float:left;
+}
+#Content .LayerRightBig{
+	width:728px;
+	float:right;
+}
+#Content .LayerRightBig .Right {
+	width: 245px;
+	float: right;
+	border-left-width: 1px;
+	border-left-style: dotted;
+	border-left-color: #98947B;
+	text-align: right;
+}
+#MovieShow{
+	width:472px;
+	height:280px;
+	float:left;
+	background-image: url(http://movie.xunlei.com/images/main_movieshow.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	margin-bottom:10px;
+}
+#MovieShow div{
+	padding-top:5px;
+}
+#Hot{
+	width:210px;
+	height:280px;
+	float:right;
+}
+#Hot .Title{
+	width:210px;
+	background-image: url(http://movie.xunlei.com/images/main_hot_title.gif);
+	background-repeat: no-repeat;
+	height: 37px;
+}
+#Hot .Content{
+	width:210px;
+	background-image: url(http://movie.xunlei.com/images/main_hot_content.gif);
+	background-repeat: no-repeat;
+	height: 243px;
+	text-align:center;
+	overflow:hidden;
+}
+#Hot .Content ul{
+	margin:auto;
+	padding-top:6px;
+	width:190px;
+}
+#Hot .Content li{
+	line-height:21px;
+	text-align:left;
+	height:21px;
+	padding-left:10px;
+	background-image:url(http://movie.xunlei.com/images/main_list1.gif);
+	list-style-type: none;
+	background-repeat: no-repeat;
+	background-position: left center;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #D7D7D7;
+}
+#Hot .Content a{
+	color:#575542;
+}
+#MovieList{
+	width:695px;
+	height:115px;
+	float:left;
+}
+#MovieList .Box1{
+	width:695px;
+	height:115px;
+}
+#MovieList ul{
+	width:675px;
+	height:95px;
+	overflow:hidden;
+}
+#MovieList li{
+	float:left;
+	list-style:none;
+	width:122px;
+	height:92px;
+	padding-top: 0px;
+	padding-right: 6px;
+	padding-bottom: 0px;
+	padding-left: 7px;
+	text-align:center;
+}
+#MovieList img{
+	width:122px;
+	height:92px;
+	border-style:none;
+}
+#MovieCategories{
+	width:247px;
+	background-image: url(http://movie.xunlei.com/images/main_movie_categories.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 81px;
+}
+#MovieCategories .Box1{
+	width:247px;
+}
+#MovieCategories ul{
+	width:227px;
+	clear:both;
+}
+#MovieCategories li{
+	list-style:none;
+	line-height:18px;
+	width:42px;
+	text-align:center;
+	float:left;
+}
+#MovieCategories a{
+	color:#D19527;
+}
+#InMedia{
+	width:243px;
+	height: 212px;
+	background:#B1E0FF;
+	border:1px solid #3DCAFD;
+	padding:2px;
+}
+.ad_txt_bar{
+	text-align:left;
+	margin-top:8px;
+	background:#E5EFF8;
+	border:1px solid #3DCAFD;
+	width:227px;
+	height:89px;
+	padding:3px 10px 3px 10px;
+}
+.ad_txt_bar li{ background:url(http://movie.xunlei.com/images/dot_a_d.gif) no-repeat left 5px; padding:1px 0 1px 12px; list-style:none;}
+.ad_txt_bar li a{ color:#000;}
+
+.ad_img_box,.ad_img_box_01{
+	text-align:center;
+	margin-top:8px;
+	background:#EFEFEF;
+	border:1px solid #DFDFDF;
+	width:239px;
+	height:189px;
+	padding:3px 4px 3px 4px;
+}
+.ad_img_box_01{ border:none; background:none; height:241px; margin-top:0px; padding:0;}
+.ad_img_box li{ clear:both;padding-bottom:6px;}
+.ad_img_box_01 li{ clear:both;padding-bottom:3px;}
+
+#Documentr .Title{
+	background-image: url(http://movie.xunlei.com/images/main_documentr.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 23px;
+	width: 231px;
+	text-align: center;
+}
+#Documentr .TopInf{
+	padding:10px;
+	text-align: left;
+	color:#918B84;
+	line-height:16px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+#Documentr .TopInf a{
+	color:#918B84;
+}
+#Documentr .TopInf .InfTitle{
+	font-weight:bold;
+	color:#787570;
+	line-height:25px;
+}
+#Documentr .TopInf .TextDiv{
+	float:right;
+	text-align:left;
+	width:135px;
+}
+#Documentr .TopInf img{
+	float:left;
+	border: 1px solid #999999;
+}
+#Documentr .TopInf .wycy{ float:right;}
+#Documentr .TopInf .TextDiv img{ border:none;}
+#Documentr .List li{
+	line-height:20px;
+	text-align: left;
+	list-style: none;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	border-top-color: #E1E0DD;
+	padding-left:0px;
+}
+#Documentr .List li span{ float:right;}
+#Documentr .List li a{color:#B3AFA9;}
+#Documentr .List li span a{ color:#787570;}
+
+#Top10{
+	width:207px;
+	height:427px;
+	float: right;
+}
+#Top10 .Title{
+	background-image: url(http://movie.xunlei.com/images/main_top10_title.gif);
+	background-repeat: no-repeat;
+	height: 59px;
+	width: 207px;
+}
+#Top10 .Title .TagList{
+	padding-top:37px;
+}
+#Top10 .Title .Tag{
+	background-image: url(http://movie.xunlei.com/images/main_top10_tag.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	text-align: center;
+	height: 20px;
+	width: 28px;
+	float: left;
+	margin-left: 15px;
+}
+#Top10 .Title .Tag a{
+	color: #AAAAAA;
+	font-weight:bold;
+	font-size:14px;
+	line-height: 20px;
+	text-decoration:none;
+}
+#Top10 .Title .Tag span{
+	cursor: pointer;
+	color: #AAAAAA;
+	font-weight:bold;
+	font-size:14px;
+	line-height: 20px;
+}
+#Top10 .Title .Tag .Current{
+	color: #FFFFFF;
+}
+#Top10 .TopInf{
+	background-image: url(http://movie.xunlei.com/images/main_top10_inf.gif);
+	background-repeat: repeat-x;
+	height: 155px;
+	width: 207px;
+	text-align: left;
+	color:#666666;
+	line-height:20px;
+}
+#Top10 .TopInf img{
+	float:left;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#Top10 .TopInf a:link , #Top10 .TopInf a:visited{
+	color:#999999;
+}
+#Top10 .TopInf a:hover{
+	color:#FF9900;
+}
+#Top10 .TopInf .TextDiv{
+	float:left;
+	width:110px;
+	text-align:left;
+	margin-top: 15px;
+}
+#Top10 .TopInf .InfTitle{
+	color:#39B4FA;
+	font-weight:bold;
+	padding-top: 0px;
+	line-height: normal;
+	height: 20px;
+}
+#Top10 .TopInf .InfTitle a:link,#Top10 .TopInf .InfTitle a:visited,#Top10 .TopInf .InfTitle a:hover{
+	color:#39B4FA;
+	text-decoration:none;
+}
+#Top10 .List{
+	background-image: url(http://movie.xunlei.com/images/main_top10_list.gif);
+	background-repeat: no-repeat;
+	height: 214px;
+	width: 207px;
+}
+#Top10 .List li{
+	list-style:none;
+	text-align:left;
+	line-height: 22px;
+	padding-left: 50px;
+	height:22px;
+	overflow:hidden;
+	width:156px;
+}
+#Top10 .List a{
+	color:#FFFFFF;
+}
+#HotVideo{
+	float:left;
+	width:472px;
+}
+#HotVideo .Title {
+	background-image: url(http://movie.xunlei.com/images/main_hot_video.gif);
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 463px;
+}
+#HotVideo .TopInf {
+	padding: 15px;
+	text-align: left;
+	line-height: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #DCD9C5;
+}
+#HotVideo .TopInf img{
+	float:left;
+}
+#HotVideo .TopInf a:link , #HotVideo .TopInf a:visited{
+	color: #666666;
+}
+#HotVideo .TopInf a:hover{
+	color: #FF9900;
+}
+#HotVideo .TopInf .TextDiv{
+	width: 220px;
+	float: right;
+	height: 110px;
+	overflow: hidden;
+}
+#HotVideo .TopInf .InfTitle{
+	font-size: 14px;
+	color: #222222;
+	font-weight: bold;
+	line-height: 30px;
+}
+#HotVideo .TopInf .InfTitle a:link,#HotVideo .TopInf .InfTitle a:visited,#HotVideo .TopInf .InfTitle a:hover{
+	color: #222222;
+}
+#HotVideo .TopInf .Button{
+	float:right;
+	margin:0px;
+	margin-right:10px;
+	margin-top:5px;
+}
+#HotVideo .List{
+	padding: 11px;
+	text-align: left;
+	line-height: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 200px;
+	background-image: url(http://movie.xunlei.com/images/main_bottom1.gif);
+	background-repeat: repeat-x;
+	background-position: center bottom;
+}
+#HotVideo .List ul{
+	padding-left:10px;
+}
+#HotVideo .List li{
+	list-style:none;
+	padding-left:10px;
+	background-image: url(http://movie.xunlei.com/images/main_list2.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+}
+#HotVideo .List a:link , #HotVideo .List a:visited{
+	color:#666666;	
+}
+#HotVideo .List a:hover{
+	color:#FF9900;	
+}
+#HotVideo .List1{
+	border-right-width: 1px;
+	border-right-style: dashed;
+	border-right-color: #98947B;
+	width: 215px;
+	float: left;
+}
+#HotVideo .List2{
+	width: 215px;
+	float: Right;
+}
+#NightCinema .Title{
+	background-image: url(http://movie.xunlei.com/images/main_night_cinema.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 23px;
+	width: 196px;
+	text-align: center;
+}
+#NightCinema .TopInf{
+	padding:10px;
+	text-align: left;
+	color:#9F9D8E;
+	line-height:16px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#NightCinema .TopInf a:link , #NightCinema .TopInf a:visited{
+	color:#9F9D8E;
+}
+#NightCinema .TopInf a:hover{
+	color:#FF9900;
+}
+#NightCinema .TopInf .InfTitle{
+	font-weight:bold;
+	color:#000000;
+	line-height:25px;
+}
+#NightCinema .TopInf .InfTitle a{
+	font-weight:bold;
+	color:#000000;
+	line-height:25px;
+}
+#NightCinema .TopInf .TextDiv{
+	float:right;
+	text-align:left;
+	width:100px;
+}
+#NightCinema .TopInf img{
+	float:left;
+	border: 1px solid #999999;
+}
+#NightCinema .List li{
+	line-height:30px;
+	text-align: left;
+	list-style: none;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	border-top-color: #E1E0DD;
+	padding-left:10px;
+}
+#NightCinema .List a:link ,#Documentr .List a:visited{
+	color:#7C971C;
+}
+#NightCinema .List a:hover{
+	color:#787570;
+}
+#Ad{
+	width:728px;
+	height:90px;
+	margin-bottom:10px;
+}
+#BoxOffice {
+	width:232px;
+	height: 200px;
+}
+#BoxOffice .Title{
+	background-image: url(http://movie.xunlei.com/images/main_box_office.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	height: 24px;
+	width: 232px;
+}
+#BoxOffice .Title .TagList{
+	padding-left: 100px;
+}
+#BoxOffice .Title .TagList div{
+	background-image: url(http://movie.xunlei.com/images/main_tag2.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 24px;
+	width: 39px;
+	float: left;
+	line-height: 24px;
+	margin-right: 2px;
+	color: #C3B992;
+	text-align: center;
+}
+#BoxOffice .Title .TagList div a{
+	color: #C3B992;
+	text-decoration:none;
+}
+#BoxOffice .Title .TagList div span{
+	color: #C3B992;
+	cursor: pointer;
+}
+#BoxOffice .Title .TagList .Current{
+	background-image: url(http://movie.xunlei.com/images/main_tag1.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 24px;
+	width: 42px;
+}
+#BoxOffice .Title .TagList .Current a{
+	color: #FFFFFF;
+}
+#BoxOffice .TopInf{
+	background-color: #F6F6F5;
+	border: 1px solid #E3E3E1;
+	width: 115px;
+	height: 160px;
+	float: left;
+	color:#9F9D8E;
+	margin-top:10px;
+}
+#BoxOffice .TopInf img{
+	border: 1px solid #999999;
+	margin-top:5px;
+	margin-bottom:2px;
+}
+#BoxOffice .TopInf a:link , #BoxOffice .TopInf a:visited{
+	color:#9F9D8E;
+}
+#BoxOffice .TopInf a:hover{
+	color:#FF9900;
+}
+#BoxOffice .TopInf .InfTitle{
+	font-weight:bold;
+	color:#000000;
+	line-height:25px;
+}
+#BoxOffice .TopInf .InfTitle a{
+	font-weight:bold;
+	color:#333333;
+}
+#BoxOffice .TopInf .TextDiv{
+	padding: 2px;
+	text-align: left;	
+}
+#BoxOffice .TopInf .TextDiv .InfTitle{
+	text-align: center;
+	line-height: 20px;
+	font-weight: bold;
+}
+#BoxOffice .List{
+	float: right;
+	width: 110px;
+	height: 160px;
+	margin-top:10px;
+}
+#BoxOffice .List li {
+	background-image: url(http://movie.xunlei.com/images/main_list3.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-align: left;
+	list-style-type: none;
+	height: 18px;
+	line-height: 18px;
+}
+#BoxOffice .List li div {
+	font-weight: bold;
+	float:left;
+	color: #FFFFFF;
+	font-style: normal;
+	width: 22px;
+	text-align: center;
+	margin-right: 5px;
+}
+#BoxOffice .List a {
+	color:#4A3D3D;
+}
+#ProductPhoto {
+	height: 200px;
+	width: 456px;
+}
+#ProductPhoto .Title {
+	background-image: url(http://movie.xunlei.com/images/main_photo.gif);
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 456px;
+	margin-bottom: 10px;
+}
+#ProductPhoto .ButtonLeft {
+	float:left;
+	padding-top:60px;
+	width:30px;
+	cursor:default;
+}
+#ProductPhoto .ButtonRight {
+	float:Right;
+	padding-top:60px;
+	width:30px;
+	cursor:default;
+}
+#ProductPhoto .List {
+	height: 160px;
+	width: 390px;
+	overflow: hidden;
+}
+#ProductPhoto .List .HMenu {
+	width: 780px;
+	overflow: hidden;
+	height: 160px;
+}
+#ProductPhoto .List li {
+	width: 130px;
+	height: 160px;
+}
+#ProductPhoto .List li .Pic{
+	padding: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#ProductPhoto .List li .PicTitle{
+	padding: 5px;
+	font-size: 14px;
+}
+#MoreCategories .Title{
+	background-image: url(http://movie.xunlei.com/images/main_more_categories.gif);
+	background-repeat: no-repeat;
+	height: 27px;
+	width: 210px;
+}
+#MoreCategories .Spliter{
+	height:0px;
+	background-color:#FFFFFF;
+}
+#MoreCategories .Box1{
+	text-align:left;
+	margin-top:10px;
+}
+#MoreCategories .Box1 em{
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	font-style: normal;
+	color: #C52457;
+	line-height: 19px;
+}
+#MoreCategories .Box1 a:link , #MoreCategories .Box1 a:visited{
+	color:#333333;
+}
+#MoreCategories .Box1 a:hover{
+	color:#FF9900;
+}
+#MoreCategories .Box1 .HMenu{
+	width:190px;
+	height:60px;
+	overflow:hidden;
+}
+#MoreCategories .Box1 .HMenu li{
+	float:left;
+	list-style:none;
+	width: 35px;
+	white-space: nowrap;
+	text-align: center;
+	line-height: 20px;
+	height: 20px;
+}
+#MoreCategories .Box1 .VMenu li{
+	list-style:none;
+	text-align: left;
+	line-height: 26px;
+	padding-left:10px;
+}
+.gnsy{ width:190px;}
+.gnsy li{ list-style:none; line-height:23px; float:left; width:95px;overflow:hidden; text-overflow:ellipsis;white-space:nowrap;table-layout:fixed; word-wrap:break-word;}
+
+#Moives{
+	float:left;
+	width:712px;
+	height: 375px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #98947B;
+	margin-bottom: 10px;
+}
+#Moives .Left {
+	width: 456px;
+	float: left;
+}
+#Moives .LeftTop {
+	width: 456px;
+	float: left;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #98947B;
+	margin-bottom: 10px;
+}
+#Moives .Right {
+	width: 245px;
+	float: right;
+	border-left-width: 1px;
+	border-left-style: dotted;
+	border-left-color: #98947B;
+	text-align: right;
+}
+#Moives .Title {
+	background-image: url(http://movie.xunlei.com/images/main_movies.gif);
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 456px;
+	margin-bottom:10px;
+}
+#Moives .TopInf {
+	text-align: center;
+	line-height: 20px;
+	width: 150px;
+	float: left;
+}
+#Moives .TopInf img{
+	border: 1px solid #C6C5C1;
+}
+#Moives .TopInf a:link , #Moives .TopInf a:visited{
+	color: #666666;
+}
+#Moives .TopInf a:hover{
+	color: #FF9900;
+}
+#Moives .TopInf .InfTitle{
+	font-size: 14px;
+	color: #666666;
+	line-height: 20px;
+}
+#Moives .TopInf .InfTitle a:link,#Moives .TopInf .InfTitle a:visited,#Moives .TopInf .InfTitle a:hover{
+	color: #666666;
+}
+#Moives .List{
+	text-align: left;
+	line-height: 21px;
+	float: right;
+	width: 300px;
+	margin-bottom: 0px;
+}
+#Moives .List li{
+	list-style:none;
+	background-image: url(http://movie.xunlei.com/images/main_list2.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+	line-height: 21px;
+}
+#Moives .List a:link , #Moives .List a:visited{
+	color:#666666;	
+}
+#Moives .List a:hover{
+	color:#FF9900;	
+}
+#Moives .ListSmall{
+	text-align: left;
+	line-height: 20px;
+	height: 100px;
+	width: 205px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#Moives .ListSmall div{
+	white-space: nowrap;
+	overflow: hidden;	
+}
+#Moives .ListSmall a:link , #Moives .ListSmall a:visited{
+	color:#666666;	
+}
+#Moives .ListSmall a:hover{
+	color:#FF9900;	
+}
+#Moives .ListSmall .Mark:link,#Moives .ListSmall .Mark:visited{
+	color:#FF6600;
+	font-weight:bold;
+}
+#Moives .ListSmall .Mark:hover{
+	color:#FF6600;
+	font-weight:bold;
+	text-decoration:none;
+}
+#Moives .BottomLeft{
+	width: 215px;
+	float: left;
+	margin-left: 8px;
+	text-align: left;
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: #98947B;
+}
+#Moives .BottomRight{
+	width: 205px;
+	float: right;
+	margin-right: 8px;
+}
+#Moives .Bottom{
+	width: 235px;
+	float: right;
+}
+#Moives .Bottom .ListSmall{
+	width: 235px;
+}
+#Moives .Picutre {
+	text-align: center;
+	float: right;
+	height: 255px;
+	width: 235px;
+	margin-bottom: 10px;
+}
+#TVPlay .Left{
+	float:left;
+	width:456px;
+	height: 140px;
+}
+#TVPlay .Right{
+	width: 245px;
+	float: right;
+}
+#TVPlay .Title{
+	float:left;
+	width:456px;
+	height: 25px;
+	background-image: url(http://movie.xunlei.com/images/main_tv_play.gif);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+}
+#TVPlay .PicList {
+	float: left;
+	width: 300px;
+	text-align: left;
+}
+#TVPlay .PicList img {
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 25px;
+	width: 65px;
+	height: 90px;
+}
+
+#TVPlay .List1 {
+	background-image: url(http://movie.xunlei.com/images/main_tv_listback.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 98px;
+	width: 150px;
+	float: right;
+}
+#TVPlay .List1 li {
+	text-align: left;
+	list-style-type: none;
+	line-height: 14px;
+}
+#TVPlay .List1 a:link , #TVPlay .List1 a:visited {
+	color:#666666;
+}
+#TVPlay .List1 a:hover {
+	color:#333333;
+}
+#TVPlay .List1 .Mark {
+	font-weight:bold;
+}
+#TVPlay .List1 ul {
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+#TVPlay .List2{
+	text-align: left;
+	height: 140px;
+	float: right;
+	width: 230px;
+}
+#TVPlay .List2 li{
+	list-style:none;
+	background-image: url(http://movie.xunlei.com/images/main_list2.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+	line-height: 22px;
+}
+#TVPlay .List2 a:link , #Moives .List1 a:visited{
+	color:#666666;	
+}
+#TVPlay .List2 a:hover{
+	color:#FF9900;	
+}
+#Disport .Title {
+	background-image: url(http://movie.xunlei.com/images/main_disport.gif);
+	background-repeat: no-repeat;
+	height: 23px;
+	width: 196px;
+	margin-bottom: 10px;
+}
+#Disport .TopInf {
+	padding-bottom: 10px;
+}
+#Disport .List li {
+	text-align:left;
+	list-style:none;
+	line-height:23px;
+	border-top:1px dotted #DCD9C5;
+}
+#Disport .List a {
+	color:#666666;
+}
+#Comic {
+	width: 456px;
+	float: left;
+}
+#Comic .Title {
+	background-image: url(http://movie.xunlei.com/images/main_comic.gif);
+	height: 25px;
+	width: 456px;
+	margin-bottom: 10px;
+}
+#Comic .TopInf {
+	text-align: center;
+	line-height: 20px;
+	width: 150px;
+	float: left;
+}
+#Comic .TopInf img{
+	border: 1px solid #C6C5C1;
+}
+#Comic .TopInf a:link , #Comic .TopInf a:visited{
+	color: #666666;
+}
+#Comic .TopInf a:hover{
+	color: #FF9900;
+}
+#Comic .TopInf .InfTitle{
+	font-size: 14px;
+	color: #666666;
+	line-height: 20px;
+}
+#Comic .TopInf .InfTitle a:link,#Comic .TopInf .InfTitle a:visited,#Comic .TopInf .InfTitle a:hover{
+	color: #666666;
+}
+#Comic .Top {
+	width: 456px;
+	float: left;
+	padding-bottom: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #98947B;
+	margin-bottom: 10px;
+	height: 250px;
+}
+#Comic .List{
+	text-align: left;
+	line-height: 21px;
+	height: 210px;
+	float: right;
+	width: 300px;
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+#Comic .List li{
+	list-style:none;
+	background-image: url(http://movie.xunlei.com/images/main_list2.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+	line-height: 21px;
+}
+#Comic .List a:link , #Comic .List a:visited{
+	color:#666666;	
+}
+#Comic .List a:hover{
+	color:#FF9900;	
+}
+#Comic .BottomLeft{
+	width: 225px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 0px;
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: #98947B;
+}
+#Comic .BottomRight{
+	width: 210px;
+	float: right;
+	margin-right: 5px;
+}
+#Comic .ListSmall{
+	text-align: left;
+	line-height: 20px;
+	height: 120px;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#Comic .ListSmall li{
+	float:left;
+	width:85px;
+	line-height:20px;
+	padding-left: 10px;
+	background-image: url(http://movie.xunlei.com/images/main_list2.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	list-style-type: none;
+	overflow: hidden;
+	height: 20px;
+}
+#Comic .ListSmall a:link , #Comic .ListSmall a:visited{
+	color:#666666;	
+}
+#Comic .ListSmall a:hover{
+	color:#FF9900;	
+}
+#Sport,#Actors{
+	float:right;
+	width:231px;	
+}
+#Sport .Title {
+	background-image: url(http://movie.xunlei.com/images/main_sport.gif);
+	background-repeat: no-repeat;
+	height: 23px;
+	width: 231px;
+	margin-bottom: 10px;
+}
+#Sport .TopInf {
+	padding-bottom: 6px;
+}
+#Sport .List li {
+	list-style:none;
+	background-image: url(http://movie.xunlei.com/images/main_list2.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+	line-height: 22px;
+	text-align: left;
+}
+#Sport .List a{
+	color:#666666;
+}
+#Actors .Title {
+	background-image: url(http://movie.xunlei.com/images/main_actor.gif);
+	background-repeat: no-repeat;
+	height: 23px;
+	width: 231px;
+	margin-bottom: 10px;
+}
+#Actors .TopInf {
+	margin-top: 10px;
+}
+#Actors .List li {
+	text-align:left;
+	padding-left:10px;
+	list-style:none;
+	line-height:23px;
+	border-bottom:1px dotted #DCD9C5;
+}
+#Actors .List a {
+	color:#666666;
+}
+#Other {
+	width: 712px;
+	float: left;
+	height: 255px;
+}
+#Other .Title {
+	background-image: url(http://movie.xunlei.com/images/main_other.gif);
+	height: 25px;
+	width: 456px;
+	margin-bottom: 10px;
+}
+#Other .TopInf {
+	text-align: center;
+	line-height: 20px;
+	width: 150px;
+	float: left;
+}
+#Other .TopInf img{
+	border: 1px solid #C6C5C1;
+}
+#Other .TopInf a:link , #Other .TopInf a:visited{
+	color: #666666;
+}
+#Other .TopInf a:hover{
+	color: #FF9900;
+}
+#Other .TopInf .InfTitle{
+	font-size: 14px;
+	color: #666666;
+	line-height: 20px;
+}
+#Other .TopInf .InfTitle a:link,#Other .TopInf .InfTitle a:visited,#Other .TopInf .InfTitle a:hover{
+	color: #666666;
+}
+#Other .Left {
+	width: 456px;
+	float: left;
+}
+#Other .Left .List{
+	text-align: left;
+	line-height: 20px;
+	height: 200px;
+	float: right;
+	width: 300px;
+}
+#Other .Right .List{
+	text-align: left;
+	line-height: 20px;
+	float: right;
+	width: 230px;
+}
+#Other .List li{
+	list-style:none;
+	background-image: url(http://movie.xunlei.com/images/main_list2.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+	line-height: 21px;
+	text-align: left;
+}
+#Other .List a:link , #Other .List a:visited{
+	color:#666666;	
+}
+#Other .List a:hover{
+	color:#FF9900;	
+}

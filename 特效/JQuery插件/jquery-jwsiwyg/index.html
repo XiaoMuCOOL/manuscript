@@ -1,0 +1,34 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>Wysiwyg</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-1.3.2.js"></script>
+	<script src="js/jquery.wysiwyg.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.wysiwyg.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#siwyg").wysiwyg({
+			    controls: {
+			        insertImage: { visible: false }/*,
+			        createLink: { visible: false },
+			        subscript: { visible: true },
+			        superscript: { visible: true }*/
+			    }
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1></h1>
+	</header>
+	<section>
+		<textarea name="siwyg" id="siwyg" cols="22" rows="10"></textarea>
+	</section>
+	<footer></footer>
+</body>
+</html>

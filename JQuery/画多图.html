@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+      function loadImages(sources, callback) {
+        var images = {};
+        var loadedImages = 0;
+        var numImages = 0;
+        // get num of sources
+        for(var src in sources) {
+          numImages++;
+        }
+        for(var src in sources) {
+          images[src] = new Image();
+          images[src].onload = function() {
+            if(++loadedImages >= numImages) {
+              callback(images);
+            }
+          };
+          images[src].src = sources[src];
+        }
+      }
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      var sources = {
+       	darthVader: 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg',
+        yoda: 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg',
+        aa : 'http://192.168.1.113:8001/upload/resource/28/70/temp/13732534977520.png',
+        bb : 'http://192.168.1.113:8001//upload/resource/28/70/temp/13732533805880.jpg',
+        cc: 'http://192.168.1.113:8001//upload/resource/28/70/temp/13732533805880.jpg'
+      };
+      var px = {
+        darthVader:{ x:0,y:0,w:50,h:50},
+        yoda:{ x:50,y:50,w:50,h:50},
+        aa :{ x:100,y:100,w:50,h:50},
+        bb : { x:150,y:150,w:50,h:50},
+        cc:{ x:130,y:100,w:50,h:50},
+      }
+
+      loadImages(sources, function(images) {
+      	var x = 0;
+      	var y = 0;
+      	var w= 200;
+      	var h = 137;
+      	for(var src in sources){
+      		context.drawImage(images[src], px[src].x,px[src].y, px[src].w, px[src].h);
+      	}
+        //context.drawImage(images.yoda, 350, 55, 93, 104);
+      });
+
+    </script>
+  </body>
+</html>

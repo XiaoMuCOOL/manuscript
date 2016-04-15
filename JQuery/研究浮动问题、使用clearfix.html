@@ -1,0 +1,124 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>研究浮动问题、使用clearfix</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#parent{
+			width:500px;
+			border:1px solid red;
+			/* overflow: hidden; */ 
+		}
+		#parent div{
+			/* width: 120px;
+			height: 80px; */
+		}
+		#son1{
+			float: left;
+			background: green;
+		}
+		#son2{
+			float: right;
+			background: yellow;
+		}
+		#parent #son3{
+			float: left;
+			height:100px;
+			background: pink;
+		}
+		.clearfix:before, .clearfix:after {
+	      content:"";
+	      display:table;
+	   }
+	   .clearfix:after {
+	     clear:both;
+	     overflow:hidden;
+	   }
+	  .clearfix {
+	     zoom:1; /* IE < 8 */
+	  }
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：研究浮动问题、使用clearfix</h1>
+	</header>
+	<section>
+		<div id="parent" class="clearfix">
+			<div id="son1">son1</div>
+			<div id="son2">son2</div>
+			<div id="son3">son3</div>
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>其实直接 固定宽度 高度就好了。</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+	<script type="text/javascript">
+		document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if(e && e.keyCode==116){
+            	location.reload();
+            	return false;
+            }
+        }
+    </script>
+</body>
+</html>

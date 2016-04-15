@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video.js | HTML5 Video Player</title>
+
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video.js"></script>
+  <script src="jquery-1.9.1.js"></script>
+
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+    _V_.options.flash.swf = "video-js.swf";
+    $(function(){
+      var s = videojs("example_video_1");
+      $("#stop").click(function(){
+        //$('#example_video_1').show();
+        s.pause();
+        // $("#example_video_1").hide();
+      });
+       $("#star").click(function(){
+        $("#bigdiv").css({
+          visibility:"visible"
+        });
+      });
+      $("#vnone").click(function(){
+        $("#bigdiv").css({
+          visibility:"hidden"
+        });
+      });
+    });
+  </script>
+
+
+</head>
+<body>
+<div id="bigdiv">
+  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup="{}">
+    <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+    <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
+  </video>
+</div>
+<div id="stop" style="float:left;width:200px;height:200px;border:1px solid red;">stop</div>
+<div id="star" style="float:left;width:200px;height:200px;border:1px solid red;">star</div>
+<div id="vnone" style="float:left;width:200px;height:200px;border:1px solid red;">none</div>
+
+</body>
+</html>

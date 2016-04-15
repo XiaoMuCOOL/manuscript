@@ -1,0 +1,165 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family:Tahoma;
+	font-size:12px;
+}
+body{
+	text-align:center;
+	background-color:#E1E5E6;
+}
+div{
+	display:block;
+}
+img{
+	border-style:none;
+}
+a:link , a:visited{
+	text-decoration:none;
+}
+a:hover{	
+	text-decoration:underline;
+}
+/*layout*/
+#Container{
+	background-color:#FFFFFF;
+	width:970px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+#Header{
+	background-image: url(../images/menu_back.gif);
+	background-repeat: repeat-x;
+	height: 92px;
+	width: 954px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+}
+#Content{
+	width:954px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+#Footer{
+	width:954px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom: 30px;
+}
+/*Common*/
+.Clear{
+	clear:both;
+}
+.HMenu li{
+	float:left;
+	background-position:left center;
+	list-style:none;
+	background-repeat: no-repeat;
+}
+#Content .LayerSplit {
+	width: 954px;
+	border-top-width: 1px;
+	border-top-style:dotted;
+	border-top-color: #98947B;
+	height:10px;
+	clear:both;
+}
+#Content .Box1{
+	background-image: url(../images/box1_tl.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	clear:both;
+	width:100%;
+}
+#Content .Box1 .BoxR{
+	background-image: url(../images/box1_r.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	clear:both;
+}
+#Content .Box1 .BoxBL{
+	background-image: url(../images/box1_bl.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	clear:both;
+}
+#Content .Box1 .BoxBR{
+	background-image: url(../images/box1_br.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	clear:both;
+	padding:10px;
+}
+#Content .Box2{
+	background-image: url(../images/box2_tl.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	clear:both;
+	width:100%;
+}
+#Content .Box2 .BoxR{
+	background-image: url(../images/box2_r.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	clear:both;
+}
+#Content .Box2 .BoxBL{
+	background-image: url(../images/box2_bl.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	clear:both;
+}
+#Content .Box2 .BoxBR{
+	background-image: url(../images/box2_br.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	clear:both;
+	padding:8px;
+}
+
+/* top ad*/
+/*in media*/
+#top, #top1, #top2, #inmedia_pos, #content_top {
+	text-align: left;
+	z-index: 1;
+}
+
+#top, #top1, #content_top {
+	width: 970px;
+	height: 80px;
+	line-height:20px;
+}
+
+
+.but{ clear:both; margin:10px auto}
+
+.but li{ float:left; margin:0 5px; list-style: none}
+.but li a{border:1px solid #CBC8B5; text-decoration:none; display:block; padding-left:28px; width:45px; height:33px; line-height:33px;color:#333; float:left}
+.but li a.bot{background: url(http://movie.xunlei.com/images/preview.gif) no-repeat 4px center #FFFFD6;}
+.but li a:hover.bot{background: url(http://movie.xunlei.com/images/preview.gif) no-repeat 4px center #97C8DD;}
+.but li a.bot1{background: url(http://movie.xunlei.com/images/down_search.gif) no-repeat 4px center #FFFFD6;}
+.but li a:hover.bot1{background: url(http://movie.xunlei.com/images/down_search.gif) no-repeat 4px center #97C8DD;}
+.but li a.bot2{background: url(http://movie.xunlei.com/images/down_gut.gif) no-repeat 4px center #FFFFD6;}
+.but li a:hover.bot2{background: url(http://movie.xunlei.com/images/down_gut.gif) no-repeat 4px center #97C8DD;}
+.but li a.bot3{background: url(http://movie.xunlei.com/images/down_comment.gif) no-repeat 4px center #FFFFD6;}
+.but li a:hover.bot3{background: url(http://movie.xunlei.com/images/down_comment.gif) no-repeat 4px center #97C8DD;}
+.botimg{ float:left;}
+
+/*add*/
+.tgs{ clear:both; width:247px;}
+.tgst{ background:url(http://movie.xunlei.com/images/tgst.gif) no-repeat; clear:both; height:27px; line-height:27px; overflow:hidden; color:#fff; font-weight:bold; font-size:14px; text-align:left; padding:6px 0 0 17px;}
+.tgsm{ background:url(http://movie.xunlei.com/images/tgsm.gif) repeat-y; clear:both;}
+.tgsm:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.tgsm ul{ clear:both; width:220px; margin:0 auto; padding:10px 0; list-style:none;}
+.tgsm li{ float:left; background:url(http://movie.xunlei.com/images/tgsdot.gif) no-repeat left 3px; width:80px; text-align:left; padding-left:15px; line-height:160%; margin-left:5px;}
+.tgsm li a{ color:#E98615;}
+.tgsb{ background:url(http://movie.xunlei.com/images/tgsb.gif) no-repeat; height:5px; overflow:hidden;}
+
+.box22{ clear:both; width:667px; margin:0 auto;}
+.box22 td a{ color:#666; font-size:12px; text-decoration:underline;}

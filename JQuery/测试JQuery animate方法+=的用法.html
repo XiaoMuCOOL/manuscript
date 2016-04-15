@@ -1,0 +1,125 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>测试JQuery animate方法+=的用法</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#box{
+			width: 500px;
+			height: 450px;
+			border: 1px solid red;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		#box2{
+			width: 1500px;
+			height: 450px;
+		}
+		.div{
+			width: 500px;
+			height: 450px;
+			background: green;
+			position: relative;
+			float: left;
+			left: 0px;
+		}
+		span{
+			display: inline-block;
+			width: 50px;
+			height: 30px;
+			background: yellow;
+			margin: 20px;
+			line-height: 30px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var l = $("#box2").children().css("left");
+			$("#box2").children().text(l);
+			$("#a1").click(function(){
+				$("#box2").children().animate({
+					left : "-=" + 500
+				},1000,function(){
+					$("#box2").children().css({
+						background : "pink"
+					});
+					$("#box2").children().text($("#box2").children().css("left"));
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：测试JQuery animate方法+=的用法</h1>
+	</header>
+	<section>
+		<span id="a1">事件1</span><span id="a2">事件2</span>
+		<div id="box">
+			<div id="box2">
+				<div class="div" style="background:green;">1</div>
+				<div class="div" style="background:yellow;">2</div>
+				<div class="div" style="background:blue;">3</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

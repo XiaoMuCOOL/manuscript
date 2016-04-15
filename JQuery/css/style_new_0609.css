@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { padding:0px; margin:0px; font-size:12px; line-height:20px; font-family:"微软雅黑"}
+ul,li { padding:0px; margin:0px; list-style:none;}
+img { border:0px;}
+.clear { clear:both;}
+.all_width_johnny { width:930px; margin:0 auto;}
+.banner_j { width:930px; height:210px; padding:10px 0px;}
+
+.left_j { width:180px; float:left; margin-bottom:0px;}
+.left_j li { margin-bottom:10px;}
+	.left_j strong { display:block; border-bottom:1px #bebebe dashed; padding-bottom:5px;}
+	.left_j a { display:block; height:28px; line-height:28px; width:180px; text-decoration:none; margin:15px 0px; color:#000;}
+		.left_j a:hover { text-decoration:none;}
+	.left_j a img { width:31px; height:31px; float:left; margin-right:15px;}
+	
+	
+.right_list_j { float:right; width:720px;margin-bottom:20px;}
+
+.product_list_j { width:212px; float:left; margin-right:24px;}
+	.product_list_j a { display:block; text-decoration:none;}
+		.product_list_j a:hover .product_list_name span { color:#783286}
+		.product_list_img { width:206px; height:158px; padding:3px; border:1px #bebebe solid; position:relative; overflow:hidden;}
+		a:hover .product_list_img { background:#a577ae; border:1px #a577ae solid;}
+		
+			.biaoqian_new { width:60px; height:60px; background:url(../images/i17.png) no-repeat; position:absolute; top:-10px}
+		/*.product_list_num { display:block; float:left; background:#a577ae; width:45px; height:45px; line-height:45px; text-align:center; color:#fff; margin-right:10px;}*/
+		.product_list_num { display:block; float:left; background:#a577ae; width:29px; height:29px; line-height:14px; text-align:center; color:#fff; margin-right:10px;padding:8px;word-break:break-all;}
+		.product_list_name { float:left;}
+			.product_list_name img { width:15px; height:15px; float:left; margin-right:10px;}
+			.product_list_name span { display:block; height:30px; color:#000; text-decoration:none;}
+		.product_list_text { width:212px; height:45px; padding:5px 0px;}
+		.beizhu_j { color:#999; }
+
+.clear_border { height:10px; margin-bottom:10px; border-bottom:1px #bebebe dashed; clear:both; width:685px;}
+.yema_j  { height:22px; margin-bottom:10px;}
+.yema_j a { display:block; width:20px; height:20px; line-height:20px; color:#999; border:1px #bebebe solid; float:left; text-align:center; text-decoration:none; margin-right:5px;}
+.yema_j a:hover { color:#000;}
+.yema_j a.on_mouse { color:#fff; background:#c20003; border:1px #c20003 solid;}
+
+
+/*---------inner---------------*/
+/*.new_product_inner_j { width:930px; height:323px; overflow:hidden; margin-bottom:20px;}*/
+.new_product_inner_j { width:930px; overflow:hidden; margin-bottom:20px;}
+	.np_inner_left_j { width:526px; float:left; height:323px;}
+.big_np_img { float:left;}
+		.tab_shutiao_j { width:86px; float:right; text-align:center; height:323px;}
+		.small_np_img img { width:80px;}
+		.tab_shutiao_j a { display:block; padding:5px 0px;}
+		.tab_shutiao_j a:hover {filter:alpha(opacity=70); -moz-opacity:0.7; opacity:0.7;}
+		.small_np_img { margin:14px 0px;filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5;}
+		/*.on_img_np {filter:alpha(opacity=100); -moz-opacity:1; opacity:1; border:3px #e62257 solid;}*/
+		.on_img_np {filter:alpha(opacity=100); -moz-opacity:1; opacity:1; border:none;}
+	.np_inner_right_j { width:380px; float:right;}
+		.tittle_j { width:370px; height:30px; border-left:5px #e62257 solid; font-size:16px; color:#e62257; line-height:30px; padding-left:5px; margin-bottom:10px;}
+		.tittle_j strong { display:block; background:#f8f3f4; padding-left:5px; }
+		.text_inner_j li { line-height:18px; border-bottom:1px #bebebe dashed; padding:10px 15px;}
+.inner_choose_j { line-height:33px; margin-bottom:25px; }
+	.inner_choose_j table td { padding:5px 0px;text-align:center;border-right:1px #fff solid; border-bottom:1px #e2e2e2 solid;}
+		/*.inner_choose_j table tr.table_tittle_j td { font-weight:bold; background:#f3e9ec; padding:5px 0px; }*/
+.inner_choose_j table tr.table_tittle_j td { font-weight:bold; background:#ffdbe5; padding:5px 0px; border-bottom:0px; }
+.inner_choose_j table td strong{color:#e62257;}
+		/*.table_hs_j { background:#f8f8f8;}*/
+.new_product_inner_tab { width:930px; margin-bottom:40px;}	
+.tabs {
+  width:930px;
+  height:auto;
+  border: 0px solid red;
+ }
+ .selectTab,.unselectTab {
+  border:1px solid #bebebe;
+  border-bottom:1px #e62254 solid;
+
+  width:130px;
+  height:34px;
+  line-height:34px;
+  text-align:center;
+  background-color:#f3f3f3;
+  margin: 0;
+  font-weight: normal;
+  font-size:14px;
+  color:#000;
+  cursor: pointer;
+  float:left; font-weight:bold;
+ }
+ .unselectTab span { display:block; border:1px #fff solid; height:32px;font-weight: normal}
+
+ .selectTab {
+  color:#e62254;
+  background-color:#fff;
+  border:1px #e62254 solid;
+  border-bottom:0px #fff solid;
+ }
+/*.selectContent {
+	width:890px;
+	border:1px #e62254 solid;
+	border-top:0px;
+	padding:15px 16px;
+	clear: both; position:relative; top:-1px; min-height:300px;
+ }*/
+ .selectContent {
+	width:900px;
+	border:1px #e62254 solid;
+	border-top:0px;
+	padding:15px 11px;
+	clear: both; position:relative; top:-1px; min-height:300px;
+ }
+ .unselectContent {
+ 	display: none;margin-top:-1px;
+ }
+ 
+ 
+ .tiaolifangshi { width:890px; margin:0 auto; height:300px; position:relative; }
+ .tiaolifangshi td { border:1px #fff solid; text-align:center; border-top:0px; border-bottom:0px;}
+ .tiaoli_tittle { background:#f9abc1; color:#fff; font-size:14px; padding:10px 0px;}
+ .tiaoli_biaoti td { background:#ffe2ec; color:#5d3432;font-size:14px; padding:10px 0px;}
+ .tiaoli_img { position:relative;}
+ .tiaoli_img td{ background:#f5f5f5; padding:60px 0px;}
+ .tiaoli_time { width:890px; height:20px; line-height:20px; color:#000; position:absolute; bottom:12px; text-align:center;}
+ 
+
+.Navigation {
+    background: url("../images/nav-now.gif") no-repeat scroll 10px center transparent;
+    color: #999999;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 30px;
+} 
+
+
+.text_inner_j { color:#666;}
+		.text_inner_j strong { color:#000}
+		.tabs div { line-height:22px;}

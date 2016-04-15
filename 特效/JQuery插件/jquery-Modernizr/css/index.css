@@ -1,0 +1,29 @@
+.boxshadow #msg{
+	width: 50px;
+	height:20px;
+	display: inline-block;
+	/* border: 1px solid red; */
+	-webkit-box-shadow: #666 1px 1px 1px;
+	-moz-box-shadow: #666 1px 1px 1px;
+	box-shadow: #666 1px 1px 1px;
+}
+
+.no-boxshadow #msg{
+	width: 50px;
+	height:20px;
+	display: inline-block;
+	border: 3px solid blue;
+}
+/*
+ * 正常情况下，低版本浏览器的 DOM 里是没有section。所以会没有效果！
+ * 而我引用了Modernizr，让浏览器能够识别，所以 有了效果。
+ */
+.no-js #msg{
+	width: 50px;
+	height:20px;
+	display: inline-block;
+	border: 3px solid blue;
+}
+section{
+	background: green;
+}

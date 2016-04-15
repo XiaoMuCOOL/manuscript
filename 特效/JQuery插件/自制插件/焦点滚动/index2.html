@@ -1,0 +1,168 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/scrollOne.js"></script>
+	<style type="text/css">
+		#area{
+			position: relative;
+			width: 100%;
+			height: 600px;
+			margin: 0 auto;
+			overflow: hidden;
+			border: 1px solid red;
+			/* background: url('img/case_web.png') center no-repeat; */
+		}
+		#area #items{
+			width: 9999px;
+			height: 82px;
+		}
+		#area .item{
+			position: relative;
+			float: left;
+			margin: 0 5px;
+			margin-top: 259px;
+			left: -14px;
+		}
+		#area .now{
+			margin: 110px 33px auto 33px;
+			z-index: 100;
+		}
+		#area .item .title{
+			display: none;
+		}
+		#area .itemPre{
+			
+		}
+		#pre,#next{
+			display: inline-block;
+			width: 100px;
+			height: 250px;
+			top:30%;
+			background-image: url("img/btn_jiantou.png");
+			position: absolute;
+			z-index: 99;
+			display: none;
+		}
+		#pre{
+			left: 0px;
+			background-position: left top;
+		}
+		#next{
+			right: 0px;
+			background-position: right bottom;
+		}
+		#pre:hover{
+			background-position: right top;
+		}
+		#next:hover{
+			background-position: left bottom;
+		}
+		#bgImg{
+			position: absolute;
+			z-index: 99;
+			background: #fff;
+		}
+		#area .now .title{
+			position: absolute;
+			top: -100px;
+			left: 150px;
+			width: 250px;
+			height: 50px;
+			border: 1px solid red;
+		}
+		#area .mask{
+			display: none;
+		}
+		#area .now .mask{
+			/* display: inline-block; */
+			position: absolute;
+			background: #fdeab4;
+			top:0;
+			left: 0;
+			opacity: 0.9;
+			width: 555px;
+			height: 315px;
+		}
+		#area .now a{
+			display: inline-block;
+			width: 555px;
+			height: 315px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#area").scrollOne({
+				//自动播放时间间隔
+				timeNum : 3000,
+				//每个DIV 的宽度 : 每张图片宽度 + 10 margin
+				itemW : 142 + 10,
+				//left的偏移量，当中图片距离前一张的偏移量 ,第二版 js 自动获取了,无需给了。
+				//leftOffset : -14,
+				//图片框架路径
+				bgImgSrc : "img/case_web.png",
+				//自动播放 方向: "next" or "pre"
+				autoDir : "next"
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1></h1>
+	</header>
+	<section>
+		<div id="area">
+			<!-- <a id="pre" href="javascript:void(0)" ></a>
+			<a id="next" href="javascript:void(0)"></a> -->
+			<img src="" id="bgImg"/>
+			<div id="items">
+				<div class="item now">
+					<img src="img/frame-01.jpg" smallSrc="img/frame-01.jpg" bigSrc="img/01.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask">图片设置成这个DIV的背景图background</div></a></div>
+					<div class="title"><span>img/frame-01.jpg</span></div>
+				</div>
+				<div class="item">
+					<img src="img/frame-02.jpg" smallSrc="img/frame-02.jpg" bigSrc="img/02.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask"></div></a></div>
+					<div class="title"><span>img/frame-02.jpg</span></div>
+				</div>
+				<div class="item">
+					<img src="img/frame-03.jpg" smallSrc="img/frame-03.jpg" bigSrc="img/03.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask"></div></a></div>
+					<div class="title"><span>img/frame-03.jpg</span></div>
+				</div>
+				<div class="item">
+					<img src="img/frame-04.jpg" smallSrc="img/frame-04.jpg" bigSrc="img/04.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask"></div></a></div>
+					<div class="title"><span>img/frame-04.jpg</span></div>
+				</div>
+				<div class="item">
+					<img src="img/frame-05.jpg" smallSrc="img/frame-05.jpg" bigSrc="img/05.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask"></div></a></div>
+					<div class="title"><span>img/frame-05.jpg</span></div>
+				</div>
+				<!-- <div class="item">
+					<img src="img/frame-06.jpg" smallSrc="img/frame-06.jpg" bigSrc="img/06.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask"></div></a></div>
+					<div class="title"><span>img/frame-06.jpg</span></div>
+				</div>
+				<div class="item">
+					<img src="img/frame-07.jpg" smallSrc="img/frame-07.jpg" bigSrc="img/07.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask"></div></a></div>
+					<div class="title"><span>img/frame-07.jpg</span></div>
+				</div>
+				<div class="item">
+					<img src="img/frame-08.jpg" smallSrc="img/frame-08.jpg" bigSrc="img/08.jpg" alt="">
+					<div class="mask"><a href="http://baidu.com"><div class="bgMask"></div></a></div>
+					<div class="title"><span>img/frame-08.jpg</span></div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+	<footer></footer>
+</body>
+</html>

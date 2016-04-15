@@ -1,0 +1,143 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>效果模板</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		.divBox{
+			width: 650px;
+			height: 200px;
+			margin-bottom: 20px;
+			border: 1px solid red;
+		}
+		.divBox div{
+			background: #82ce18;
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			float: left;
+		}
+		.move{
+			position: relative;
+		}
+		h2{
+			width: 200px;
+			float: right;
+		}
+		input{
+			float: right;
+		}
+		br{
+			clear: both;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$(".fadeIn").hide(0);
+			$("#btnIn").click(function(){
+				// 淡入 方法，括号时间
+				$(".fadeIn").fadeIn(1000);
+			});
+			$("#btnOut").click(function(){
+				// 淡出 方法，括号时间
+				$(".fadeOut").fadeOut(1000);
+			});
+			$("#btnMove").click(function(){
+				//移动方法，left是往右，right是往左，或者给负数也是往左，这个标签必须要有posistion
+				$(".move").animate({
+					left : 503,
+				},1000);
+			});
+			$("#moveL").click(function(){
+				$("#moveL").animate({
+					width : 400,
+				},1000);
+				$("#moveR").animate({
+					width : 0,
+				},1000,function(){
+					$("#moveR").hide();
+				});
+			});
+			$("#moveR").click(function(){
+				$("#moveR").animate({
+					width : 400,
+				},1000);
+				$("#moveL").animate({
+					width : 0,
+				},1000,function(){
+					$("#moveL").hide();
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：效果模板</h1>
+	</header>
+	<section>
+		<div class="divBox"><h2>淡入效果</h2><div class="fadeIn">淡入效果</div><input type="button" id="btnIn" value="淡入"/></div><br />
+		<div class="divBox"><h2>淡出效果</h2><div class="fadeOut">淡出效果</div><input type="button" id="btnOut" value="淡出"/></div><br />
+		<div class="divBox"><h2>移动效果</h2><div class="move">移动效果</div><input type="button" id="btnMove" value="移动"/></div><br />
+		<div class="divBox"><h2>移动效果</h2><div id="moveL" class="move">左效果</div><div id="moveR" class="move">右效果</div></div><br />
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

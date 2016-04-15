@@ -1,0 +1,285 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/index.js"></script>
+	<style type="text/css">
+		#area{
+			position: relative;
+			width: 1200px;
+			height: 600px;
+			margin: 0 auto;
+			overflow: hidden;
+			border: 1px solid red;
+			background: url('img/case_web.png') center no-repeat;
+		}
+		#area #items{
+			width: 9999px;
+			height: 82px;
+		}
+		#area .item{
+			position: relative;
+			float: left;
+			margin: 0 5px;
+			margin-top: 259px;
+			left: -14px;
+		}
+		#area .now{
+			margin: 110px 33px auto 32px;
+		}
+		#area .item span{
+			display: none;
+		}
+		#area .itemPre{
+			
+		}
+		#pre,#next{
+			display: inline-block;
+			width: 100px;
+			height: 250px;
+			top:30%;
+			background-image: url("img/btn_jiantou.png");
+			position: absolute;
+			z-index: 99;
+			display: none;
+		}
+		#pre{
+			left: 0px;
+			background-position: left top;
+		}
+		#next{
+			right: 0px;
+			background-position: right bottom;
+		}
+		#pre:hover{
+			background-position: right top;
+		}
+		#next:hover{
+			background-position: left bottom;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			//自动播放时间间隔
+			var timeNum = 1000;
+			//每个DIV 的宽度 : 每张图片宽度 + 10 margin
+			var itemW = 142 + 10;
+			//left的偏移量，当中图片距离前一张的偏移量
+			var leftOffset = -14;
+
+			var item = $("#items .item");
+			var maxNum = item.length;
+			var nowId = 0;
+			var nowLeft = -10;
+			var saveLeft = -10;
+			//复制 功能
+			$(item[item.length -2]).clone().attr('id','cloneLast2').insertBefore(item.first());
+			$(item[item.length -1]).clone().attr('id','cloneLast1').insertBefore(item.first());
+			$(item[1]).clone().attr('id','cloneFirst2').insertAfter(item.last());
+			$(item[0]).clone().removeClass("now").attr('id','cloneFirst1').insertAfter(item.last());
+
+			//设置大图
+			$(".now img").attr("src",$(".now img").attr("bigSrc"));
+
+			//后一个
+			/**
+			 * 无效果版
+			 */
+			 /*
+			function nextOne(thisId){
+				var thisId = thisId?thisId : nowId + 1;
+				//判断Now
+				if(thisId > maxNum-1){
+					thisId = 0;
+				}
+				nowLeft = leftOffset - (itemW * thisId);
+				$(".item").css("left",nowLeft);
+				//去掉 now , 改变 src
+				var now = $(".now");
+				var nowImg = $(".now img");
+				var src = nowImg.attr("smallSrc");
+				now.removeClass("now");
+				nowImg.attr("src",src);
+
+				// 设置新的now
+				$(item[thisId]).addClass("now");
+				$(".now img").attr("src",$(".now img").attr("bigSrc"));
+
+				nowId = thisId;
+			}*/
+
+			/**
+			 * 单个方法版   两个效果两个方法
+			 */
+			 /*
+			//后一个
+			function nextOne(thisId){
+				var thisId = thisId?thisId : nowId + 1;
+				//判断Now
+				if(thisId > maxNum-1){
+					thisId = 0;
+					saveLeft = leftOffset - (itemW * -1);
+				}else{
+					saveLeft = nowLeft;
+				}
+				nowLeft = leftOffset - (itemW * thisId);
+				//去掉 now , 改变 src
+				var now = $(".now");
+				var nowImg = $(".now img");
+				var src = nowImg.attr("smallSrc");
+
+				//动画效果
+				$(item[nowId]).animate({"opacity":0.2},200,function(){
+					//去掉 now , 改变 src
+					now.removeClass("now");
+					nowImg.attr("src",src);
+					$(this).css("opacity","1");
+					// 设置新的now
+					$(item[thisId]).addClass("now");
+					$(".now img").attr("src",$(".now img").attr("bigSrc")).css("opacity","0");
+					$(".item").css({"left":saveLeft});
+					$(".item").animate({"left":nowLeft},500,function(){
+						$(".now img").animate({"opacity":1},200);
+					});
+				});
+				nowId = thisId;
+			}
+			//前一个
+			function preOne(thisId){
+				var thisId = thisId?thisId : nowId - 1;
+				//判断Now
+				if(thisId < 0){
+					thisId = maxNum-1;
+					saveLeft = leftOffset - (itemW * maxNum);
+				}else{
+					saveLeft = nowLeft;
+				}
+				nowLeft = leftOffset - (itemW * thisId);
+				//去掉 now , 改变 src
+				var now = $(".now");
+				var nowImg = $(".now img");
+				var src = nowImg.attr("smallSrc");
+
+				//动画效果
+				$(item[nowId]).animate({"opacity":0.2},200,function(){
+					//去掉 now , 改变 src
+					now.removeClass("now");
+					nowImg.attr("src",src);
+					$(this).css("opacity","1");
+					// 设置新的now
+					$(item[thisId]).addClass("now");
+					$(".now img").attr("src",$(".now img").attr("bigSrc")).css("opacity","0");
+					$(".item").css({"left":saveLeft});
+					$(".item").animate({"left":nowLeft},500,function(){
+						$(".now img").animate({"opacity":1},200);
+					});
+				});
+				nowId = thisId;
+			}
+			*/
+
+			/**
+			 * 两个效果合并版
+			 */
+			function scrollOne(direction,thisId){
+				var dir = direction?direction : "next"
+				var thisId;
+				//判断Now
+				if(dir == "next"){
+					thisId = thisId?thisId : nowId + 1;
+					if(thisId > maxNum-1){
+						thisId = 0;
+						saveLeft = leftOffset - (itemW * -1);
+					}else{
+						saveLeft = nowLeft;
+					}
+				}else if(dir == "pre"){
+					thisId = thisId?thisId : nowId - 1;
+					if(thisId < 0){
+						thisId = maxNum-1;
+						saveLeft = leftOffset - (itemW * maxNum);
+					}else{
+						saveLeft = nowLeft;
+					}
+				};
+				nowLeft = leftOffset - (itemW * thisId);
+				//去掉 now , 改变 src
+				var now = $(".now");
+				var nowImg = $(".now img");
+				var src = nowImg.attr("smallSrc");
+
+				//动画效果
+				$(item[nowId]).animate({"opacity":0.2},300,function(){
+					//去掉 now , 改变 src
+					now.removeClass("now");
+					nowImg.attr("src",src);
+					$(this).css("opacity","1");
+					// 设置新的now
+					$(item[thisId]).addClass("now");
+					$(".now img").attr("src",$(".now img").attr("bigSrc")).css("opacity","0");
+					$(".item").css({"left":saveLeft});
+					$(".item").animate({"left":nowLeft},500,function(){
+						$(".now img").animate({"opacity":1},200);
+					});
+				});
+				nowId = thisId;
+			}
+
+
+			//点击事件
+			$("#next").click(function(){
+				//nextOne();
+				scrollOne("next");
+			});
+			$("#pre").click(function(){
+				//preOne();
+				scrollOne("pre");
+			});
+
+			//自动播放
+			var timer = setInterval(function(){
+				scrollOne("next");
+			},timeNum);
+
+			//鼠标事件
+			$("#area").mouseenter(function(){
+				//暂停自动播放
+				clearInterval(timer);
+				$("#pre").show();
+				$("#next").show();
+			}).mouseleave(function(){
+				timer = setInterval(function(){
+					scrollOne("next");
+				},timeNum);
+				$("#pre").hide();
+				$("#next").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1></h1>
+	</header>
+	<section>
+		<div id="area">
+			<a id="pre" href="javascript:void(0)" ></a>
+			<a id="next" href="javascript:void(0)"></a>
+			<div id="items">
+				<div class="item now"><img src="img/frame-01.jpg" smallSrc="img/frame-01.jpg" bigSrc="img/01.jpg" alt=""><span>img/frame-01.jpg</span></div>
+				<div class="item"><img src="img/frame-02.jpg" smallSrc="img/frame-02.jpg" bigSrc="img/02.jpg" alt=""><span>img/frame-02.jpg</span></div>
+				<div class="item"><img src="img/frame-03.jpg" smallSrc="img/frame-03.jpg" bigSrc="img/03.jpg" alt=""><span>img/frame-03.jpg</span></div>
+				<div class="item"><img src="img/frame-04.jpg" smallSrc="img/frame-04.jpg" bigSrc="img/04.jpg" alt=""><span>img/frame-04.jpg</span></div>
+				<div class="item"><img src="img/frame-05.jpg" smallSrc="img/frame-05.jpg" bigSrc="img/05.jpg" alt=""><span>img/frame-05.jpg</span></div>
+				<div class="item"><img src="img/frame-06.jpg" smallSrc="img/frame-06.jpg" bigSrc="img/06.jpg" alt=""><span>img/frame-06.jpg</span></div>
+				<div class="item"><img src="img/frame-07.jpg" smallSrc="img/frame-07.jpg" bigSrc="img/07.jpg" alt=""><span>img/frame-07.jpg</span></div>
+				<div class="item"><img src="img/frame-08.jpg" smallSrc="img/frame-08.jpg" bigSrc="img/08.jpg" alt=""><span>img/frame-08.jpg</span></div>
+			</div>
+		</div>
+	</section>
+	<footer></footer>
+</body>
+</html>

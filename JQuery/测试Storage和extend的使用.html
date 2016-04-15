@@ -1,0 +1,277 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>测试Storage和extend的使用</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			width: 960px;
+			min-height: 250px;
+			margin: 0 auto;
+			height: 100%;
+		}
+		#add,#del,#review{
+			position: relative;
+			width: 33%;
+			min-height: 250px;
+			border: 1px solid orange;
+			float: left;
+			padding-top: 10px;
+			height: 100%;
+		}
+		#del{
+			border-left:0;
+			border-right:0; 
+		}
+		input[type=button]{
+			width: 80px;
+			height: 40px;
+			border: 0;
+			background: orange;
+			position: absolute;
+			bottom: 20px;
+			left: 35%;
+		}
+		input[type=text]{
+			margin: 10px;
+		}
+		#pageId2{
+			margin-top: 90px;
+		}
+		#review p{
+			display:inline-block;
+			word-break:break-all;
+			width: 100%;
+		}
+		.txtStorage{
+			border-top: 2px solid pink;
+			padding-top: 10px;
+			margin-bottom: 80px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			//获取localStorage对象
+			var localz = window.localStorage;
+			var pid = 1;
+			var pageArray = [];
+
+			var page = {};
+			if(localz.getItem(pid) != null){
+				var strStorage = localz.getItem(pid);
+				var objStorage = JSON.parse(strStorage);
+				pageArray =  objToArray(objStorage);
+			}
+			function arrayToObj(isPage,array){
+				var result = {};
+				if(isPage){
+					for(var i = 0; i <array.length; i++) {
+						var now = array[i];
+                        result[now.idx] = now;
+                    }
+				}else{
+					for(var i = 0; i <array.length; i++) {
+	                    result[i] = array[i];
+	                }
+                }
+                return result;
+			}
+			function objToArray(obj){
+				var result = [];
+				for(var i in obj) {
+                   result.push(obj[i]);
+                }
+                return result;
+			}
+			$("#btnAdd").click(function(){
+				var name = $("#name").val();
+				var age = $("#age").val();
+				var address = $("#address").val();
+				var pageId = $("#pageId").val();
+				//获取localStorage对象
+				var local = window.localStorage;
+
+				//先保存comp
+				var comp = {};
+				comp.name = name;
+				comp.age = age;
+				comp.address = address;
+				//放入 comp数组
+				var compArray = [];
+				var compObj = {};
+				var page = {};
+				var strPage = "";
+				var obj = {};
+				if(local.getItem(pid)!=null && JSON.parse(local.getItem(pid))[pageId]!=undefined){
+					var strStorage = local.getItem(pid);
+					var objStorage = JSON.parse(strStorage);
+					compArray = objToArray(objStorage[pageId].comp);
+					compArray.push(comp);
+					compObj = arrayToObj(false,compArray);
+					page = objStorage[pageId];
+					page.comp = compObj;
+					page.compLength = compArray.length;
+					pageArray =  objToArray(objStorage);
+					pageArray.push(page);
+	                var obj = arrayToObj(true,pageArray);
+				}else{
+					compArray = [];
+					compArray.push(comp);
+					compObj[0] = comp;
+					//保存 page
+					var page = {};
+					page.idx = pageId;
+					page.name = "page";
+					page.comp = compObj;
+					page.compLength = compArray.length;
+					pageArray.push(page);
+					obj = arrayToObj(true,pageArray);
+				}
+                strPage = JSON.stringify(obj)
+				local.setItem(pid,strPage);
+				/*if(local.getItem("A")!= null){
+					//var s = parseInt(local.getItem("A"))+1;
+					var s = local.getItem("A")*1 + 1;
+					local.setItem("A",s);
+					alert(local.getItem("A"));
+				}else{
+					local.setItem("A","1");
+				}*/
+				alert("已添加至Page" + pageId);
+			});
+			$("#btnDel").click(function(){
+				//获取localStorage对象
+				var local = window.localStorage;
+				var pageId = $("#pageId2").val();
+				if(!isNaN(pageId)){
+					//删除 pageId
+					alert("已删除Page" + pageId);
+				}else if(pageId.toLowerCase() == "all"){
+					pageArray = [];
+					//清空localStorage
+					local.clear();
+					alert("已清空了localStorage!");
+				}else{
+					alert("请输入数字或all");
+				}
+			});
+			$("#btnReview").click(function(){
+				//获取localStorage对象
+				var local = window.localStorage;
+				var objJSON = {
+					"1" : {
+						"idx" : 1,
+						"name" : "page",
+						"comp" : {
+							"1" : {"name" : "Group","age" : 15,"address" : "XXXX"},
+							"2" : {"name" : "Picture","age" : 18,"address" : "YYY"},
+							"3" : {"name" : "Layer","age" : 16,"address" : "ZZZ"}
+						},
+						"compLength" : 1
+					}
+				};
+				var objJSON2 = {
+					"1" : {
+						"idx" : 1,
+						"name" : "page",
+						"comp" : {"4" : {"name" : "Layer","age" : 16,"address" : "gggg"}},
+						"compLength" : 1
+					}
+				};
+				$.extend(objJSON,objJSON2);
+				var strJSON = JSON.stringify(objJSON);
+				var strArray = JSON.stringify(pageArray);
+
+				var objStorage = local.getItem(pid);
+				$("#txtJSON").html("在Array里的JSON为: <br /><br />" + strJSON);
+				$("#txtStorage").addClass("txtStorage");
+				$("#txtStorage").html("在Storage里的JSON为: <br /><br />" + objStorage);
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：测试Storage和extend的使用</h1>
+	</header>
+	<section>
+		<div id="div">
+			<div id="add">
+				<label for="name">姓　名:</label><input type="text" id="name"><br />
+				<label for="age">年　龄:</label><input type="text" id="age"><br />
+				<label for="address">地　址:</label><input type="text" id="address"><br />
+				<label for="pageId">添加ID:</label><input type="text" id="pageId"><br />
+				<input type="button" id="btnAdd" value="添加" />
+			</div>
+			<div id="del">
+				<label for="pageId2">删除 ID:</label><input type="text" id="pageId2">
+				<input type="button" id="btnDel" value="删除" />
+			</div>
+			<div id="review">
+				<p id="txtJSON"></p>
+				<p id="txtStorage"></p>
+				<input type="button" id="btnReview" value="显示" />
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

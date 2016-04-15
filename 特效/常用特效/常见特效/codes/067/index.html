@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<SCRIPT src="js/sohuflash_1.js" type=text/javascript></SCRIPT>
+<title>php100中文网</title>
+</head>
+<body>
+
+<div align="center">
+<!-- top_banner -->
+<table width="760" height="103" border="0" cellpadding="0" cellspacing="0" bgcolor="#F4F4F4">
+  <tr>
+    <td align="center">php100中文网</td>
+  </tr>
+</table>
+<div id=lanrentuku style='width:760px;height:32px;position:relative;overflow:hidden;z-index:-1'></div>
+<SCRIPT language=javascript>
+var sohuFlash2 = new sohuFlash(
+"flash/banner.swf", "flexDiv",
+"100%", "100%", "7", "" );
+sohuFlash2.addParam( "scale", "noscale" );
+sohuFlash2.addParam( "salign", "tl" );
+sohuFlash2.addParam( "quality", "high" );
+sohuFlash2.addParam( "wmode", "opaque" );
+sohuFlash2.addVariable( "clickthru", "http://www.chinaz.com/" );
+sohuFlash2.write( "lanrentuku" );
+with( document.getElementById( 'lanrentuku' ) )
+{
+if ( navigator.plugins && navigator.mimeTypes && navigator.mimeTypes.length )
+{
+addEventListener( "mouseover", function()
+{
+style.height = '48pt';
+}
+, false );
+addEventListener( "mouseout", function()
+{
+style.height = '24pt';
+}
+, false );
+}
+else
+{
+attachEvent( "onmouseover", function()
+{
+style.height = '64px';
+}
+);
+attachEvent( "onmouseout", function()
+{
+style.height = '32px';
+}
+);
+}
+}
+</SCRIPT>
+</div>
+
+</body>
+</html>

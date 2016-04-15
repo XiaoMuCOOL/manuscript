@@ -1,0 +1,106 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>Canvas画制图片</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#canvas{
+			border: 1px solid pink;
+		}
+	</style>
+	<script type="text/javascript">
+		/*$(function(){
+			var ctx = document.getElementById('canvas').getContext('2d');
+			var img = new Image();
+			img.src = "img/earth.png";
+			ctx.drawImage(img,50,50);
+			ctx.fillRect(50,50,100,100);
+			ctx.save();
+
+		});*/
+		var myImage = new Image();
+		myImage.src = "img/1.png";
+		var myImage2 = new Image();
+		myImage2.src = "img/2.png";
+		var myImage3 = new Image();
+		myImage3.src = "img/3.png";
+		var myImage4 = new Image();
+		myImage4.src = "img/4.png";
+		myImage.onload = function() {  
+			var ctx = document.getElementById('canvas').getContext('2d');
+			ctx.drawImage(myImage,0,0,100,100);
+			ctx.drawImage(myImage2,50,50,100,100);
+			ctx.drawImage(myImage3,100,100,100,100);
+			ctx.drawImage(myImage4,150,150,100,100);
+			//ctx.fillRect(50,50,100,100);
+			//ctx.save();
+		}  
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：Canvas画制图片</h1>
+	</header>
+	<section>
+		<canvas id="canvas" width="500" height="500">您的浏览器不支持canvas</canvas>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

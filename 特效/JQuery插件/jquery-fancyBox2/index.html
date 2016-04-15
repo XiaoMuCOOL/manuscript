@@ -1,0 +1,269 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>fancyBox2 插件</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" />
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		section{
+			height: 1024px;
+		}
+		.fancybox img,a img{
+			width:170px;
+			height: 130px;
+		}
+		.fancybox-thumb img{
+			width:170px;
+			height: 130px;
+		}
+		#fancy_box1,#fancy_box2{
+			/* width: 100%;
+			height: 100%; */
+			border: 1px solid red;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：fancyBox2 插件</h1>
+	</header>
+	<section>
+		<!-- 简单的效果 -->
+		<div id="fancy_box1">
+			<a class="fancybox" rel="group" href="img/1_b.jpg"><img src="img/1_b.jpg" alt="" /></a>
+			<a class="fancybox" rel="group" href="img/2_b.jpg"><img src="img/2_b.jpg" alt="" /></a>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".fancybox").fancybox();
+				//alert("aaDDDD55".toLowerCase());
+			});
+		</script>
+
+		<!-- 缩略图 效果 -->
+		<script src="js/jquery.fancybox-thumbs.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css" />
+		<div id="fancy_box2">
+			<a class="fancybox-thumb" rel="fancybox-thumb" href="img/1_b.jpg" title="图片一(1/4)">
+				<img src="img/1_b.jpg" alt="" />
+			</a>
+			<a class="fancybox-thumb" rel="fancybox-thumb" href="img/2_b.jpg" title="图片二(2/4)">
+				<img src="img/2_b.jpg" alt="" />
+			</a>
+			<a class="fancybox-thumb" rel="fancybox-thumb" href="img/3_b.jpg" title="图片三(3/4)">
+				<img src="img/3_b.jpg" alt="" />
+			</a>
+			<a class="fancybox-thumb" rel="fancybox-thumb" href="img/4_b.jpg" title="图片四(4/4)">
+				<img src="img/4_b.jpg" alt="" />
+			</a>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".fancybox-thumb").fancybox({
+					padding : 5,  //边框
+ 					//margin : [2,50,500,400],
+ 					autoSize : false,
+ 					/*width : 200,
+ 					height : 200,
+ 					maxWidth : 200,
+ 					maxHeight : 200,*/
+ 					arrows : true, //显示 箭头
+ 					autoResize : true,
+ 					autoCenter : true,
+ 					fitToView : true,
+ 					modle : true,
+ 					/*autoPlay : true,
+ 					playSpeed : 200,*/
+ 					preload : 10,
+					prevEffect	: 'none',
+					nextEffect	: 'none',
+					parent: "section", // jQuery selector
+					css : {
+				        'background' : 'rgba(58, 42, 45, 1)'
+				    },
+				    //开始加载对象前调用 
+				    beforeLoad: function() {
+						//this.title = "<span>sssss</span>";
+				    },
+				    //打开动画开始前调用 注意：如果回调中return false，那么加载会停止
+					beforeShow: function () {
+			            /* 禁用右键 */
+			            $.fancybox.wrap.bind("contextmenu", function (e) {
+			                    return false; 
+			            });
+			        },
+					keys :{
+						next : {
+							13 : 'left', // enter（回车键）
+							34 : 'up',   // page down（下翻页）
+							39 : 'left', // right arrow（右箭头）
+							40 : 'up'    // down arrow（下箭头）
+						},
+						prev : {
+							8  : 'right',  // backspace（退格键）
+							33 : 'down',   // page up（上翻页）
+							37 : 'right',  // left arrow（左箭头）
+							38 : 'down'    // up arrow（上箭头）
+						},
+						close  : [27], // escape key（ESC）
+						play   : [32], // space（空格键） - 开始/暂停
+						toggle : [70]  // letter "f"（f）70 - 切换全屏
+					},
+					helpers	: {
+						overlay : {
+							closeClick : true,  // 点击阴影关闭
+							speedOut   : 200,   // duration of fadeOut animation
+							showEarly  : true,  // indicates if should be opened immediately or wait until the content is ready
+							css        : {
+								'background' : 'rgba(58, 42, 45, 0.1)'
+							},    // custom CSS properties
+							locked     : true   // if true, the content will be locked into overlay
+						},
+						title	: {
+							type: 'float' // 'float', 'inside', 'outside' or 'over'
+						},
+						thumbs	: {
+							width	: 100,
+							height	: 100,
+							position : "bottom"
+						}
+					}
+				});
+			new Image().src = 'img/do.jpg';
+			});
+		</script>
+		<div id="fancy_box3">
+			<a class="" href="img/3_b.jpg">
+				<img src="img/3_b.jpg" alt="" />
+			</a>
+			<a class="" href="img/4_b.jpg" >
+				<img src="img/4_b.jpg" alt="" />
+			</a>
+		</div>
+		<script type="text/javascript">
+			$("#fancy_box3 a").attr('rel', 'gallery').fancybox({
+		        padding    : 0,
+		        margin     : 5,
+		        nextEffect : 'none',
+		        prevEffect : 'none',
+		        autoCenter : false,
+				helpers	: {
+						overlay : {
+							closeClick : true,  // 点击阴影关闭
+							speedOut   : 200,   // duration of fadeOut animation
+							showEarly  : true,  // indicates if should be opened immediately or wait until the content is ready
+							css        : {
+								'background' : 'rgba(58, 42, 45, 0.1)'
+							},    // custom CSS properties
+							locked     : true   // if true, the content will be locked into overlay
+						},
+						thumbs	: {
+							width	: 50,
+							height	: 50,
+							position : "bottom"
+						}
+					},
+		        afterLoad  : function () {
+		            $.extend(this, {
+		                aspectRatio : false,
+		                type    : 'html',
+		                width   : '100%',
+		                height  : '100%',
+		                content : '<div class="fancybox-image" style="border:1px solid red;background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
+		            });
+		        }
+			});
+		</script>
+		<div id="fancy_box3">
+			<a class="" href="img/2_b.jpg">
+				<img src="img/2_b.jpg" alt="" />
+			</a>
+			<a class="" href="img/3_b.jpg" >
+				<img src="img/3_b.jpg" alt="" />
+			</a>
+		</div>
+		<script type="text/javascript">
+			$("#fancy_box3 a").attr('rel', 'gallery').fancybox({
+		        padding    : 0,
+		        margin     : 5,
+		        nextEffect : 'none',
+		        prevEffect : 'none',
+		        autoCenter : false,
+				helpers	: {
+						overlay : {
+							closeClick : true,  // 点击阴影关闭
+							speedOut   : 200,   // duration of fadeOut animation
+							showEarly  : true,  // indicates if should be opened immediately or wait until the content is ready
+							css        : {
+								'background' : 'rgba(58, 42, 45, 0.1)'
+							},    // custom CSS properties
+							locked     : true   // if true, the content will be locked into overlay
+						}
+					}
+			});
+		</script>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p><a href="http://doc.bropaul.com/fancyBox/">中文文档</a>　　<a href="http://fancyapps.com/fancybox/">官方文档</a></p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

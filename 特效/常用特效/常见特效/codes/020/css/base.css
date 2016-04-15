@@ -1,0 +1,39 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #151515; PADDING-BOTTOM: 0px; MARGIN: 0px auto; COLOR: #fff; PADDING-TOP: 0px; POSITION: relative; TEXT-ALIGN: center;font-size:12px;
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+A {
+	font-size:12px;COLOR: #fff;
+}
+#fbMaster {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; MARGIN: 0px auto; WIDTH: 520px; PADDING-TOP: 5px; POSITION: relative; TEXT-ALIGN: left
+}
+#content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 535px; PADDING-TOP: 0px
+}
+#content DT {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(images/bg_loading.gif) #222 no-repeat 50% 50%; PADDING-BOTTOM: 10px; MARGIN: 0px 0px 10px; PADDING-TOP: 10px
+}
+#content DT STRONG {
+	DISPLAY: block; OVERFLOW: hidden; WIDTH: 515px; POSITION: relative; HEIGHT: 430px
+}
+#content DT STRONG SPAN {
+	POSITION: absolute; TOP: 0px
+}
+#content DT STRONG SPAN IMG {
+	FLOAT: left
+}
+#content DD {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(images/bg_loading.gif) #222 no-repeat 50% 50%; FLOAT: left; PADDING-BOTTOM: 10px; MARGIN: 0px 10px 0px 0px; PADDING-TOP: 10px; POSITION: relative
+}
+#content DD.last {
+	MARGIN: 0px
+}
+#content DD A {
+	CURSOR: pointer; opacity: 0.99
+}
+#content DD A:hover {
+	opacity: 0.75
+}

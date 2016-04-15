@@ -1,0 +1,94 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>测试匿名函数传值</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var myAlert = function(){
+				alert("我是匿名函数 myAlert！");
+			}
+			$("#btn1").click(myAlert);
+			var myAlert2 = function(i){
+				alert("我是匿名函数 myAlert2！:::::: 参数值为：" + i);
+				if(i<10){
+					myAlert2(++i);
+				}
+			}
+			$("#btn2").click(function(){
+				myAlert2("5");
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：测试匿名函数传值</h1>
+	</header>
+	<section>
+		<input id="btn1" type="button" value="点击触发myAlert 匿名函数" onClick="">
+		<input id="btn2" type="button" value="点击触发myAlert2 匿名函数" onClick="">
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

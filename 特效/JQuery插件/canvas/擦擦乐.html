@@ -1,0 +1,91 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>擦擦乐</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="1024" height="768"></canvas>
+    <canvas id="myCanvas01" width="1024" height="768"></canvas>
+    <canvas id="myCanvas02" width="1024" height="768"></canvas>
+    <script>
+		var canvas = document.getElementById('myCanvas');
+		var canvas01 = document.getElementById('myCanvas01');
+		var canvas02 = document.getElementById('myCanvas02');
+		var context = canvas.getContext('2d');
+		var context01 = canvas01.getContext('2d');
+		var context02 = canvas02.getContext('2d');
+		var imgMask = new Image();
+		var imgMM = new Image();
+		var imgMM01 = new Image();
+		var img01 = new Image();
+		var img02 = new Image();
+		var picLength = 1024 * 768;
+		var imgdata;
+		var imgdata01;
+		imgMask.onload = function() {
+			context.drawImage(imgMask, 0, 0);
+			imgdata = context.getImageData(0,0,1024,768);
+			imgMM01.onload = function(){
+				//context01.globalAlpha=0.5;
+				context01.drawImage(imgMM01,0,0);
+			    imgMM.onload = function(){
+			     	context02.drawImage(imgMM,0,0);
+			     	imgdata01 = context02.getImageData(0,0,1024,768);
+			     	for (var i = 0; i < picLength * 4; i += 4) {
+				        var myRed = imgdata01.data[i];
+				        var myGreen = imgdata01.data[i + 1];
+				        var myBlue = imgdata01.data[i + 2];
+				        var myAlpha = imgdata01.data[i+3];
+						var myGrey = (myRed + myGreen + myBlue)/3;
+						if(imgdata.data[i] == 255){
+						  	//����
+						  	//imgdata01.data[i+0] = myGrey;
+						  	//imgdata01.data[i+1] = myGrey;
+						  	//imgdata01.data[i+2] = myGrey;
+						  	
+						  	//����ʾ
+						  	/*imgdata01.data[i+0] = 0; 
+						  	imgdata01.data[i+1] = 0; 
+						  	imgdata01.data[i+2] = 0; */
+						  	imgdata01.data[i+3] = 0; 
+						}
+			    	}
+			    	context01.putImageData(imgdata01, 0, 0);
+			    }
+			    imgMM.src = 'img/mm.jpg';
+			}
+			 imgMM01.src = 'img/mm01.jpg';
+		};
+		imgMask.src = 'img/mask.jpg';
+
+		img01.onload = function() {
+			context02.drawImage(img01, 0, 0);
+			img02.onload = function() {
+				context02.drawImage(img02, 0, 0);
+			}
+			img02.src = 'img/img02.png';
+		}
+		img01.src = 'img/mm01.jpg';
+	</script>
+</body>
+</html>

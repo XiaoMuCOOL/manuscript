@@ -1,0 +1,136 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>JQuery UI 拖拽</title>
+	<script src="js/jquery-1.9.1.js"></script>
+
+	<!-- jquery-ui 的CSS文件 和 js 文件 -->
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.css" />
+
+	<!-- 自己的CSS文件 和 js 文件 -->
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/index.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			color: red;
+			float: right;
+		}
+	</style>
+	<style type="text/css">
+		#box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid blue;
+			margin: 0 auto;
+		}
+		#box div{
+			width:100px;
+			height: 100px;
+			border:1px solid red;
+			float: left;
+			margin-left: 10px;
+			text-align: center;
+			line-height: 100px;
+		}
+		#box #son1{
+			height: 600px;
+			/* !important 的权重最高 行内1000，ID 100，class 10，标签 1 */
+			color:blue !important;
+			font-size: 24px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#son1").draggable({
+				/*start: function(event, ui) {
+						var asisVal = Math.abs(ui.position.left) > Math.abs(ui.position.top) ? "x" : "y";
+						$( "#son1" ).draggable( "option", "axis", asisVal);
+				},
+				helper: "clone",*/
+				start: function(event, ui) {
+					var d=event.target;
+					d.axis=true;
+					d.starX = event.pageX;
+					d.stary = event.pageY;
+					console.log("start：x=" + d.starX + ",y=" + d.stary);
+				},
+				drag:function(event, ui){
+					var d=event.target;
+					if(d.axis){
+						var asisVal = Math.abs(event.pageX-d.starX) > Math.abs(event.pageY-d.stary) ? "x" : "y";
+						$( "#son1" ).draggable( "option", "axis", asisVal);
+						d.axis=false;
+					}
+				},
+				stop:function(event, ui){
+					var d=event.target;
+					d.starX = event.pageX;
+					d.stary = event.pageY;
+					console.log("stop：x=" + d.starX + ",y=" + d.stary);
+				},
+				axis : false,
+				cursor: "move",
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：JQuery UI 拖拽</h1>
+	</header>
+	<section>
+		<div id="box" class="box">
+			<div id="son1" style="color:red;">Son1</div>
+			<div id="son2">Son2</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p></p>
+		<p class="copy">Powered by Gavin(小牧COOL)</p>
+	</footer>
+</body>
+</html>

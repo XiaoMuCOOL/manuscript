@@ -1,0 +1,101 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>测试 lazyload</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery.lazyload.min.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			
+		}
+		section img{
+			width: 500px;
+			height: 500px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("img.lazy").lazyload({ 
+				effect : "fadeIn",
+				threshold : 500,
+				placeholder : "img/grey.gif"/*,  
+				event : "click",
+				container: $("#container")*/
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：测试 lazyload</h1>
+	</header>
+	<section>
+		<img alt="" class="lazy" id="img1" data-original="img/car1.jpg" >
+		<img alt="" class="lazy" id="img2" data-original="img/car2.jpg" >
+		<img alt="" class="lazy" id="img3" data-original="img/car3.jpg" >
+		<img alt="" class="lazy" id="img4" data-original="img/car4.jpg" >
+		<img alt="" class="lazy" id="img5" data-original="img/car5.jpg" >
+		<img alt="" class="lazy" id="img6" data-original="img/car6.jpg" >
+		<img alt="" class="lazy" id="img7" data-original="img/car6.jpg" >
+		<img alt="" class="lazy" id="img8" data-original="img/car5.jpg" >
+		<img alt="" class="lazy" id="img9" data-original="img/car4.jpg" >
+		<img alt="" class="lazy" id="img10" data-original="img/car3.jpg">
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/sly.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<!--<script src="js/index.js"></script>-->
+	<script type="text/javascript">
+		$(function(){
+			var sly = new Sly("#frame");
+		});
+	</script>
+	<style type="text/css">
+		li{
+			list-style: none;
+			width:200px;
+			height:200px;
+			border: 1px solid red;
+		}
+		#frame{
+			height:100px;
+			width:200px;
+		}
+		.slidee{
+			height:600px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1></h1>
+	</header>
+	<section>
+		<div id="scrollbar">
+			<div class="handle"></div>
+		</div>
+		<div id="frame">
+			<ul class="slidee">
+				<li>item1</li>
+				<li>item2</li>
+				<li>item3</li>
+			</ul>
+		</div>
+	</section>
+	<footer></footer>
+</body>
+</html>

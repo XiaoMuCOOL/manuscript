@@ -1,0 +1,416 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>各种动画效果集合</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#box{
+			width: 300px;
+			height: 300px;
+			background: green;
+			position: relative;
+			margin: 0 auto;
+		}
+		input{
+			height: 28px;
+			margin-bottom: 15px;
+			border: 1px solid pink;
+			background: orange;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			var getDirection = function (){
+				var obj = {};
+				var dir = $("#direction").val();
+				switch(dir){
+					case "NONE" : 
+						obj = {left:0,top:0};
+						break;
+					case "right" : 
+						obj = {left:-200,top:0}
+						break;
+					case "left" : 
+						obj = {left:200,top:0}
+						break;
+					case "down" : 
+						obj = {left:0,top:-200}
+						break;
+					case "up" : 
+						obj = {left:0,top:200}
+						break;
+					case "rightUp" : 
+						obj = {left:-200,top:200}
+						break;
+					case "leftUp" : 
+						obj = {left:200,top:200}
+						break;
+					case "rightDown" : 
+						obj = {left:-200,top:-200}
+						break;
+					case "leftDown" : 
+						obj = {left:200,top:-200}
+						break;
+				}
+				return obj;
+			}
+
+			$("#btnOpen1").click(function(){
+				//淡入
+				var time = $("#time").val() * 1000;
+				$("#box").hide();
+				$("#box").fadeIn(time);
+			});
+
+			$("#btnOpen2").click(function(){
+				//直线飞入
+				var time = $("#time").val() * 1000;
+				var dir = getDirection();
+				var left=$("#box").css("left")=="auto"?0:$("#box").css("left");
+				var top=$("#box").css("top")=="auto"?0:$("#box").css("top");
+				$("#box").css({
+					left:dir.left,
+					top:dir.top
+				});
+				$("#box").animate({
+					left: left,
+					top: top
+					},time);
+			});
+
+			$("#btnOpen3").click(function(){
+				//弧线飞入
+				var time = $("#time").val() * 1000;
+				var dir = getDirection();
+				var left=$("#box").css("left")=="auto"?0:$("#box").css("left");
+				var top=$("#box").css("top")=="auto"?0:$("#box").css("top");
+				$("#box").css({
+					left:dir.left,
+					top:dir.top
+				});
+				$("#box").animate({
+					left: left,
+					top: top
+					},time,"easeOutBack");
+			});
+
+			$("#btnOpen4").click(function(){
+				//切入
+				var dir = getDirection();
+				var left=$("#box").css("left")=="auto"?0:$("#box").css("left");
+				var top=$("#box").css("top")=="auto"?0:$("#box").css("top");
+				var time = $("#time").val() * 1000;
+				/*$("#box").css({
+					left:dir.left/2,
+					top:dir.top/2
+				});
+				$("#box").animate({
+					left: left,
+					top: top
+					},time,"easeOutBack");*/
+				/*$("#box").slideUp();
+				$("#box").slideDown();*/
+				$("#box").slideToggle();
+			});
+
+			$("#btnOpen5").click(function(){
+				//立体旋转
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnOpen6").click(function(){
+				//平面旋转
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnOpen7").click(function(){
+				//由小变大
+				var time = $("#time").val() * 1000;
+				var w = $("#box").width();
+				var h = $("#box").height();
+				$("#box").css({
+					width: 0,
+					height: 0
+				});
+				$("#box").animate({
+					width: w,
+					height: h
+					},time);
+			});
+
+			$("#btnOpen8").click(function(){
+				//由大变小
+				var time = $("#time").val() * 1000;
+				var w = $("#box").width();
+				var h = $("#box").height();
+				$("#box").css({
+					width: w+200,
+					height: h+200
+				});
+				$("#box").animate({
+					width: w,
+					height: h
+					},time);
+			});
+
+			$("#btnStrong1").click(function(){
+				//跷跷板
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnStrong2").click(function(){
+				//上下抖动
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnStrong3").click(function(){
+				//平面旋转
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnStrong4").click(function(){
+				//立体旋转
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnStrong5").click(function(){
+				//缩放
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnStrong6").click(function(){
+				//普通闪烁
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnStrong7").click(function(){
+				//渐变闪烁
+				var time = $("#time").val() * 1000;
+				$("#box").animate({
+					left: 500,
+					top: [200,"swing"]
+					},time,"easeOutBounce");
+			});
+
+			$("#btnClose1").click(function(){
+				//淡出
+				var time = $("#time").val() * 1000;
+				$("#box").fadeOut(time);
+			});
+
+			$("#btnClose2").click(function(){
+				//直线飞出
+				var time = $("#time").val() * 1000;
+				var dir = getDirection();
+				var left=$("#box").css("left")=="auto"?0:$("#box").css("left");
+				var top=$("#box").css("top")=="auto"?0:$("#box").css("top");
+				$("#box").show().animate({
+					left:dir.left * 5 ,
+					top:dir.top *5
+				},time,function(){
+					$(this).hide().css({
+						left: left,
+						top: top
+					});
+				});
+			});
+
+			$("#btnClose3").click(function(){
+				//弧线飞出
+				var time = $("#time").val() * 1000;
+				var dir = getDirection();
+				var left=$("#box").css("left")=="auto"?0:$("#box").css("left");
+				var top=$("#box").css("top")=="auto"?0:$("#box").css("top");
+				$("#box").show().animate({
+					left:dir.left * 5 ,
+					top:dir.top *5
+				},time,"easeOutBounce",function(){
+					$(this).hide().css({
+						left: left,
+						top: top
+					});
+				});
+			});
+
+			$("#btnClose4").click(function(){
+				//缩小
+				var time = $("#time").val() * 1000;
+				var w = $("#box").width();
+				var h = $("#box").height();
+				$("#box").show().animate({
+					width:0 ,
+					height:0
+				},time,function(){
+					$(this).hide().css({
+						width: w,
+						height: h
+					});
+				});
+			});
+
+			$("#btnClose5").click(function(){
+				//放大
+				var time = $("#time").val() * 1000;
+				var w = $("#box").width();
+				var h = $("#box").height();
+				$("#box").show().animate({
+					width:w + 200 ,
+					height:h+200
+				},time,function(){
+					$(this).hide().css({
+						width: w,
+						height: h
+					});
+				});
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：各种动画效果集合</h1>
+	</header>
+	<section>
+		<input id="btnOpen1" type="button" value="open-淡入" />
+		<input id="btnOpen2" type="button" value="open-直线飞入" />
+		<input id="btnOpen3" type="button" value="open-弧线飞入" />
+		<input id="btnOpen4" type="button" value="open-切入" />
+		<input id="btnOpen5" type="button" value="open-立体旋转" />
+		<input id="btnOpen6" type="button" value="open-平面旋转" />
+		<input id="btnOpen7" type="button" value="open-由小变大" />
+		<input id="btnOpen8" type="button" value="open-由大变小" /><br />
+
+		<input id="btnStrong1" type="button" value="strong-跷跷板" />
+		<input id="btnStrong2" type="button" value="strong-上下抖动" />
+		<input id="btnStrong3" type="button" value="strong-平面旋转" />
+		<input id="btnStrong4" type="button" value="strong-立体旋转" />
+		<input id="btnStrong5" type="button" value="strong-缩放" />
+		<input id="btnStrong6" type="button" value="strong-普通闪烁" />
+		<input id="btnStrong7" type="button" value="strong-渐变闪烁" /><br />
+
+		<input id="btnClose1" type="button" value="close-淡出" />
+		<input id="btnClose2" type="button" value="close-直线飞出" />
+		<input id="btnClose3" type="button" value="close-弧线飞出" />
+		<input id="btnClose4" type="button" value="close-缩小" />
+		<input id="btnClose5" type="button" value="close-放大" /><br />
+
+		<select id="direction">
+			<option value="NONE">无</option>
+			<option value="right">→</option>
+			<option value="left">←</option>
+			<option value="down">↓</option>
+			<option value="up">↑</option>
+			<option value="rightUp">↗</option>
+			<option value="leftUp">↖</option>
+			<option value="rightDown">↘</option>
+			<option value="leftDown">↙</option>
+		</select>
+		<select id="time">
+			<option value="0.5">0.5</option>
+			<option value="1">1</option>
+			<option value="1.5">1.5</option>
+			<option value="2">2</option>
+			<option value="2.5">2.5</option>
+			<option value="3">3</option>
+			<option value="3.5">3.5</option>
+			<option value="4">4</option>
+		</select>
+
+		<div id="box">
+			
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

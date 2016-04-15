@@ -1,0 +1,57 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var nice = $("html").niceScroll({
+				"cursorcolor":"#00a040",
+				"cursorborder":"1px solid red"
+			});
+			var nice1 = $("#div1").niceScroll({
+				"cursorcolor":"#00a040",
+				"cursorborder":"1px solid #00a040",
+				"horizrailenabled":false,
+			});
+			$("#div1").click(function(){
+				$("#div1").hide();
+				$("#div2").show();
+			});
+			$("#div2").click(function(){
+				$("#div2").hide();
+				$("#div1").show();
+			});
+			var nice2 = $("#div2").niceScroll({
+				"cursorcolor":"#00a040",
+				"cursorborder":"1px solid #00a040",
+				"scriptpath":"../img/icon_3.png"
+			});
+			//$("myIframe").niceScroll({cursorcolor:"#00F"});
+		});
+	</script>
+</head>
+<body>
+	<!-- <header>
+			<h1></h1>
+		</header>
+		 -->	
+
+		<div id="div1" style="height:500px;width:500px;overflow:hidden;border:1px solid red;">
+			<div style="width:600px;height:800px;background:green;"></div>
+		</div>
+
+		<div id="div2" style="height:500px;width:500px;overflow:hidden;border:1px solid red;display:none">
+			<div style="width:200px;height:800px;background:yellow;"></div>
+		</div>
+		<!--  <div style="height:900px;">
+					<iframe src="myIframe.html" frameborder="0" id="myIframe" width="500" height="500"></iframe>
+				</div> -->
+
+	<!-- <footer></footer> -->
+</body>
+</html>

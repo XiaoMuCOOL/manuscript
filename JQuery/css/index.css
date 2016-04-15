@@ -1,0 +1,67 @@
+#testOpacity{
+	height:50px;
+	width:50px;
+	background:#03F;
+	opacity:0.2;
+	border-radius:30px 0;
+	position:relative;
+	left:0;
+	 -moz-transition: all 2s ease-in;
+    -webkit-transition: all 2s ease-in;
+    -o-transition: all 2s ease-in;
+	transition:all 2s ease 0;}
+#testOpacity:hover{
+	opacity:1;
+	border-radius:0px 30px;
+	left:500px;
+	 -moz-transition: all 2s ease-in;
+    -webkit-transition: all 2s ease-in;
+    -o-transition: all 2s ease-in;
+	transition:all 2s ease 0;}
+	
+/*
+ * 自己做的 六边形
+ */
+#six{
+	width:500px;
+	height:500px;
+	border:1px solid orange;}
+	#six span{
+		display:inline-block;
+		height:1px;
+		width:20px;
+		background:black;}
+	#s1{
+		position:relative;
+		top:25px;
+		left:41px;
+		-webkit-transform:rotate(60deg);}
+	#s2{
+		position:relative;
+		top:8px;
+		left:13px;
+		-webkit-transform:rotate(120deg);}
+	#s3{}
+	#s4{
+		position:relative;
+		top:8px;
+		right:13px;
+		-webkit-transform:rotate(60deg);}
+	#s5{
+		position:relative;
+		top:25px;
+		right:41px;
+		-webkit-transform:rotate(120deg);}
+	#s6{
+		position:relative;
+		top:34px;
+		right:84px;}
+/****************END***************/
+
+#tuozhuai{
+	width:680px;
+	height:125px;
+	border:1px solid red;
+	margin:0 auto;
+	padding:10px;
+	}

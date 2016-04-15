@@ -1,0 +1,347 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>图片切换</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		section{
+			/* border: 1px solid red; */
+			width:100%;
+			/* max-width: 1200px; */
+			height: 300px;
+			position: absolute;
+		}
+		#box{
+			/* border: 1px solid red; */
+			margin: 0 auto;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			/* top: 50%; */
+			overflow: hidden;
+		}
+		#box #imgs{
+			width: 9999px;
+			height: 100%;
+			position: absolute;
+		}
+		#box #imgs>div{
+			/*width: 253px;
+			height: 508px;
+			width: 100%;
+			height: 100%;*/
+			float: left;
+			height:100%;
+			position: relative;
+		}
+		#box div img{
+			height: 100%;
+		}
+		#box #pre{
+			width: 39px;
+			height: 44px;
+			display: block;
+			position: absolute;
+			top: 45%;
+			background: url('img/pre.png');
+			z-index: 99;
+		}
+		#box #next{
+			width: 39px;
+			height: 44px;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 45%;
+			background: url('img/next.png');
+		}
+		/* 影藏 */
+		#box .showDiv{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			/*display: block;*/
+			float: left;
+			top: 0;
+			background: #000;
+			opacity:0.8;
+		}
+		#box .boxa{
+			display:none; 	
+			position:absolute;
+			background:#000;
+			height:70px;
+			width:230px;
+			opacity:1;
+			text-align:left;
+			color:white;
+			left:0;
+			bottom:10%;
+			text-decoration:none;
+		}
+		#box .address{
+			margin-bottom: 5px;
+			margin-left: 10%;
+			font-size: 18px;
+		}
+		#box .time{
+			margin-top: 0;
+			margin-left: 10%;
+			font-size: 14px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#item1 .showDiv").children(".boxa").fadeIn(100);
+			$("#item1 .showDiv").css({
+				background : "none"
+			});
+			document.getElementById("imgLast").onload = function(){
+			var divs = $("#imgs > div");
+			//复制 功能
+			$(divs[divs.length -2]).clone().attr('id','cloneLast2').insertBefore(divs.first());
+			$(divs[divs.length -1]).clone().attr('id','cloneLast1').insertBefore(divs.first());
+			$(divs[1]).clone().attr('id','cloneFirst2').insertAfter(divs.last());
+			$(divs[0]).clone().attr('id','cloneFirst1').insertAfter(divs.last());
+			/*divs.each(function(i){
+				if(i == 0){
+					$(this).clone().attr('id','cloneFirst').insertAfter(divs.last());
+				}
+				if(i == divs.length -1){
+					$(this).clone().attr('id','cloneLast').insertBefore(divs.first());
+				}
+			});*/
+				var initImgs = $("#imgs img");
+				initImgs.each(function(i){
+				   $(initImgs[i]).width($(this).width());
+				});
+				var pre = $("#pre");
+				var next = $("#next");
+				var showDivs = $(".showDiv");
+				var imgs = $("#imgs");
+				var count = 0;
+				var divNow = 0;
+				var boxWidth =  $("#box").width();
+				var marLeft = (($("#cloneLast1").width()+$("#cloneLast2").width()) - (boxWidth/2-$(divs[0]).width()/2))*-1;
+				var initLeft = marLeft;
+				var initNow = 0;
+				imgs.css({
+					marginLeft : marLeft+"px"
+				});
+				//单击 事件
+				imgs.on("click",".showDiv",function(){
+					$(".boxa").fadeOut(100);
+					$(".showDiv").css({
+						background : "#000",
+						opacity : 0.8
+					});
+					$(this).children(".boxa").fadeIn(100);
+					$(this).css({
+						background : "none"
+					});
+				});
+				//向前
+				pre.click(function(){
+					if(divNow <= 0){
+						divNow = divs.length;
+						marLeft = marLeft + ($(divs[0]).width()/2)*-1;
+						for(var i=1;i<divs.length-1;i++){
+							marLeft = marLeft + ($(divs[i]).width())*-1;
+						}
+						marLeft = marLeft + ($(divs[divs.length - 1]).width()/2)*-1;
+						initNow = divs.length - 1;
+					}else{
+						marLeft = marLeft + ($(divs[divNow]).width()/2 + $(divs[divNow - 1]).width()/2);
+						initNow = divNow - 1;
+					}
+
+					imgs.css({
+						marginLeft : marLeft+"px"
+					});
+					/**
+					 * 焦点效果
+					 */
+					$(".boxa").fadeOut(100);
+					$(".showDiv").css({
+						background : "#000",
+						opacity : 0.8
+					});
+					$(divs[initNow]).children(".showDiv").children(".boxa").fadeIn(100);
+					$(divs[initNow]).children(".showDiv").css({
+						background : "none"
+					});
+
+					divNow = divNow - 1;
+				});
+				//向后
+				next.click(function(){
+					if(divNow >= divs.length - 1){
+						divNow = -1;
+						marLeft = initLeft;
+						initNow = 0;
+					}else{
+						marLeft = marLeft + ($(divs[divNow]).width()/2 + $(divs[divNow + 1]).width()/2)*-1;
+						initNow = divNow + 1;
+					}
+
+					imgs.css({
+						marginLeft : marLeft+"px"
+					});
+					/**
+					 * 焦点效果
+					 */
+					$(".boxa").fadeOut(100);
+					$(".showDiv").css({
+						background : "#000",
+						opacity : 0.8
+					});
+					$(divs[initNow]).children(".showDiv").children(".boxa").fadeIn(100);
+					$(divs[initNow]).children(".showDiv").css({
+						background : "none"
+					});
+
+					divNow = divNow + 1;
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：图片切换</h1>
+	</header>
+	<section>
+		<div id="box">
+			<a id="pre" href="javascript:void(0)" ></a>
+			<div id="imgs">
+				<div id="item1">
+					<img src="img/1.png" alt="成都.jpg" title="成都.jpg" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="成都站">
+			              <h3 class="address">今天成都站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+			        </div>
+				</div>
+				<div id="item2">
+					<img src="img/2.png" alt="杭州.jpg" title="杭州.jpg" >
+					<div class="showDiv">
+						<a class="boxa" href="http://www.baidu.com" title="杭州站">
+			              <h3 class="address">今天杭州站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+					</div>
+				</div>
+				<div id="item3">
+					<img src="img/3.png" alt="深圳.jpg" title="深圳.jpg" >
+					<div class="showDiv">
+						<a class="boxa" href="http://www.baidu.com" title="深圳站">
+			              <h3 class="address">今天深圳站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+					</div>
+				</div>
+				<div id="item4">
+					<img src="img/5.png" alt="上海.jpg" title="上海.jpg" >
+					<div class="showDiv">
+						<a class="boxa" href="http://www.baidu.com" title="上海站">
+			              <h3 class="address">今天上海站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+					</div>
+				</div>
+				<div id="item5">
+					<img src="img/gz.jpg" alt="广州.jpg" title="广州.jpg" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="广州站">
+			              <h3 class="address">今天广州站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+				<div id="item6">
+					<img src="img/bj.jpg" alt="北京.jpg" title="北京.jpg" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="北京站">
+			              <h3 class="address">今天北京站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+				<div id="item7">
+					<img src="img/nj.jpg" alt="南京.jpg" title="南京.jpg" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="南京站">
+			              <h3 class="address">今天南京站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+				<div id="item8">
+					<img id="imgLast" src="img/xa.jpg" alt="西安.jpg" title="西安.jpg" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="西安站">
+			              <h3 class="address">今天西安站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+			</div>
+			<a id="next" href="javascript:void(0)" ></a>
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>循环的设计思想：复制 几个到头尾，根据下标 跳转</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

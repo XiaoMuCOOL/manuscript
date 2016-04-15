@@ -1,0 +1,30 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>奥运背景</title>
+<SCRIPT src="aoyun/sinaflash.js" type=text/javascript></SCRIPT>
+<style type="text/css">
+#reStyle {DISPLAY: block; RIGHT: 6px; BACKGROUND: url(aoyun/cl_mj_001.gif) no-repeat 0px 0px; OVERFLOW: hidden; WIDTH: 18px; CURSOR: pointer; POSITION: absolute; TOP: 6px; HEIGHT: 43px}
+.RedStyle {BACKGROUND: url(aoyun/2008indexbg.png) #fff no-repeat center top}
+</style>
+
+</head>
+
+<body class=RedStyle style="margin-top: 0">
+<!-- 首页可关闭背景效果代码_START -->
+<DIV id=sudsclickstreamdiv 
+style="Z-INDEX: 1; VISIBILITY: hidden; POSITION: absolute"></DIV>
+<DIV id=reStyle title=关闭背景></DIV>
+<SCRIPT language=javascript type=text/javascript>
+sina.$("reStyle").onclick = function(){
+document.body.className = "";
+this.style.display = "none";
+};
+sina.$("reStyle").onmouseover = function(){this.className = "hover"};
+sina.$("reStyle").onmouseout = function(){this.className = ""};
+</SCRIPT>
+
+</body>
+
+</html>

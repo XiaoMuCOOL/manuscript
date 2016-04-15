@@ -1,0 +1,159 @@
+<gallery>
+	<setup>
+		<imgPath>images/</imgPath>
+
+		<slideshowOn>false</slideshowOn>
+
+		<thumbScrollSpeed>15</thumbScrollSpeed>
+		<loadIndicatorOn>true</loadIndicatorOn>
+		<loadIndicatorColor>0xFFFFFF</loadIndicatorColor>
+		<slideshowDelay>4</slideshowDelay>
+		<stopAutoOnClick>true</stopAutoOnClick>
+		<randomImages>false</randomImages>
+		<slideshowLoop>true</slideshowLoop>
+		<bgCorner>10</bgCorner>
+		<bgAlpha>1</bgAlpha>
+		<bgColor>0xFFFFFF</bgColor>
+
+		<imgScaleMode>scaleToAreaWidth</imgScaleMode>
+		<imgScaleAlignVert>top</imgScaleAlignVert>
+		<imgScaleAlignHor>center</imgScaleAlignHor>
+		<imgMaskCorner>10</imgMaskCorner>
+		<imgAlpha>1</imgAlpha>
+		<imgShadowOn>true</imgShadowOn>
+		<imgShadowDistance>4</imgShadowDistance>
+		<imgShadowSize>4</imgShadowSize>
+		<imgShadowAngle>90</imgShadowAngle>
+
+		<imgCaptionFont>Verdana</imgCaptionFont>
+		<imgCaptionColor>0xFFFFFF</imgCaptionColor>
+		<imgCaptionSize>10</imgCaptionSize>
+		<imgCaptionAlpha>0.7</imgCaptionAlpha>
+		<imgCaptionPosition>bottom</imgCaptionPosition>
+		<imgCaptionBgColor>0x000000</imgCaptionBgColor>
+		<imgCaptionBgAlpha>0.7</imgCaptionBgAlpha>
+		<imgCaptionShadowOn>true</imgCaptionShadowOn>
+                <imgCaptionShow>onRollOver</imgCaptionShow>
+
+		<transitionEffect>zoom</transitionEffect>
+		<transitionStartPoint>right</transitionStartPoint>
+		<transitionDirection>horizontal/ccw</transitionDirection>
+		<transitionRotateDegrees>820</transitionRotateDegrees>
+		<transitionIrisShape>square</transitionIrisShape>
+		<transitionPixelDissolveSize>10</transitionPixelDissolveSize>
+		<transitionEasingType>strong</transitionEasingType>
+		<transitionEasingFunction>out</transitionEasingFunction>
+		<transitionTime>1</transitionTime>
+
+		<thumbWidth>40</thumbWidth>
+		<thumbHeight>30</thumbHeight>
+		<thumbMaskCorner>5</thumbMaskCorner>
+
+		<spaceBetweenThumbs>10</spaceBetweenThumbs>
+		<thumbRowsCount>1</thumbRowsCount>
+		<thumbPosition>bottom</thumbPosition>
+		<thumbToImgSpace>15</thumbToImgSpace>
+		<thumbAlpha>0.5</thumbAlpha>
+		<thumbReflectionsOn>true</thumbReflectionsOn>
+		<thumbReflectionsAlpha>0.5</thumbReflectionsAlpha>
+		<thumbReflectionsHeight>40</thumbReflectionsHeight>
+		<thumbPreviewOn>true</thumbPreviewOn>
+		<thumbPreviewMaskCorner>5</thumbPreviewMaskCorner>
+		<thumbPreviewWidth>160</thumbPreviewWidth>
+		<thumbPreviewHeight>120</thumbPreviewHeight>
+		<thumbPreviewDistance>8</thumbPreviewDistance>
+		<thumbPreviewAlpha>0.9</thumbPreviewAlpha>
+		<thumbPreviewDelay>0.5</thumbPreviewDelay>
+		<thumbPreviewShowAnimationTime>1</thumbPreviewShowAnimationTime>
+		<thumbSoundOnRollover>sounds/over.mp3</thumbSoundOnRollover>
+		<thumbSoundOnClick>sounds/click.mp3</thumbSoundOnClick>
+		<thumbOutlineThick>1</thumbOutlineThick> 
+		<thumbOutlineAlpha>1</thumbOutlineAlpha> 
+		<thumbOutlineColor>0x000000</thumbOutlineColor> 
+		<thumbOutlineColorRoll>0xFFFFFF</thumbOutlineColorRoll> 
+		<thumbOutlineColorActive>0x8B0000</thumbOutlineColorActive>
+		<thumbShadowOn>true</thumbShadowOn>
+		<thumbShadowDistance>4</thumbShadowDistance>
+		<thumbShadowSize>4</thumbShadowSize>
+		<thumbShadowAngle>90</thumbShadowAngle>	
+
+		<showButtonsOn>true</showButtonsOn>
+		<buttonsAlignVert>top</buttonsAlignVert>
+		<buttonsAlignHor>right</buttonsAlignHor>
+
+                <backgroundImgPath>images/bg.jpg</backgroundImgPath>
+		<backgroundImgAlpha>1</backgroundImgAlpha>
+
+	</setup>
+
+	<item>
+		<thumb>1.jpg</thumb>
+		<img>1.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>2.jpg</thumb>
+		<img>2.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>3.jpg</thumb>
+		<img>3.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>4.jpg</thumb>
+		<img>4.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>5.jpg</thumb>
+		<img>5.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>6.jpg</thumb>
+		<img>6.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>7.jpg</thumb>
+		<img>7.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>8.jpg</thumb>
+		<img>8.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>9.jpg</thumb>
+		<img>9.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>10.jpg</thumb>
+		<img>10.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+	<item>
+		<thumb>11.jpg</thumb>
+		<img>11.jpg</img>
+		<caption>Art Flash Gallery is based on Adobe Flash (cs3) technology. It will help you easily post any images on your site in a matter of minutes.</caption> 
+	</item>
+
+
+
+</gallery>
+
+

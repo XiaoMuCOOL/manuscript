@@ -1,0 +1,33 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery.mCustomScrollbar.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
+	<script src="js/index.js"></script>
+	<script>
+		(function($){
+			$(window).load(function(){
+				$("#myframe").mCustomScrollbar({
+					horizontalScroll:true,
+        			autoDraggerLength:true,
+        			theme:"dark"
+				});
+			});
+		})(jQuery);
+	</script>
+</head>
+<body>
+	<header>
+		<h1></h1>
+	</header>
+	<section>
+		<iframe src="myFrame.html" frameborder="0" id="myframe" width="600" height="500"></iframe>
+	</section>
+	<footer></footer>
+</body>
+</html>

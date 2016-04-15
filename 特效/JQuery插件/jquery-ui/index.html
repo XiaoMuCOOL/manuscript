@@ -1,0 +1,160 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>JQuery UI 拖拽</title>
+	<script src="js/jquery-1.9.1.js"></script>
+
+	<!-- jquery-ui 的CSS文件 和 js 文件 -->
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.css" />
+
+	<!-- 自己的CSS文件 和 js 文件 -->
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/index.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			color: red;
+			float: right;
+		}
+	</style>
+	<style type="text/css">
+		#box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid blue;
+			margin: 0 auto;
+		}
+		#box div{
+			width:100px;
+			height: 100px;
+			border:1px solid red;
+			float: left;
+			margin-left: 10px;
+			text-align: center;
+			line-height: 100px;
+		}
+		#box #son1{
+			height: 600px;
+			/* !important 的权重最高 行内1000，ID 100，class 10，标签 1 */
+			color:blue !important;
+			font-size: 24px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var starX = 0;
+			var stary = 0;
+			var dropx = 0;
+			var dropy = 0;
+			var b = false;
+			$("#son1").mousedown(function(){
+				/*starX = event.clientX;
+				stary = event.clientY;
+				dropx = event.pageX;
+				dropy = event.pageY;*/
+			}); 
+			$("#son1").draggable({
+				create:function(event, ui){
+						starX = event.pageX;
+						stary = event.pageY;
+						console.log("create：x=" + starX + ",y=" + stary);
+				},
+				start: function(event, ui) {
+						starX = event.pageX;
+						stary = event.pageY;
+						console.log("start：x=" + starX + ",y=" + stary);
+						b = true;
+				      },
+				drag:function(event, ui){
+						dropx = event.pageX;
+						dropy = event.pageY;
+						if(b){
+							//if(dropx > (starX+18) || dropx < (starX-18) || dropy > (stary+18) || dropy < (stary-18)){
+							var asisVal = Math.abs(dropx-starX) > Math.abs(dropy-stary) ? "x" : "y";
+							$( "#son1" ).draggable( "option", "axis", asisVal);
+							//}
+						}
+						b = false;
+				},
+				drop:function(event, ui){
+						starX = event.pageX;
+						stary = event.pageY;
+						console.log("drop：x=" + starX + ",y=" + stary);
+				},
+				stop:function(event, ui){
+						starX = event.pageX;
+						stary = event.pageY;
+						console.log("stop：x=" + starX + ",y=" + stary);
+						b = false;
+				},
+				axis : false,
+				//grid: [ 1,1 ],
+				//distance: 20,//必须滑动多少后才移动
+				appendTo: "parent",
+				cancel: ".title",
+				cursor: "move",
+				addClasses: true,
+				//cursorAt: { left: 50,top: 50}
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：JQuery UI 拖拽</h1>
+	</header>
+	<section>
+		<div id="box" class="box">
+			<div id="son1" style="color:red;">Son1</div>
+			<div id="son2">Son2</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p></p>
+		<p class="copy">Powered by Gavin(小牧COOL)</p>
+	</footer>
+</body>
+</html>

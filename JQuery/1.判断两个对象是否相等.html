@@ -1,0 +1,186 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>判断两个对象是否相等</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+			position: relative;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var a = {
+				"x":1,
+				"y":"str"
+			}
+			var b = {
+				"x":1,
+				"y":"str"
+			}
+			var c = {
+				x:1,
+				"y":"str"
+			}
+			var d = {
+				"x":2,
+				"y":"str"
+			}
+			var e = {
+				"x":1,
+				"y":"str",
+				"c":"cc"
+			}
+			var obj1 = {
+				a:{
+					b:1
+				}
+			}
+			var obj2 = {
+				a:{
+					b:1
+				}
+			}
+			function isObjectValueEqual(a, b) {
+				var c =  a.hasOwnProperty("x");
+				console.log("has====>:"+c);
+				console.log("===|===>:"+(a===b));
+				console.log("==|===>:"+(a==b));
+		    var aProps = Object.getOwnPropertyNames(a);
+		    var bProps = Object.getOwnPropertyNames(b);
+		    if (aProps.length != bProps.length) {
+		      return false;
+		    }
+		    for (var i = 0; i < aProps.length; i++) {
+		      var propName = aProps[i];
+		      if (a[propName] !== b[propName]) {
+		          return false;
+		      }
+		    }
+		    return true;
+		  }
+			function cmp(x, y){ 
+				if(x === y) { 
+					return true; 
+				} 
+				if(!(x instanceof Object) || !(y instanceof Object )) { 
+					return false; 
+				}
+				if (x.constructor !== y.constructor) { 
+					return false; 
+				} 
+				for(var p in x) {
+					if(x.hasOwnProperty(p)) { 
+						if(!y.hasOwnProperty(p)) { 
+							return false; 
+						}
+						if(x[p] === y[p]) { 
+							continue; 
+						} 
+						if(typeof(x[p]) !== "object"){ 
+							return false; 
+						}else{
+							console.log("It's Multilayer,not support!");
+						}
+					} 
+				} 
+				for(p in y) { 
+					if(y.hasOwnProperty(p) && !x.hasOwnProperty(p)) { 
+						return false; 
+					} 
+				} 
+				return true; 
+			};
+
+		  function cloneObject(a) {
+		    var b = {};
+		    for (var i in a) {
+		      b[i] = a[i];
+		    }
+		    return b;
+		  }
+		  // console.log("a&b====>:"+isObjectValueEqual(a, b));
+		  // console.log("a&c====>:"+isObjectValueEqual(a, c));
+		  console.log("a&b==cmp==>:"+cmp(a, b));
+		  console.log("a&c==cmp==>:"+cmp(a, c));
+		  console.log("a&d==cmp==>:"+cmp(a, d));
+		  console.log("a&e==cmp==>:"+cmp(a, e));
+		  console.log("obj1&obj2==cmp==>:"+cmp(obj1, obj2));
+		  // console.log("Object.equals==>:"+Object.equals(a,b));
+		  var cClone = cloneObject(c);
+		  console.log(cClone)
+		  console.log(cClone===c)
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：判断两个对象是否相等</h1>
+	</header>
+	<section>
+		<div id="div"></div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta content="www.php100.com" name="keywords" />
+<title>5屏FLASH广告图片切换</title>
+</head>
+
+<body>
+<br /><br />
+<!-- Flash图片轮播 begin -->
+<SCRIPT src="js/sohuflash_1.js" type=text/javascript></SCRIPT>
+<DIV id=lanren_tuku align="center"></DIV>
+<SCRIPT>
+txt="<a image='images/Img_01.jpg' info='php100中文网 搜集整理 01' url='http://www.php100.com/' /><a image='images/Img_02.jpg' info='php100中文网 搜集整理 02' url='http://www.php100.com/' /><a image='images/Img_03.jpg' info='php100中文网 搜集整理 03' url='http://www.php100.com/' /><a image='images/Img_04.jpg' info='php100中文网 搜集整理 04' url='http://www.php100.com/' /><a image='images/Img_05.jpg' info='php100中文网 搜集整理 05' url='http://www.php100.com/' />"
+var sohuFlash2 = new sohuFlash("flash/torchrelay.swf", "27", 320, 310, "7");
+sohuFlash2.addParam("quality", "high");
+sohuFlash2.addParam("wmode", "opaque");
+sohuFlash2.addVariable("txt",txt);
+sohuFlash2.write("lanren_tuku");
+</SCRIPT>
+</DIV>
+<!-- Flash图片轮播 end -->
+  <br />
+
+</body>
+</html>

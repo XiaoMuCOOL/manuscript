@@ -1,0 +1,17 @@
+Angular.js
+nodejs
+
+
+熟悉前端mvc/mvvm开发框架（例如backbone/angularjs等）
+使用前端技术开发单页面应用（SPA）
+有jQuery框架使用经验，对ECMA规范有一定了解
+
+iScroll http://www.gafish.net/api/iScroll.html#overview
+
+
+
+HTML5 游戏
+
+GameMaker
+Construct 2 
+android

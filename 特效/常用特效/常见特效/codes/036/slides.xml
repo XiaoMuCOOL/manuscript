@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<flash_parameters>
+    <preferences>
+        <global>
+            <basic_property movieWidth="980" movieHeight="600" html_title="Title" loadStyle="Pie" startAutoPlay="true" backgroundColor="0xffffff" anvsoftMenu="false" hideAdobeMenu="false" photoDynamicShow="true" enableURL="true" transitionArray=""/>
+            <title_property photoTitle="false" photoTitleX="5" photoTitleY="5" photoTitleSize="15" photoTitleFont="Verdana" photoTitleColor="0xffffff"/>
+            <music_property path="" stream="true" loop="true"/>
+            <photo_property topPadding="0" bottomPadding="65" leftPadding="0" rightPadding="0"/>
+            <frame_property frameColor="0x000000"/>
+            <properties enable="true" backgroundColor="0xffffff" backgroundAlpha="50" cssText="a:link{text-decoration: underline;} a:hover{color:#ff0000; text-decoration: none;} a:active{color:#0000ff;text-decoration: none;} .blue {color:#0000ff; font-size:15px; font-style:italic; text-decoration: underline;} .body{color:#ff5500;font-size:20px;}" align="bottom"/>
+        </global>
+        <thumbnail>
+            <basic_property backgroundColor="0x3c3c3c" buttonColor="0x000000" borderColor="0xb3b3b3"/>
+        </thumbnail>
+    </preferences>
+    <album>
+        <slide jpegURL="images/thumbs/t_0001.jpg" d_URL="images/p_0001.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000801_20080809_MVPFN1A001" width="980" height="535"><![CDATA[　8月9日，中国选手黄旭在资格赛鞍马比赛中（多重曝光拍摄）。新华社记者李钢摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0002.jpg" d_URL="images/p_0002.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001200_20080810_MVPFN1A001" width="980" height="535"><![CDATA[　8月10日，法国选手法布里斯·让内（左）在进攻（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0003.jpg" d_URL="images/p_0003.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001670_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，意大利选手玛丽亚·瓦伦蒂娜·韦扎利（右）在比赛中（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0004.jpg" d_URL="images/p_0004.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001728_20080812_MVPFN1A001" width="980" height="535"><![CDATA[　8月12日， 中国选手郭丹在比赛中。该幅照片记者采用多重曝光拍摄，颤抖的弓箭呈现出了如同“千手观音”一般的效果。新华社记者格桑达瓦摄
+]]></slide>
+        <slide jpegURL="images/thumbs/t_0005.jpg" d_URL="images/p_0005.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001744_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，韩国选手南贤喜（左）在比赛中（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0006.jpg" d_URL="images/p_0006.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001888_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，意大利选手玛格丽塔·格兰巴西（右）在国家会议中心击剑馆举行的北京奥运会女子花剑个人季军争夺战中战胜同胞焦万娜·特里利尼，夺得季军。（多重曝光拍摄）新华社记者刘宇摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0007.jpg" d_URL="images/p_0007.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm1C000633_20080815_MVPFN1A001" width="980" height="535"><![CDATA[　8月15日，美国选手娜斯佳·柳金在自由体操比赛中（多次曝光拍摄）。新华社记者王雷摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0008.jpg" d_URL="images/p_0008.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001863_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，意大利选手玛丽亚·瓦伦蒂娜·韦扎利在比赛中（多重曝光拍摄）。新华社记者 李钢 摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0009.jpg" d_URL="images/p_0009.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001890_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，意大利选手玛丽亚·瓦伦蒂娜·韦扎利（右）在国家会议中心击剑馆举行的北京奥运会女子花剑个人决赛中以6比5战胜韩国选手南贤喜，连续第三次夺得奥运会女子花剑个人赛冠军。（多重曝光拍摄）新华社记者刘宇摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0010.jpg" d_URL="images/p_0010.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001652_20080812_MVPFN1A001" width="980" height="535"><![CDATA[　8月12日， 乌克兰选手维多利亚·科瓦利在比赛中。该幅照片记者采用多重曝光拍摄，颤抖的弓箭呈现出了如同“千手观音”一般的效果。新华社记者格桑达瓦摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0011.jpg" d_URL="images/p_0011.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001866_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，意大利选手玛丽亚·瓦伦蒂娜·韦扎利在比赛中（多重曝光拍摄）。新华社记者 李钢 摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0012.jpg" d_URL="images/p_0012.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001889_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，意大利选手玛格丽塔·格兰巴西（右）在国家会议中心击剑馆举行的北京奥运会女子花剑个人季军争夺战中战胜同胞焦万娜·特里利尼，夺得季军。（多重曝光拍摄）新华社记者刘宇摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0013.jpg" d_URL="images/p_0013.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000433_20080816_MVPFN1A001" width="980" height="535"><![CDATA[　8月16日，日本选手福冈春菜在比赛中（多重曝光拍摄）。新华社记者徐昱摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0014.jpg" d_URL="images/p_0014.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000141_20080813_MVPFN1A001" width="980" height="535"><![CDATA[　8月12日，罗马尼亚选手米哈伊·科瓦柳（右）在国家会议中心击剑馆举行的北京奥运会男子佩剑个人季军争夺赛中战胜法国选手朱利安·皮耶，获得铜牌（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0015.jpg" d_URL="images/p_0015.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2B002582_20080814_MVPFN1A001" width="980" height="535"><![CDATA[　8月14日，中国选手倪红（左）在比赛中（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0016.jpg" d_URL="images/p_0016.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001234_20080816_MVPFN1A001" width="980" height="535"><![CDATA[　8月16日，俄罗斯男排18号阿列克谢·库列绍夫在比赛中发球（多重曝光拍摄）。新华社记者赵众志摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0017.jpg" d_URL="images/p_0017.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2B002453_20080814_MVPFN1A001" width="980" height="535"><![CDATA[　8月14日，中国选手谭雪（左）在比赛中（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0018.jpg" d_URL="images/p_0018.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2B002458_20080814_MVPFN1A001" width="980" height="535"><![CDATA[　8月14日，中国选手倪红（左）在比赛中（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0019.jpg" d_URL="images/p_0019.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000380_20080817_MVPFN1A001" width="980" height="535"><![CDATA[　这张8月17日多重曝光得到的照片显示中国队队员李琪在投球。新华社记者武巍摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0020.jpg" d_URL="images/p_0020.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000949_20080815_MVPFN1A001" width="980" height="535"><![CDATA[　8月15日，波兰选手托马什·莫蒂卡（右）与中国选手黎国介在比赛中（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0021.jpg" d_URL="images/p_0021.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000948_20080815_MVPFN1A001" width="980" height="535"><![CDATA[　8月15日，波兰选手托马什·莫蒂卡（右）与中国选手黎国介在比赛中（多重曝光拍摄）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0022.jpg" d_URL="images/p_0022.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C002574_20080816_MVPFN1A001" width="980" height="535"><![CDATA[　8月16日，俄罗斯选手亚历山大·鲁萨科夫在北京奥运会蹦床男子资格赛中得分69.90，进入决赛。此图为多重曝光拍摄。新华社记者程敏摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0023.jpg" d_URL="images/p_0023.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001223_20080815_MVPFN1A001" width="980" height="535"><![CDATA[　8月15日，波兰队队员托马什·莫蒂卡（右）和中国队队员黎国介在比赛中（多次曝光）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0024.jpg" d_URL="images/p_0024.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001887_20080811_MVPFN1A001" width="980" height="535"><![CDATA[　8月11日，意大利选手玛丽亚·瓦伦蒂娜·韦扎利（右）在国家会议中心击剑馆举行的北京奥运会女子花剑个人决赛中以6比5战胜韩国选手南贤喜，连续第三次夺得奥运会女子花剑个人赛冠军。（多重曝光拍摄）新华社记者刘宇摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0025.jpg" d_URL="images/p_0025.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000884_20080816_MVPFN1A001" width="980" height="535"><![CDATA[　8月16日，美国男排9号瑞安·米勒在比赛中发球（多重曝光拍摄）。新华社记者赵众志摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0026.jpg" d_URL="images/p_0026.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C002547_20080813_MVPFN1A001" width="980" height="535"><![CDATA[　8月13日，德国选手布丽塔·海德曼（右）在比赛中（多次曝光拍摄）。新华社记者陈晓伟摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0027.jpg" d_URL="images/p_0027.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001143_20080810_MVPFN1A001" width="980" height="535"><![CDATA[　8月10日，意大利选手马泰奥·塔利亚里奥尔（右）在奥运会击剑男子重剑个人淘汰赛中战胜西班牙选手何塞·路易斯·阿瓦霍，进入决赛。（多重曝光拍摄）新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0028.jpg" d_URL="images/p_0028.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C001660_20080817_MVPFN1A001" width="980" height="535"><![CDATA[　8月17日，新西兰队球员在比赛中出击。此图为多重曝光拍摄。新华社记者李勇摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0029.jpg" d_URL="images/p_0029.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm2C000621_20080809_MVPFN1A001" width="980" height="535"><![CDATA[　8月9日，美国选手萨达·雅各布森（左）在比赛中（多次曝光）。新华社记者杨磊摄]]></slide>
+        <slide jpegURL="images/thumbs/t_0030.jpg" d_URL="images/p_0030.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Xxjpm1C000785_20080818_MVPFN1A001" width="980" height="535"><![CDATA[　8月18日，乌兹别克斯坦选手埃卡特里娜·基尔科在进行比赛（多次曝光拍摄）。新华社记者王雷摄]]></slide>
+    </album>
+</flash_parameters>

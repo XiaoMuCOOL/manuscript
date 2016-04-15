@@ -1,0 +1,193 @@
+#Header .Left{
+	background-image: url(../images/menu_tl.gif);
+	background-repeat: no-repeat;
+	float: left;
+	height: 92px;
+	width: 80px;
+	
+}
+.yymenu{ position:absolute; left:30px; top:72px; z-index:2; display:block;}
+.yymenu a.a1{ color:#439DD3; background:url(../images/yymenu-bg.gif) no-repeat; display:block; width:58px; height:16px; padding:4px 0 0 5px;}
+.yymenu a.a2{ color:#439DD3; background:url(../images/hovrbg.gif) no-repeat; display:block; width:58px; height:16px; padding:4px 0 0 5px; }
+.xlmenu{ width:128px; height:112px; background:url(../images/xlbg.gif) no-repeat #fff;text-align:center;position:absolute; margin-top:-1px;}
+.xlmenu ul{ clear:both; width:114px; margin:10px auto 0 auto; text-align:left; list-style:none;}
+.xlmenu li{ background:url(../images/xldot.gif) no-repeat left 5px; padding:2px 0 2px 18px;}
+.xlmenu li a{color:#439DD3;}
+
+#Header .Right{
+	background-image: url(../images/menu_tr.gif);
+	background-repeat: no-repeat;
+	float: right;
+	height: 92px;
+	width: 5px;	
+}
+#Header .Middle{
+	float: right;
+	height: 92px;
+	width: 869px;	
+}
+#Header .Layer1{
+	clear:both;
+	float: left;
+	width: 860px;	
+	height:35px;
+}
+#Header .Layer2{
+	clear:both;
+	float: left;
+	width: 860px;	
+	height:35px;
+}
+#Header .Layer3{
+	clear:both;
+	float: left;
+	width: 860px;	
+	height:22px;
+}
+#Header .Logo{
+	float:left;
+	background-image: url(../images/menu_logo.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 35px;
+	width: 120px;
+}
+#Header .LinkDiv{
+	float:right;
+	padding: 5px;
+	line-height: 25px;
+	color:#8D8D8D;
+	position:relative;
+	height: 25px;
+}
+#Header .LinkDiv a:link,#Header .LinkDiv a:visited{
+	color:#8D8D8D;
+}
+#Header .LinkDiv a:hover{
+	color:#000000;
+}
+#DownMenu {
+	position: absolute;
+	display:none;
+	right: -50px;
+	top: 0px;
+	padding-top:30px;
+	z-index:100;
+}
+#DownMenu ul{
+	background-color:#FFFFFF;
+	border-top:1px solid #E5E9E9;
+	border-left:1px solid #E5E9E9;
+	width:100px;
+	
+}
+#DownMenu li{
+	background-color:#FFFFFF;
+	border-right:1px solid #E5E9E9;
+	border-bottom:1px solid #E5E9E9;
+	padding-left:10px;
+	text-align:left;
+	list-style:none;
+}
+#Header .Login{
+	background-image: url(../images/menu_logoin_back.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 94px;
+}
+#Header .Login a{
+	font-weight:bold;
+}
+#Header .Product ul{
+	height:25px;
+	float:left;
+}
+#Header .Product li{
+	list-style:none;
+	float:left;
+	position:relative;
+	padding-left:25px;
+}
+#Header .Product li img{
+	position:absolute;
+	left:5px;
+	top:3px;
+}
+#Header .Product *{ margin:0; padding:0;}
+#Header .MainMenu li{
+	font-size: 14px;
+	color:#FFFFFF;
+	background-image:url(../images/menu_split1.gif);
+	padding-right: 15px;
+	padding-left: 16px;
+	line-height:35px;
+	text-align: center;
+}
+#Header .MainMenu a{
+	font-size: 14px;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+#Header .MainMenu div{
+	font-size: 14px;
+	color:#FFFFFF;
+	cursor:default;
+}
+#Header .MainMenu .Current{
+	background-image: url(../images/menu_arrow.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+#Header .MainMenu .First{
+	background-image:none;
+}
+#Header .SubMenu li{
+	color:#000000;
+	background-image:url(../images/menu_split2.gif);
+	padding-right: 9px;
+	padding-left: 10px;
+	line-height:22px;
+	text-align: center;
+}
+#Header .SubMenu a:link , #Header .SubMenu a:visited{
+	color:#333333;
+}
+#Header .SubMenu a:hover{
+	color:#FF0000;
+}
+#Header .SubMenu .First{
+	background-image:none;
+}
+#Header .Search{
+	float:right;
+	width:360px;
+}
+#Header .Search .TextBox{
+	background-image: url(../images/menu_search_input.gif);
+	background-repeat: no-repeat;
+	background-position:left 6px;
+	width: 210px;
+	float:left;
+	height:32px;
+}
+#Header .Search .TextBox input{
+	width:198px;
+	margin:5px;
+	margin-top:9px;
+	height:20px;
+	vertical-align:middle;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background:none;
+	color: #666666;
+}
+#Header .Search .DropdownList{
+	float:left;
+	padding:5px;
+}
+#Header .Search .SearchButton{
+	float:left;
+	padding:5px;
+}

@@ -1,0 +1,131 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>CSS3_Transform特效</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		.div{
+			width: 300px;
+			height: 300px;
+			background: pink;
+			margin: 0 auto;
+			/* -webkit-transition:all 3s linear 1s;
+			transition:all 3s linear 1s; */
+		}
+		/* .change{
+			width: 800px;
+		}  */
+		.div2{
+			width: 300px;
+			height: 300px;
+			background: yellow;
+			margin: 0 auto;
+			transform:rotateY(0deg);
+			-webkit-transform:rotateY(0deg);
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$(".div").click(function(){
+				$(".div").css({
+					 width:0,
+					 height:0
+				});
+				setTimeout(function(){
+					$(".div").css({
+						 "-webkit-transition":"all 3s linear 1s",
+						 "transition":"all 3s linear 1s",
+						 width:800,
+						 height:500
+					});
+				},1);
+				
+				/*$(".div").css({
+					width:800
+
+			transform:translate3d(180,0,0);
+			-webkit-transform:translate3d(180,0,0);
+				});*/
+			});
+
+			$(".div2").click(function(){
+				$(".div2").css({
+					 "-webkit-transition":"all 1s linear 0s",
+					 "transition":"all 1s linear 0s",
+					 
+					"transform":"rotateY(180deg)",
+					"-webkit-transform":"rotateY(180deg)",
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：CSS3_Transform特效</h1>
+	</header>
+	<section>
+		<div class="div"></div>
+		<div class="div2"></div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

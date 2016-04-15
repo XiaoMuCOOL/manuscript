@@ -1,0 +1,98 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>测试 JQuery Trigger方法在Safari是否支持</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			color: red;
+			float: right;
+		}
+	</style>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			float: left;
+			margin-right: 20px;
+		}
+		#div2{
+			padding-top: 100px;
+			width: 400px;
+			height: 300px;
+		}
+		#div3{
+			float: none;
+			margin: 0 auto;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#div1").click(function(){
+				$("#div2").hide.();
+				$("#div3").trigger("click");
+			});
+			$("#div3").click(function(){
+				alert("div3 事件触发.");
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：测试 JQuery Trigger方法在Safari是否支持</h1>
+	</header>
+	<section>
+		<div id="div1">div1</div>
+		<div id="div2">div2
+			<div id="div3">div3</div>
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p></p>
+		<p class="copy">Powered by Gavin(小牧COOL)</p>
+	</footer>
+</body>
+</html>

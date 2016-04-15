@@ -1,0 +1,273 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>图片切换</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			color: red;
+			float: right;
+		}
+	</style>
+	<style type="text/css">
+		#box{
+			/* border: 1px solid red; */
+			margin: 0 auto;
+			width: 1265px;
+			height: 508px;
+			position: relative;
+			top: 50%;
+			overflow: hidden;
+		}
+		#box #imgs{
+			width: 3999px;
+			height: 508px;
+			position: absolute;
+		}
+		#box #imgs>div{
+			width: 253px;
+			height: 508px;
+			float: left;
+			position: relative;
+		}
+		#box div img{
+			width: 100%;
+			height: 100%;
+		}
+		#box #pre{
+			width: 39px;
+			height: 44px;
+			display: block;
+			position: absolute;
+			top: 45%;
+			background: url('img/pre.png');
+			z-index: 99;
+		}
+		#box #next{
+			width: 39px;
+			height: 44px;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 45%;
+			background: url('img/next.png');
+		}
+		#box .showDiv{
+			position: relative;
+			width: 100%;
+			height: 101%;
+			/*display: block;*/
+			float: left;
+			bottom: 101%;
+			background: #000;
+			opacity:0.8;
+		}
+		#box .boxa{
+			display:none; 	
+			position:absolute;
+			background:#000;
+			height:70px;
+			width:80%;
+			opacity:1;
+			text-align:left;
+			color:white;
+			left:0;
+			bottom:10%;
+			text-decoration:none;
+		}
+		#box .address{
+			margin-bottom: 5px;
+			margin-left: 10%;
+			font-size: 18px;
+		}
+		#box .time{
+			margin-top: 0;
+			margin-left: 10%;
+			font-size: 14px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var pre = $("#pre");
+			var next = $("#next");
+			var divs = $("#imgs > div");
+			var showDivs = $(".showDiv");
+			var count = 0;
+			var imgW = 253;
+			/*divs.hover(function(){
+				$(this).css({
+					background: "#00FF00",
+					opacity: 0.5
+				});
+			},function(){
+				$(this).css({
+					background: "#00FF00",
+					opacity: 1
+				});
+			});*/
+			showDivs.click(function(){
+				$(".boxa").fadeOut(100);
+				$(".showDiv").css({
+					background : "#000",
+					opacity : 0.8
+				});
+				$(this).children(".boxa").fadeIn(100);
+				$(this).css({
+					background : "none"
+				});
+			});
+			pre.click(function(){
+				count = count + imgW;
+				if(count > 0){
+					count = 0;
+					return;
+				}
+				divs.animate({
+					// $(this).css("left") - imgW
+					left: count
+				},1000);
+			});
+			next.click(function(){
+				count = count -imgW;
+				if(count < ((divs.length - 5)*-imgW)){
+					count = (divs.length - 5)*-imgW;
+					return;
+				}
+				divs.animate({
+					left: count
+				},1000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：图片切换</h1>
+	</header>
+	<section>
+		<div id="box">
+			<a id="pre" href="javascript::;" ></a>
+			<div id="imgs">
+				<div id="item1">
+					<img src="img/cd.png" alt="成都.png" title="成都.png" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="成都站">
+			              <h3 class="address">今天成都站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+			        </div>
+				</div>
+				<div id="item2">
+					<img src="img/hz.png" alt="杭州.png" title="杭州.png" >
+					<div class="showDiv">
+						<a class="boxa" href="http://www.baidu.com" title="杭州站">
+			              <h3 class="address">今天杭州站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+					</div>
+				</div>
+				<div id="item3">
+					<img src="img/sz.png" alt="深圳.png" title="深圳.png" >
+					<div class="showDiv">
+						<a class="boxa" href="http://www.baidu.com" title="深圳站">
+			              <h3 class="address">今天深圳站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+					</div>
+				</div>
+				<div id="item4">
+					<img src="img/sh.png" alt="上海.png" title="上海.png" >
+					<div class="showDiv">
+						<a class="boxa" href="http://www.baidu.com" title="上海站">
+			              <h3 class="address">今天上海站</h3>
+			              <h2 class="time">2009-5-9</h2>
+						</a>
+					</div>
+				</div>
+				<div id="item5">
+					<img src="img/gz.png" alt="广州.png" title="广州.png" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="广州站">
+			              <h3 class="address">今天广州站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+				<div id="item6">
+					<img src="img/bj.png" alt="北京.png" title="北京.png" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="北京站">
+			              <h3 class="address">今天北京站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+				<div id="item7">
+					<img src="img/nj.png" alt="南京.png" title="南京.png" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="南京站">
+			              <h3 class="address">今天南京站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+				<div id="item8">
+					<img src="img/xa.png" alt="西安.png" title="西安.png" >
+					<div class="showDiv">
+			            <a class="boxa" href="http://www.baidu.com" title="西安站">
+			              <h3 class="address">今天西安站</h3>
+			              <h2 class="time">2009-5-9</h2>
+			            </a>
+					</div>
+				</div>
+			</div>
+			<a id="next" href="javascript::;" ></a>
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p></p>
+		<p class="copy">Powered by Gavin(小牧COOL)</p>
+	</footer>
+</body>
+</html>

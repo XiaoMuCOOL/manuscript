@@ -1,0 +1,120 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>F5刷新iframe而不是刷新页面</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			width: 800px;
+			height: 300px;
+			border: 1px solid red;
+		}
+	</style>
+	
+</head>
+<body>
+	<header>
+		<h1>问题：F5刷新iframe而不是刷新页面</h1>
+	</header>
+	<section>
+		<div id="div"><span id="time">0</span></div>
+		<iframe name="myiframe" id="myiframe" src="点击切换.html" width="500" height="500"></iframe>
+	</section>
+	<footer>
+		<p onclick="a();">结论：</p>
+		<p>This is 结论.<a target="myiframe" href="研究浮动问题、使用clearfix.html">点击切换iframe</a></p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+	<script type="text/javascript">
+		/*var check=function(e){ 
+			e=e||window.event; 
+			//alert(e.which||e.keyCode); 
+			if((e.which||e.keyCode)==116){ 
+				if(e.preventDefault){ 
+					e.preventDefault(); 
+					window.frames["myiframe"].location.reload(); 
+				} else{
+					event.keyCode = 0; 
+					e.returnValue=false; 
+					window.frames["myiframe"].location.reload(); 
+				} 
+			} 
+		} 
+		if(document.addEventListener){
+			document.addEventListener("keydown",check,false); 
+		} else{ 
+			document.attachEvent("onkeydown",check); 
+		}*/
+		/*document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if(e && e.keyCode==116){
+            	//alert($("#myiframe").href());
+            	//$("#myiframe").attr("src","http:baidu.com");
+                return false;
+            }
+        }*/
+		$(function(){
+			setInterval(function(){
+				var i = parseInt($("#time").html()) + 1;
+				$("#time").html(i);
+			},1000);
+		});
+		function a(){
+			document.getElementById("myiframe").src="http://baidu.com";
+		}
+	</script>
+</body>
+</html>

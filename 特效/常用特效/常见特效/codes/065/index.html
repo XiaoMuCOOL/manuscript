@@ -1,0 +1,114 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<SCRIPT src="js/sinaflash.js" type=text/javascript></SCRIPT>
+<title>php100</title>
+</head>
+<body>
+<!--新浪首页左侧流媒体浮动图标开始-->
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+var adflashbig = 'flash/200x200.swf';
+var adurl100100 = '';
+var float_stream_top = 98; // 流媒体上边距 根据需要修改
+var float_stream_left = -1; // 流媒体左边距 根据需要修改 -1 = 默认居中
+var float_stream_width = 200; // 流媒体宽度 根据需要修改
+var adflash100100 = 'flash/100x100.swf';
+var ifswf100100 = 'swf';	
+function showcl(){
+	document.getElementById('cl_stylebig').style.visibility='visible';
+	document.getElementById('cl_style').style.visibility='hidden';
+	document.getElementById('float_liumeiti').Play();
+}
+function closeliumeiti(){
+	document.getElementById('float_liumeiti').Rewind();
+	document.getElementById('float_liumeiti').Stop();
+	document.getElementById('cl_style').style.visibility='visible';
+	document.getElementById('cl_stylebig').style.visibility='hidden';
+}
+function closebtn(){
+	//document.getElementById('cl_style').style.visibility='hidden';
+	document.getElementById('cl_stylebigflash').innerHTML = '';
+	document.getElementById('cl_style').innerHTML = '';
+}
+//]]>
+</SCRIPT>
+
+<DIV id=cl_stylebig 
+style="Z-INDEX: 25; LEFT: 0px; VISIBILITY: hidden; OVERFLOW: visible; WIDTH: 200px; POSITION: absolute; TOP: 0px; HEIGHT: 217px" 
+align=right>
+<DIV style="Z-INDEX: 1; LEFT: 0px; POSITION: absolute; TOP: 0px"><IFRAME 
+src="about:blank" frameBorder=0 width=200 height=216></IFRAME></DIV>
+<DIV id=cl_stylebigflash 
+style="Z-INDEX: 2; LEFT: 0px; POSITION: absolute; TOP: 0px"></DIV>
+<TABLE style="Z-INDEX: 99; LEFT: 0px; POSITION: absolute; TOP: 200px" 
+cellSpacing=0 cellPadding=0 width=200 bgColor=#cccccc border=0>
+  <TBODY>
+  <TR>
+    <TD style="PADDING-RIGHT: 5px; PADDING-TOP: 2px" align=right><A 
+      style="FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none" 
+      onclick="javascript:closeliumeiti();return false;" 
+      href="http://www.chinaz.com/#">关 闭</A></TD></TR></TBODY></TABLE></DIV>
+<DIV id=cl_style 
+style="Z-INDEX: 1; LEFT: 0px; VISIBILITY: hidden; OVERFLOW: visible; WIDTH: 100px; POSITION: absolute; TOP: 0px; HEIGHT: 117px">
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+if(ifswf100100=='swf'){
+	document.write("<div id='cl_flash'>flash内容</div>"
+	+"<table width='100' bgcolor='#cccccc' border='0' cellpadding='0' cellspacing='0'>");
+} else {
+	document.write("<table width='100' bgcolor='#cccccc' border='0' cellpadding='0' cellspacing='0'>"
+	+"<tr><td colspan='2'><a href="+adurl100100+" target='_blank'><img src="+adflash100100+" width='100' height='100' border='0' /></a></td></tr>");
+}
+//]]>
+</SCRIPT>
+<TR><TD style="PADDING-TOP: 2px" align="center" width="50"><A 
+style="FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none" 
+onclick="javascript:closebtn();return false;" href="http://www.chinaz.com/#">关 
+闭</A></TD> <TD style="PADDING-TOP: 2px" align="center" width="50" 
+bgcolor="#000000"><A 
+style="FONT-SIZE: 12px; COLOR: #cccccc; TEXT-DECORATION: none" 
+onclick="javascript:showcl();return false;" href="http://www.chinaz.com/#">重 
+播</A></TD></TR></TABLE> </DIV>
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+var FlashCLbig = new sinaFlash( adflashbig , "float_liumeiti", "200", "200", "7", "", false, "High");
+	FlashCLbig.addParam("wmode", "transparent");
+	FlashCLbig.write("cl_stylebigflash");
+if(ifswf100100=='swf'){
+	var FlashCL = new sinaFlash( adflash100100 , "logo_liumeiti", "100", "100", "7", "", false, "High");
+		FlashCL.addParam("wmode", "transparent");
+		FlashCL.write("cl_flash");
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT language=javascript src="js/left_stream_float_v4.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+try{
+	aryADSeq.push("openWin()");
+}catch(e){
+	openWin();
+}
+//]]>
+</SCRIPT>
+<!--新浪首页左侧流媒体浮动图标结束-->
+
+<!--新浪首页右侧浮动图标 开始-->
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+var ad_float_right_src = "flash/right_100x100.swf";
+var ad_float_right_url = "";
+var ad_float_right_type = "swf";
+//]]>
+</SCRIPT>
+<SCRIPT language=javascript src="js/floatright_close_v7.js" type=text/javascript></SCRIPT>
+<!--新浪首页右侧浮动图标 结束-->
+
+
+
+</body>
+</html>

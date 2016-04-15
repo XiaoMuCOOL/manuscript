@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>打开关闭层JS</title>
+<style type="text/css">
+<!--
+body{margin:0px;padding:0px;font-size:12px;background:#eee;line-height:20px;}
+.bodyer{width:760px;margin:20px auto auto;border:1px dotted #ccc;background:#fff;}	
+.t_rt{text-align:right;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;margin:0px;padding:0px;font-size:12px;}
+ul,li{margin:0px;padding:0px;}
+li{list-style-type:none;}
+h1{margin:10px;padding-right:10px;padding-bottom:5px;border-bottom:1px dotted #ccc;}
+.preview{margin:10px;padding:10px;overflow:hidden;background:#eee;}
+.cont{padding:10px;}
+.cls{clear:both;}
+.hidden{display:none;}
+#sourse{border:1px dotted #ccc;width:600px;height:300px;margin:0px auto;}
+.textDiv{margin:10px 40px 10px;text-align:center;}
+h2{margin:0px 10px;background:#ccc;padding:5px;}
+.example{margin:10px;background:#FFF;border:1px dotted #ccc;padding:10px;}
+.authorInfo{width:760px; margin:10px auto 10px;text-align:center;}
+.c_666{color:#666;}
+.red{color:red;}
+.scrolldoorFrame{width:600px;border:1px solid #FFF;margin:0px auto;overflow:hidden;position:relative;height:400px;}
+.scrollUl{width:400px;border-bottom:1px solid #CCC;overflow:hidden;height:35px;}
+.scrollUl li{float:left;}
+.bor03{border:1px solid #ccc;border-top-width:0px;}
+.sd01{cursor:pointer;border:1px solid #CCC;background:#FFF;margin:5px;padding:2px;font-weight:bold;}
+.sd02{cursor:pointer;border:0px solid #CCC;margin:5px;padding:2px;}
+-->
+</style>
+<script src="jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(function(){
+var h = "-" + $("#test").height()/2 + "px";
+function openDivPro(){
+	this.w = new Array(); //宽度
+	this.h = new Array(); //高度
+	this.count = 0;
+	this.pro = new Array(); //过程
+	//this.oId = new Array();
+}
+/*$("#c02").click(function(){
+	alert('aaa');
+});*/
+openDivPro.prototype = {
+	
+	creatParent:function(id,openId,closeId,minH,minW,type){//创建父容器	
+		var _this = this;
+		var parent = document.createElement("div");
+		_this.count++
+		parent.value = _this.count;
+		_this.$(id).value = _this.count;
+		_this.$(closeId).value = _this.count;
+		
+		_this.$(openId).value = _this.count;
+		parent.style.height = _this.$(id).offsetHeight + "px";
+		parent.style.width = _this.$(id).offsetWidth + "px";
+		parent.style.overflow = "hidden";
+		_this.w[_this.count] = _this.$(id).offsetWidth;
+		_this.h[_this.count] = _this.$(id).offsetHeight;
+		_this.$(id).parentNode.appendChild(parent);
+		parent.appendChild(_this.$(id));
+		//_this.$(closeId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.closeDiv(parent,minH,minW,__this.value)},10)}	
+		
+		//_this.$(openId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.openDiv(parent,_this.h[__this.value],_this.w[__this.value],__this.value)},10);}
+		if(type=="wh")
+		{
+			_this.$(closeId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.closeDiv(parent,minH,minW,__this.value)},10)}	
+		
+			_this.$(openId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.openDiv(parent,_this.h[__this.value],_this.w[__this.value],__this.value)},10);}
+		}
+		if(type=="h")
+		{
+			_this.$(closeId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.closeDivH(parent,minH,__this.value)},10)}	
+			
+			_this.$(openId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.openDiv(parent,_this.h[__this.value],_this.w[__this.value],__this.value)},10);}
+		}
+		if(type=="w")
+		{
+			_this.$(closeId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.closeDivW(parent,minW,__this.value)},10)}	
+		
+			_this.$(openId).onclick = function(){var __this = this;clearInterval(_this.pro[__this.value]);_this.pro[__this.value] = setInterval(function(){_this.openDivW(parent,_this.w[__this.value],__this.value)},10);}
+		}
+	},
+	openDivH:function(o,maxH,i){
+		if(parseInt(o.style.height) < maxH)
+		{
+			o.style.height = (parseInt(o.style.height) + 1) + "px";	
+			o.style.height = (parseInt(o.style.height) + Math.ceil((maxH-parseInt(o.style.height))/10)) + "px";
+		}		
+		if(parseInt(o.style.height) >= maxH)
+		{
+			clearInterval(this.pro[i]);
+		}
+	},
+	closeDivH:function(o,minH,i){
+		$("#test").css("margin-bottom",0);
+		if(parseInt(o.style.height) > minH)
+		{			
+			o.style.height =(parseInt(o.style.height) - Math.ceil((parseInt(o.style.height) - minH)/10)) + "px";
+		}		
+		if(parseInt(o.style.height) <= minH)
+		{
+			clearInterval(this.pro[i]);
+		}		
+	},
+	openDivW:function(o,maxW,i){
+		if(parseInt(o.style.width) < maxW)
+		{
+			o.style.width = (parseInt(o.style.width) + 1) + "px"; 
+			o.style.width = (parseInt(o.style.width) + Math.ceil((maxW-parseInt(o.style.width))/10)) + "px";
+		}
+		if(parseInt(o.style.width) >= maxW)
+		{
+			clearInterval(this.pro[i]);
+		}
+	},
+	closeDivW:function(o,minW,i){		
+		
+		if(parseInt(o.style.width) > minW)
+		{			
+			o.style.width = (parseInt(o.style.width) - Math.ceil((parseInt(o.style.width) - minW)/10)) + "px";
+		}
+		if(parseInt(o.style.width) <= minW)
+		{
+			clearInterval(this.pro[i]);
+		}		
+	},
+	openDiv:function(o,maxH,maxW,i){
+		$("#test").css("margin-bottom",h);
+		if(parseInt(o.style.height) < maxH)
+		{
+			o.style.height = (parseInt(o.style.height) + 1) + "px";	
+			o.style.height = (parseInt(o.style.height) + Math.ceil((maxH-parseInt(o.style.height))/10)) + "px";
+		}
+		if(parseInt(o.style.width) < maxW)
+		{
+			o.style.width = (parseInt(o.style.width) + 1) + "px"; 
+			o.style.width = (parseInt(o.style.width) + Math.ceil((maxW-parseInt(o.style.width))/10)) + "px";
+		}
+		if(parseInt(o.style.height) >= maxH && parseInt(o.style.width) >= maxW)
+		{
+			clearInterval(this.pro[i]);
+		}
+	},
+	closeDiv:function(o,minH,minW,i){
+		var _this = this;
+		if(parseInt(o.style.height) > minH)
+		{			
+			o.style.height =(parseInt(o.style.height) - Math.ceil((parseInt(o.style.height) - minH)/10)) + "px";
+		}
+		if(parseInt(o.style.width) > minW)
+		{			
+			o.style.width = (parseInt(o.style.width) - Math.ceil((parseInt(o.style.width) - minW)/10)) + "px";
+		}
+		if(parseInt(o.style.height) <= minH && parseInt(o.style.width) <= minW)
+		{
+			clearInterval(this.pro[i]);
+		}		
+	},
+	$:function(o){//获取对象
+		if(typeof(o) == "string")
+		{
+			if(document.getElementById(o))
+			{
+				return document.getElementById(o);
+			}
+			else
+			{
+				alert("errId \""+ o + "\"!");
+				return false;
+			}
+		}
+		else
+		{
+			return o;
+		}
+	}
+}
+window.onload = function(){
+	var c = new openDivPro();
+	c.creatParent("d02","o02","c02",0,0,"h");
+}
+//$("#c02").trigger("click");
+});
+</script>
+</head>
+<body>
+<span id="o02"><b>[开]</b></span>
+<div id="test" style="width:100%; position:absolute; bottom:50%; padding:0px;margin-bottom:-250px">
+<div style="position:absolute; width:100px; height:100px; background:#666; left:50%; margin-left:-50px;top:-100px;"></div>
+<div id="d02" style="width:100%; height:500px;background:#fff;">
+	<div style="height:20px;margin:1px;background:#BBB;color:#EEE;padding-left:5px;">
+		<span id="c02"><b>[关]</b></span>
+	</div>
+	方式二<br/>
+	内容内容内容<br/>
+	内容内容内容<br/>
+	内容内容内容<br/>
+</div>
+</div>
+</body>
+</html>

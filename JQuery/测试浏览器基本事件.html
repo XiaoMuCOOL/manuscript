@@ -1,0 +1,19 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>事件</title>
+</head>
+<body>
+	<h1>事件</h1>
+	<div id="div">
+		Hello, this is a snippet.
+	</div>
+	<script type="text/javascript">
+		document.getElementById("div").onclick = function () {
+			var div = document.getElementById("div"); 
+			div.innerHTML="<li><label><a href=javascript:;>"+i+"</a></label></li>"; 
+		}
+	</script>
+</body>
+</html>

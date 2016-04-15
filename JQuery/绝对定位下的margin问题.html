@@ -1,0 +1,50 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>绝对定位下的margin问题</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<!-- <script src="js/index.js"></script> -->
+	<style type="text/css">
+		#div1{
+			background:blue;
+			width:448px;
+			height:348px;
+			/*position:relative;*/
+		}
+		#div0{
+			background:black;
+			width:448px;
+			height:348px;
+			/*position:relative;*/
+		}
+		#top{
+			/*position:relative;*/
+			border-top: 1px solid green;
+			height: 100px;
+			width: 100%;
+			background:black;
+		}
+		#bottom{
+			/*position:relative;*/
+			border-top: 1px solid red;
+			border-bottom: 1px solid red;
+			height: 100px;
+			width: 100%;
+			margin-top:100px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+		<div id="div1">
+			<!-- <div id="top"></div> -->
+			<div id="bottom"></div>
+		</div>
+
+		<p>
+			这是 collapsing margins 问题，外边距合并。
+			详细解释 请看：http://www.cnblogs.com/kei0/articles/2586242.html</p>
+</body>
+</html>

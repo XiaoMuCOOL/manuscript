@@ -1,0 +1,237 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>HTML5的拖拽</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		aside{
+			padding:100px 0;
+			width:30%;
+			height: 100%;
+			float: right;
+		}
+		aside p{
+			padding-top:0;
+			margin-top: 0;
+			font-size: 12px;
+		}
+		.focus{
+			padding: 5px;
+			margin:0 5px;
+			border:1px solid red;
+			border-radius: 20px;
+			box-shadow: 0px 0px 5px 2px rgba(0,0,0,.6);
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		.dustbin{width:100px; height:260px; line-height:1.4; background-color:gray; font-size:36px; font-family:"微软雅黑", "Yahei Mono"; text-align:center; text-shadow:-1px -1px #bbb; float:left;}
+		.dragbox{width:500px; padding-left:20px; float:left;}
+		.draglist{padding:10px; margin-bottom:5px; border:2px dashed #ccc; background-color:#eee; cursor:move;}
+		.draglist:hover{border-color:#cad5eb; background-color:#f0f3f9;}
+		.dragremind{padding-top:2em; clear:both;}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var eleDrag = null;
+			$(".draglist").each(function(i){
+				//拖拽开始
+				//拖拽效果
+				$(this).on("dragstart",function(ev){
+					/**
+					 * event.dataTransfer.effectAllowed : 只是 改变光标 有四个值
+					 * “none”：不能把拖动的元素放在这里.这是除文本框之外所有元素的默认值.
+					 * “move”：应该把拖动的元素移动到放置目标.
+					 * “copy”：应该把拖动的元素复制到放置目标.
+					 * “link”：表示放置目标会打开拖动的元素（但拖动的元素必须是一个链接，有URL.
+					 */
+					event.dataTransfer.effectAllowed = "copy";
+			        event.dataTransfer.setData("text", "event.target.innerHTML");
+			        //event.dataTransfer.setDragImage(event.target, 0, 0);
+			        //要传JQuery对象 才有 hide()方法
+			        //eleDrag = ev.target;
+			        eleDrag = $(this);
+			        return true;
+				});
+				$(this).on("dragend",function(){
+					event.dataTransfer.clearData("text");
+					eleDrag = null;
+					return false;
+				});
+			});
+			$(".dustbin").on("dragover",function(){
+				event.preventDefault();
+				return true;
+			});
+			$(".dustbin").on("dragenter",function(){
+				$(this).css({
+					color:"#ffffff"
+				});
+				return true;
+			});
+			$(".dustbin").on("drop",function(){
+				 if (eleDrag) {
+				 	eleDrag.hide();
+			        $(".dragremind").val(eleDrag.val() + "被扔进了垃圾箱");
+			    }
+				$(this).css({
+					color:"#000000"
+				});
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：HTML5的拖拽</h1>
+	</header>
+	<aside>
+		<div class="focus">相关重点:
+			<p>1.DataTransfer 对象：<br />　　拖拽对象用来传递的媒介，使用一般为Event.dataTransfer.</p>
+			<p>2.draggable 属性：<br />　　就是标签元素要设置draggable=true，否则不会有效果</p>
+			<p>3.ondragstart 事件：<br />　　当拖拽元素开始被拖拽的时候触发的事件，此事件作用在被拖曳元素上</p>
+			<p>4.ondragenter 事件：<br />　　当拖曳元素进入目标元素的时候触发的事件，此事件作用在目标元素上</p>
+			<p>5.ondragover 事件：<br />　　拖拽元素在目标元素上移动的时候触发的事件，此事件作用在目标元素上</p>
+			<p>6.ondrop 事件：<br />　　被拖拽的元素在目标元素上同时鼠标放开触发的事件，此事件作用在目标元素上</p>
+			<p>7.ondragend 事件：<br />　　当拖拽完成后触发的事件，此事件作用在被拖曳元素上</p>
+			<p>8.dragleave属性：<br />　　拖拽元素在离开目标区域时触发.</p>
+			<p>9.Event.preventDefault() 方法：<br />　　阻止默认的些事件方法等执行.在ondragover中一定要执行preventDefault(),否则ondrop事件不会被触发.另外,如果是从其他应用软件或是文件中拖东西进来，尤其是图片的时候，默认的动作是显示这个图片或是相关信息，并不是真的执行drop.此时需要用用document的ondragover事件把它直接干掉.</p>
+			<p>10.Event.effectAllowed 属性：<br />　　就是拖拽的效果.</p>
+		</div>
+	</aside>
+	<section>
+		<div class="dustbin"><br />垃<br />圾<br />箱</div>
+		<div class="dragbox">
+		    <div class="draglist" title="拖拽我" draggable="true">列表1</div>
+		    <div class="draglist" title="拖拽我" draggable="true">列表2</div>
+		    <div class="draglist" title="拖拽我" draggable="true">列表3</div>
+		    <div class="draglist" title="拖拽我" draggable="true">列表4</div>
+		    <div class="draglist" title="拖拽我" draggable="true">列表5</div>
+		    <div class="draglist" title="拖拽我" draggable="true">列表6</div>
+		</div>
+		<div class="dragremind"></div>
+		<hr />
+		<div id="p" style="width:500px;height:50px;border:1px solid red;" title="拖拽我" draggable="true" >列表6</div>
+		<script type="text/javascript">
+			var p = document.getElementById('p');
+			p.ondragstart = function(){
+				alert(1);
+			}
+		</script>
+		<!-- <script type="text/javascript">
+			var $ = function(selector) {
+				if (!selector) { return []; }
+				var arrEle = [];
+				if (document.querySelectorAll) {
+					arrEle = document.querySelectorAll(selector);
+				} else {
+					var oAll = document.getElementsByTagName("div"), lAll = oAll.length;
+					if (lAll) {
+						var i = 0;
+						for (i; i<lAll; i+=1) {
+							if (/^\./.test(selector)) {
+								if (oAll[i].className === selector.replace(".", "")) {
+									arrEle.push(oAll[i]);
+								}
+							} else if(/^#/.test(selector)) {
+								if (oAll[i].id === selector.replace("#", "")) {
+									arrEle.push(oAll[i]);
+								}
+							}
+						}
+					}
+				}
+				return arrEle;
+			};
+			var eleDustbin = $(".dustbin")[0], eleDrags = $(".draglist"), lDrags = eleDrags.length, eleRemind = $(".dragremind")[0], eleDrag = null;
+			for (var i=0; i<lDrags; i+=1) {
+				eleDrags[i].onselectstart = function() {
+					return false;
+				};
+				eleDrags[i].ondragstart = function(ev) {
+					ev.dataTransfer.effectAllowed = "move";
+					ev.dataTransfer.setData("text", ev.target.innerHTML);
+					ev.dataTransfer.setDragImage(ev.target, 0, 0);
+					eleDrag = ev.target;
+					return true;
+				};
+				eleDrags[i].ondragend = function(ev) {
+					ev.dataTransfer.clearData("text");
+					eleDrag = null;
+					return false
+				};
+			}
+			eleDustbin.ondragover = function(ev) {
+				ev.preventDefault();
+				return true;
+			};
+			eleDustbin.ondragenter = function(ev) {
+				this.style.color = "#ffffff";
+				return true;
+			};
+			eleDustbin.ondrop = function(ev) {
+				if (eleDrag) {
+					eleRemind.innerHTML = '<strong>"' + eleDrag.innerHTML + '"</strong>被扔进了垃圾箱';
+					eleDrag.parentNode.removeChild(eleDrag);
+				}
+				this.style.color = "#000000";
+				return false;
+			};
+		</script> -->
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

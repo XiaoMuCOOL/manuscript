@@ -1,0 +1,126 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>JQuery插件——J360</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/j360.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#box{
+			/* style="width:100%;height:100%;" */
+			overflow: hidden;
+			border: 1px solid red;
+		}
+		#box img,.preload_img{
+			width: 100%;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#box").j360();
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：JQuery插件——J360</h1>
+	</header>
+	<section>
+		<div id="box" style="width:100%;height:100%;">
+			<img src="img/01.png" alt="">
+			<img src="img/02.png" alt="">
+			<img src="img/03.png" alt="">
+			<img src="img/04.png" alt="">
+			<img src="img/05.png" alt="">
+			<img src="img/06.png" alt="">
+			<img src="img/07.png" alt="">
+			<img src="img/08.png" alt="">
+			<img src="img/09.png" alt="">
+			<img src="img/10.png" alt="">
+			<img src="img/11.png" alt="">
+			<img src="img/12.png" alt="">
+			<img src="img/13.png" alt="">
+			<img src="img/14.png" alt="">
+			<img src="img/15.png" alt="">
+			<img src="img/16.png" alt="">
+			<img src="img/17.png" alt="">
+			<img src="img/18.png" alt="">
+			<img src="img/19.png" alt="">
+			<img src="img/20.png" alt="">
+			<img src="img/21.png" alt="">
+			<img src="img/22.png" alt="">
+			<img src="img/23.png" alt="">
+			<img src="img/24.png" alt="">
+			<img src="img/25.png" alt="">
+			<img src="img/26.png" alt="">
+			<img src="img/27.png" alt="">
+			<img src="img/28.png" alt="">
+			<img src="img/29.png" alt="">
+			<img src="img/30.png" alt="">
+			<img src="img/31.png" alt="">
+			<img src="img/32.png" alt="">
+			<img src="img/33.png" alt="">
+			<img src="img/34.png" alt="">
+			<img src="img/35.png" alt="">
+			<img src="img/36.png" alt="">
+		</div>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

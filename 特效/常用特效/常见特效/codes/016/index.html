@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS代码,焦点图,JS广告代码,JS特效代码" />
+<meta name="description" content="此代码内容为糯米网产品展示效果，属于站长常用代码。" />
+<LINK media=all href="css/css.css" type=text/css rel=stylesheet>
+<SCRIPT src="js/xixi.js" type=text/javascript></SCRIPT>
+<title>糯米网产品展示效果</title>
+</head>
+
+<body style="text-align:center">
+
+	<div id="container">
+		<div class="left">
+			<DIV class=s-t>
+				<H3 class=diet>网聚中国互联网企业</H3><SPAN class=date id=dailyDate><EM 
+				class=ym>2010-07</EM><EM class=day>09</EM></SPAN>
+			</DIV>
+			<DIV class=s-c>
+				<H4 id=dailyTitle>标题1</H4>
+				<DIV class=s-main>
+					<DIV class=pics>
+						<P class="p1"><a href="http://www.php100.com"><img alt="www.php100.com" id=dailyImage src="images/01-big.jpg"></a></P>
+						<P class=tip id=dailyImageFrom>www.php100.com</P>
+					</DIV>
+					<DIV class=s-detail>
+						<DIV class=cnt id=dailyContent> 
+							文字说明1
+						</DIV>
+					</DIV>
+				</DIV>
+			</div>
+		</div>
+		<DIV class=right>
+			<DIV class=slide-pic id=slidePic>
+				<A class=gray id=prev hideFocus href="javascript:;">前移</A> 
+				<DIV class=pic-container>
+					<UL>
+					  <LI class=cur>
+					  <P><IMG src="images/01.jpg"><SPAN class=date>2012-12-21</SPAN></P>
+					  <LI class="">
+					  <P><IMG src="images/02.jpg"><SPAN class=date>2012-12-21</SPAN></P>
+					  <LI class="">
+					  <P><IMG src="images/03.jpg"><SPAN class=date>2012-12-21</SPAN></P>
+					  <LI class="">
+					  <P><IMG src="images/04.jpg"><SPAN class=date>2012-12-21</SPAN></P>
+					  <LI class="">
+					  <P><IMG src="images/05.jpg"><SPAN class=date>2012-12-21</SPAN></P>
+					</UL>
+				</DIV>
+				 <A id=next hideFocus href="javascript:;">后移</A>
+			</DIV>
+		  
+			<SCRIPT type=text/javascript>
+			var areaDailyList = [{"content":"文字说明1<br>","id":29,"title":"标题1","image":"images\/01-big.jpg","date":"2010-07-09","imageFrom":"www.php100.com"},{"content":"文字说明2","id":28,"title":"标题2","image":"images\/02-big.jpg","date":"2010-07-08","imageFrom":"www.php100.com"},{"content":"文字说明3","id":27,"title":"标题3","image":"images\/03-big.jpg","date":"2010-07-07","imageFrom":"www.php100.com"},{"content":"文字说明4","id":20,"title":"标题4","image":"images\/04-big.jpg","date":"2010-07-06","imageFrom":"www.php100.com"},{"content":"文字说明5","id":24,"title":"标题5","image":"images\/05-big.jpg","date":"2010-07-05","imageFrom":"www.php100.com"}];
+			jQuery(function(){
+			if (!$('#slidePic')[0]) 
+			return;
+			var i = 0, p = $('#slidePic ul'), pList = $('#slidePic ul li'), len = pList.length;
+			var elePrev = $('#prev'), eleNext = $('#next');
+			//var firstClick = false;
+			var w = 100, num = 3;
+			p.css('width',w*len);
+			if (len <= num) 
+			eleNext.addClass('gray');
+			function prev(){
+			if (elePrev.hasClass('gray')) {
+			//alert('已经是第一张了');
+			return;
+			}
+			p.animate({
+			marginTop:-(--i) * w
+			},500);
+			if (i < len - num) {
+			eleNext.removeClass('gray');
+			}
+			if (i == 0) {
+			elePrev.addClass('gray');
+			}
+			}
+			function next(){
+			if (eleNext.hasClass('gray')) {
+			//alert('已经是最后一张了');
+			return;
+			}
+			//p.css('margin-left',-(++i) * w);
+			p.animate({
+			marginTop:-(++i) * w
+			},500);
+			if (i != 0) {
+			elePrev.removeClass('gray');
+			}
+			if (i == len - num) {
+			eleNext.addClass('gray');
+			}
+			}
+			elePrev.bind('click',prev);
+			eleNext.bind('click',next);
+			pList.each(function(n,v){
+			$(this).click(function(){
+			if(n-i == 2){
+			next();
+			}
+			if(n-i == 0){
+			prev()
+			}
+			$('#slidePic ul li.cur').removeClass('cur');
+			$(this).addClass('cur');
+			show(n);
+			}).mouseover(function(){
+			$(this).addClass('hover');
+			}).mouseout(function(){
+			$(this).removeClass('hover');
+			})
+			});
+			function show(i){
+			var ad = areaDailyList[i];
+			var t = ad.date.split('-');
+			$('#dailyTitle').html(ad.title);
+			$('#dailyImage').attr('src',ad.image);
+			$('#dailyImageFrom').html('' + ad.imageFrom + '');
+			$('#dailyContent').html(ad.content);
+			$('#dailyDate').html('<em class="ym">' + t[0] + '.' + t[1] + '</em><em class="day">' + t[2] + '</em>');
+			var shareRRUrl = encodeURIComponent('http://www.nuomi.com/share365/'+ad.id);
+			var shareUrl = encodeURIComponent('http://www.nuomi.com/#reading');
+			var shareTitle = encodeURIComponent(ad.title + 'http://www.php100.com');
+			var shareContent = encodeURIComponent(ad.content.substring(0,100)+'...');
+			
+			}
+			});
+			</SCRIPT>
+		</DIV>
+	</div>
+</body>
+</html>

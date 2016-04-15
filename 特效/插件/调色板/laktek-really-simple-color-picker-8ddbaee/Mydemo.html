@@ -1,0 +1,36 @@
+<!DOCTYPE html5>
+<html>
+<head>
+<title>Color</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="jquery.colorPicker.js"/></script>
+
+<script type="text/javascript">
+	//Run the code when document ready
+	$(function() {
+		$('#color').colorPicker().show();
+		$("#btn").click(function(){
+			$('#color').toggle(500);
+		});
+		
+		$("#color").blur(function(){
+			alert("mouse is blur");
+		});
+	});
+</script>
+<link rel="stylesheet" href="colorPicker.css" type="text/css" />
+<style type="text/css">
+</style>
+</head>
+
+<body>
+	<div>
+	<form action="#" method="post">
+			<input id="color" type="text" value="#333399" />
+            <input id="btn" type="button" value="AAAA" />
+	</form>
+    </div>
+</body>
+
+</html>

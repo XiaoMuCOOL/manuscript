@@ -1,0 +1,206 @@
+<!Doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content=IE=EmulateIE7>
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.filestyle.js" type="text/javascript"></script>
+<style type="text/css">
+#fileStyle{
+
+}
+</style>
+
+<script type="text/javascript">
+	/*
+	 *闭包的常见运用
+	 *
+	var outer = null;
+	(function(){
+		var one = 1;
+		function inner (){
+			one += 1;
+			alert(one);
+		}
+		outer = inner;
+	})();
+	outer();    //2
+	outer();    //3
+	outer();    //4*/
+	
+	/*
+	 *HTML localStorage的基本运用
+	 *
+	var local = window.localStorage;
+	//local.clear();
+	if(local.getItem("A")!= null){
+		//var s = parseInt(local.getItem("A"))+1;
+		var s = local.getItem("A")*1 + 1;
+		local.setItem("A",s);
+		alert(local.getItem("A"));
+	}else{
+		local.setItem("A","1");
+	}
+	*/
+	
+	/*
+	 *获取 元素 css 的基本方法
+	 *
+	$(function(){
+		var o = $("#testOpacity").css("opacity");
+		alert(o);
+		$("#testOpacity").css("opacity",1);
+		});*/
+	/*
+	 *引入 JS 文件的位置测试
+	 *结论：在同一个script里 位置在最后。
+	alert('a');
+	document.write("<script src=\"js/index.js\"><\/script>");
+	document.write("<script src=\"js/indexs.js\"><\/script>");
+	alert('c');*/
+</script>
+    <!--
+	<script type="text/javascript">
+	alert('d');
+	</script>-->
+<script type="text/javascript">
+	/*
+	 *测试JQuery 中的animate 方法
+	 *
+	 $(function(){
+		var o = $("#testAnimate");
+		o.click(function() {
+			$(this).animate({left: "150px"}, 2000,"linear");
+		});
+	 });*/
+	 
+	 /*
+	  *  获取 浏览器名称
+	  *
+	String.prototype.inc=function(s){return this.indexOf(s)>-1?true:false}
+	var agent=navigator.userAgent;
+	window.isOpr=agent.inc("Opera");
+	var indexof = agent.indexOf("Mozilla");
+	window.isIE=agent.inc("IE")&&!isOpr;
+	window.isMoz=agent.inc("Mozilla")&&!isOpr&&!isIE;
+	//alert(navigator);
+	//alert(navigator.userAgent);
+	//alert(navigator.appName);*/
+	/*window.onload=function(){
+		$("#remove").click(function(){
+			$("#tuozhuai").remove();
+		});
+	}*/
+	/*
+	 * 使用JQuery 改变 file样式
+	 *
+	$(function() {
+      $(".st").filestyle({ 
+          image: "img/fileBtn.jpg",
+          imageheight : 22,
+          imagewidth : 82,
+          width : 220,
+		  height:555
+      }); 
+	});*/
+	
+	/*
+	 * 测试 JQuery追加 方法
+	 **/
+	$(function() {
+	  //$("<p>BBB</p>").prependTo($("#append")); 
+	  //$("<div id='xx'></div>").prependTo($("#append"));
+	  //$("#append *").wrap($("<div id='xx'></div>"));
+	  $(".pren").append($("<div id='container_div'></div>"));
+	});
+	
+	
+	/*function b(x, y, a) {
+		arguments[2] = 10;
+		alert(a);
+	}
+	b(4, 6, 9);
+	$(function() {
+		var ss = "#000236";
+		var s = ss.split("#");
+		alert("第一个："+s[0]+",第二个："+ s[1]);	
+	});
+	*/
+
+	/*
+	 * 测试 数组 特性
+	 */
+	$(function() {
+		/*var arrays = new Array();
+		for(var i=2;i<10;i++){
+			arrays[i] = "item" + i;
+		}
+		arrays.
+		alert(arrays[3]);
+		var a = arrays.indexOf("item3");
+		if(a > -1){
+            arrays.splice(a,1);
+        }
+		alert(arrays[3]);*/
+		/*var h = "-" + $("#test").height()/2 + "px";
+		$("#test").css("margin-bottom",h);*/
+
+	});
+</script>
+
+</head>
+<body>
+<!-- <div id="test" style="border:1px solid red;"><div style="height:200px;width:200px;border:1px solid red;"></div></div> -->
+测试 JQuery追加 方法
+<div id="a" class="pren"><p id="b">AAA</p><div id="c" class="wallClass"></div><div id="d" class="wallClass"></div></div>
+<div id="boxs">
+	<div id="box1">1</div>
+	<div id="box2">2</div>
+	<div id="box3">3</div>
+</div>
+<style type="text/css">
+	#boxs{
+		width: 500px;
+		height: 500px;
+		border: 1px solid red;
+	}
+	#boxs div{
+		width: 50px;
+		height: 50px;
+		border: 1px solid green;
+	}
+</style>
+<script type="text/javascript">
+	$div4 = $("<div id='box4'>4</div>");
+	$("#box2").after($div4);
+	function foo (n) {
+　　　　return function (i) {
+　　　　　　return n += i } }
+</script>
+
+<!--使用JQuery 改变 file样式
+<form>
+	<input type="file" id="fileStyle" class="st" style="border:1px solid blue;color:red;background:green;font:bold 12px '隶书';height:18px;width:160px"/>
+</form>-->
+<!--<div id="testOpacity"></div>-->
+<!--<div id="testAnimate" style="width:200px;height:200px;border:1px solid red;position:relative;"></div>-->
+
+<!-- 自己做的六边形
+<div id="six">
+<span id="s1"></span>
+<span id="s2"></span>
+<span id="s3"></span>
+<span id="s4"></span>
+<span id="s5"></span>
+<span id="s6"></span>
+</div>
+<button id="remove" title="remove" value="remove">remove</button>
+<div draggable="true" id="tuozhuai" >
+    <img draggable="true" src="img/car1.jpg" />
+    <img draggable="true" src="img/car2.jpg" />
+    <img draggable="true" src="img/car3.jpg" />
+</div>-->
+</body>
+</html>

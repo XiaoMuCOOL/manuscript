@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<flash_parameters copyright="anvsoftFLVPlayerTheme" code="anvsoftFLVPlayerThemeRegistered">
+	<preferences>
+		<global>
+			<basic_property movieWidth="571" movieHeight="359" html_title="Title" loadStyle="gear.swf" hideAdobeMenu="true" enableURL="true" autoPlay="true" autoRepeat="false" backgroundColor="0x00d2d2d2" bufferTime="5" defaultvolume="80" websitesign="http://www.lvtao.net"/>
+			<panel_property panelbackgroundColor="0x00ffffff" buttonColor="0x00808080" buttonbackgroundColor="0x00a4a0a0" dragbarColor="0x002c2c2c" bufferColor="0x00000000" slideColor="0x00008080" slidebgColor="0x00000000" showTime="true" timeColor="0x00808080"/>
+			<video_property topPadding="4" bottomPadding="38" leftPadding="4" rightPadding="4"/>
+			<title_property showTitle="true" titleColor="0x00ffffff"/>
+			<description_property enable="true" textColor="0x00555555" backgroundColor="0x00ffffff" backgroundAlpha="60" align="bottom"/>
+		</global>
+		<thumbnail>
+			<basic_property width="110" height="80" thumBackColor="0x002c2c2c" borderColor="0x00ffffff" thumborder="1" thumSpacing="20" thumsButtonColor="0x00f0fbff"/>
+		</thumbnail>
+	</preferences>
+	<video>
+		<slide v_URL="../../078/01.flv" jpegURL="videos/thumbs/img-1.jpg" d_URL="videos/slides/img-5.jpg" title="Amazing Caves" url="" URLTarget="0"/>
+		<slide v_URL="../../078/02.flv" jpegURL="videos/thumbs/img-2.jpg" d_URL="videos/slides/p_0001.jpg" title="Super Speed Way" url="" URLTarget="0"/>
+	</video>
+</flash_parameters>

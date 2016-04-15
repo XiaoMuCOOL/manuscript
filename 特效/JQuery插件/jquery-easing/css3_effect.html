@@ -1,0 +1,466 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>各种动画效果集合_CSS3版</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		ul{
+			width: 1300px;
+			height: 150px;
+			margin: 0 auto;
+			padding: 15px 0;
+		}
+		li{
+			margin: 0;
+			padding: 0 5px;
+			list-style: none;
+			float: left;
+		}
+		li div{
+			height: 150px;
+			width: 150px;
+			margin-bottom: 15px;
+			border: 1px solid pink;
+			line-height: 150px;
+			background: orange;
+			position: relative;
+			-webkit-transition:all 0s linear 1s;
+			transition:all 0s linear 1s;
+		}
+		/*
+		 * open
+		 * 淡入
+		 */
+		#open1:hover{
+			opacity: 0;
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#open1{
+			opacity: 1;
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 直线飞入
+		 */
+		#open2:hover{
+			-webkit-transform: translate(-500px,-500px) scale(0,0);
+			transform: translate(-500px,-500px) scale(0,0);
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#open2{
+			-webkit-transform: translate(0px,0px) scale(1,1);
+			transform: translate(0px,0px) scale(1,1);
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 弧线飞入
+		 */
+		#open3:hover{
+			-webkit-transform: translateX(-500px);
+			transform: translateX(-500px);
+			-webkit-transition:all 0s ease-in;
+			transition:all 0s ease-in;
+		}
+		#open3{
+			-webkit-transition:all 2s ease-in;
+			transition:all 2s ease-in;
+		}
+		/*
+		 * 切入
+		 */
+		#open4:hover{
+			height: 0;
+			width: 0;
+			-webkit-transition:all 0s ease-in;
+			transition:all 0s ease-in;
+		}
+		#open4{
+			-webkit-transition:all 0.3s ease-in;
+			transition:all 0.3s ease-in;
+		}
+		/*
+		 * 立体旋转
+		 */
+		#open5:hover{
+			-webkit-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#open5{
+			-webkit-transition:all 0.3s linear;
+			transition:all 0.3s linear;
+		}
+		/*
+		 * 平面旋转
+		 */
+		#open6:hover{
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#open6{
+			-webkit-transition:all 1s linear;
+			transition:all 1s linear;
+		}
+		/*
+		 * 由小变大
+		 */
+		#open7:hover{
+			-webkit-transform: scale(0,0);
+			transform: scale(0,0);
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#open7{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 由大变小
+		 */
+		#open8:hover{
+			-webkit-transform: scale(2,2);
+			transform: scale(2,2);
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#open8{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+
+		/*
+		 * strong
+		 * 跷跷板
+		 */
+		 @-webkit-keyframes Seesaw {   
+		    0% {   
+		        -webkit-transform: rotate(0);
+				transform: rotate(0);
+		    }   
+		    25% {   
+		        -webkit-transform: rotate(30deg);
+				transform: rotate(30deg);       
+		    }   
+		    50%{
+		    	-webkit-transform: rotate(-30deg);
+				transform: rotate(-30deg);       
+		    }
+		    75%{
+		    	-webkit-transform: rotate(30deg);
+				transform: rotate(30deg);       
+		    }
+		    100% {   
+		        -webkit-transform: rotate(-30deg);
+				transform: rotate(-30deg);
+		    }   
+		}   
+		#strong1:hover{
+			-webkit-animation-name: Seesaw;   
+		    -webkit-animation-duration: 1s;   
+		    -webkit-animation-iteration-count: infinite;   
+		    -webkit-animation-direction: alternate;   
+		    -webkit-animation-timing-function: ease-in-out;  
+		}
+		#strong1{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 上下抖动
+		 */
+		  @-webkit-keyframes UpDown {   
+		    0% {   
+		        top:-10px;
+		    }   
+		    25% {   
+		        top:10px;
+		    }   
+		    50%{
+		    	top:-10px; 
+		    }
+		    75%{
+		    	top:10px;    
+		    }
+		    100% {   
+		        top:-10px;
+		    }   
+		}
+		#strong2:hover{
+			-webkit-animation-name: UpDown;
+		    -webkit-animation-duration: 1s;   
+		    -webkit-animation-iteration-count: infinite;   
+		    -webkit-animation-direction: alternate;   
+		    -webkit-animation-timing-function: ease-in-out;  
+		}
+		#strong2{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 平面旋转
+		 */
+		#strong3:hover{
+			-webkit-transform: rotate(30deg);
+			transform: rotate(30deg);
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#strong3{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 立体旋转
+		 */
+		#strong4:hover{
+			-webkit-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		#strong4{
+			-webkit-transition:all 0.3s linear;
+			transition:all 0.3s linear;
+		}
+		/*
+		 * 缩放
+		 */
+		 @-webkit-keyframes big { 
+		    0% {   
+		        -webkit-transform: scale(0.1,0.1);
+				transform: scale(0.1,0.1);
+		    }
+		    100% {   
+		        -webkit-transform: scale(2,2);
+				transform: scale(2,2);
+		    }   
+		}   
+		#strong5:hover{
+			-webkit-animation-name: big;   
+		    -webkit-animation-duration: 1s;   
+		    -webkit-animation-iteration-count: infinite;   
+		    -webkit-animation-direction: alternate;   
+		    -webkit-animation-timing-function: ease-in-out;  
+		}
+		#strong5{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 普通闪烁
+		 */
+		 @-webkit-keyframes Show {   
+		    0% {   
+		        opacity: 0;
+		    }
+		    100% {   
+		        opacity: 1;
+		    }   
+		}   
+		#strong6:hover{
+			-webkit-animation-name: Show;   
+		    -webkit-animation-duration: 0.1s;   
+		    -webkit-animation-iteration-count: infinite;   
+		    -webkit-animation-direction: alternate;   
+		    -webkit-animation-timing-function: ease-in-out;  
+		}
+		#strong6{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * 渐变闪烁
+		 */
+		 @-webkit-keyframes Slow { 
+		    0% {   
+		        opacity: 0.1;
+		    }
+		    100% {   
+		        opacity: 1;
+		    }   
+		}   
+		#strong7:hover{
+			-webkit-animation-name: Slow;   
+		    -webkit-animation-duration: 1s;   
+		    -webkit-animation-iteration-count: infinite;   
+		    -webkit-animation-direction: alternate;   
+		    -webkit-animation-timing-function: ease-in-out;  
+		}
+		#strong7{
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		/*
+		 * close
+		 * 淡出
+		 */
+		#close1:hover{
+			opacity: 0;
+			-webkit-transition:all 2s linear;
+			transition:all 2s linear;
+		}
+		#close1{
+			opacity: 1;
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		/*
+		 * 直线飞出
+		 */
+		#close2:hover{
+			-webkit-transform: translateX(-500px);
+			transform: translateX(-500px);
+			-webkit-transition:all 0.5s linear;
+			transition:all 0.5s linear;
+		}
+		#close2{
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		/*
+		 * 弧线飞出
+		 */
+		#close3:hover{
+			-webkit-transform: translateX(-800px);
+			transform: translateX(-800px);
+			-webkit-transition:all 0.5s ease-in;
+			transition:all 0.5s ease-in;
+		}
+		#close3{
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		/*
+		 * 缩小
+		 */
+		#close4:hover{
+			-webkit-transform: scale(0,0);
+			transform: scale(0,0);
+			-webkit-transition:all 2s ease-in;
+			transition:all 2s ease-in;
+		}
+		#close4{
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+		/*
+		 * 放大
+		 */
+		#close5:hover{
+			-webkit-transform: scale(2,2);
+			transform: scale(2,2);
+			-webkit-transition:all 2s ease-in;
+			transition:all 2s ease-in;
+		}
+		#close5{
+			-webkit-transition:all 0s linear;
+			transition:all 0s linear;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function  () {
+			$("#close5").click(function(){
+				$(this).addClass("change");
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：各种动画效果集合_CSS3版</h1>
+	</header>
+	<section>
+		<ul>
+			<li><div id="open1">open-淡入</div></li>
+			<li><div id="open2">open-直线飞入</div></li>
+			<li><div id="open3">open-弧线飞入</div></li>
+			<li><div id="open4">open-切入</div></li>
+			<li><div id="open5">open-立体旋转</div></li>
+			<li><div id="open6">open-平面旋转</div></li>
+			<li><div id="open7">open-由小变大</div></li>
+			<li><div id="open8">open-由大变小</div></li>
+		</ul>
+		<ul>
+			<li><div id="strong1">strong-跷跷板</div></li>
+			<li><div id="strong2">strong-上下抖动</div></li>
+			<li><div id="strong3">strong-平面旋转</div></li>
+			<li><div id="strong4">strong-立体旋转</div></li>
+			<li><div id="strong5">strong-缩放</div></li>
+			<li><div id="strong6">strong-普通闪烁</div></li>
+			<li><div id="strong7">strong-渐变闪烁</div></li>
+		</ul>
+		<ul>
+			<li><div id="close1">close-淡出</div></li>
+			<li><div id="close2">close-直线飞出</div></li>
+			<li><div id="close3">close-弧线飞出</div></li>
+			<li><div id="close4">close-缩小</div></li>
+			<li><div id="close5">close-放大</div></li>
+		</ul>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

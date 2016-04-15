@@ -1,0 +1,8 @@
+#test{
+	width: 500px;
+	height: 500px;
+	border: 1px solid red;
+	transform-origin:50% 50%;
+	/*-webkit-transform: rotate(60deg);*/
+	transform:rotate(60deg);
+}

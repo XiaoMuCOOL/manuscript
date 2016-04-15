@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>javascript控制图片或div层的上下移动滚动效果</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<style type="text/css">
+    #pre{
+        position: absolute;
+        left: 50%;
+    }
+    #next{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- <a href="javascript: void(0);" onmouseover="ScrollDivUp_T=setInterval(ScrollDivUp,10);" onmouseout="clearInterval(ScrollDivUp_T)">上</a> -->
+<div id="items" style="position: relative;width:400px;height:500px;border:1px solid #dddddd;overflow:hidden">
+    <a id="pre" href="javascript: void(0);" onclick="ScrollDivUp()">上</a>
+    <div style="width:398px;height:248px;border:1px solid green;">1</div>
+    <div style="width:398px;height:248px;border:1px solid green;">2</div>
+    <div style="width:398px;height:248px;border:1px solid green;">3</div>
+    <div style="width:398px;height:248px;border:1px solid green;">4</div>
+    <div style="width:398px;height:248px;border:1px solid green;">5</div>
+    <div style="width:398px;height:248px;border:1px solid green;">6</div>
+    <div style="width:398px;height:248px;border:1px solid green;">7</div>
+    <div style="width:398px;height:248px;border:1px solid green;">8</div>
+    <div style="width:398px;height:248px;border:1px solid green;">9</div>
+    <div style="width:398px;height:248px;border:1px solid green;">10</div>
+    <a id="next" href="javascript: void(0);" onclick="ScrollDivDown()">下</a>
+</div>
+<!-- <a href="javascript: void(0);" onmouseover="ScrollDivDown_T=setInterval(ScrollDivDown,10);" onmouseout="clearInterval(ScrollDivDown_T)">下</a> -->
+<script language="javascript">
+    /*$("#items").mouserover(function(){
+        $("#pre").animate({
+            top : 20px;
+        },2000);
+    });*/
+    function ScrollDivUp(){
+        // document.getElementById('items').scrollTop -= 500;
+        var now = document.getElementById('items').scrollTop - 500;
+        if(now <= 0){
+            now = 0;
+        }
+        var f = setInterval(function(){
+            if(document.getElementById('items').scrollTop > now){
+                    document.getElementById('items').scrollTop -= 10;
+            }else{
+                clearInterval(f);
+            }
+        },10);
+        //$("#items").
+    }
+    function ScrollDivDown(){
+        //document.getElementById('items').scrollTop += 500;
+        var $items = $("#items div");
+        var max = $items.length*250 -500;
+        var now = document.getElementById('items').scrollTop + 500;
+        if(now >= max){
+            now = max;
+        }
+        var f = setInterval(function(){
+            if(document.getElementById('items').scrollTop < now){
+                    document.getElementById('items').scrollTop += 10;
+            }else{
+                clearInterval(f);
+            }
+        },10);
+    }
+</script>
+
+</body>
+
+</html> 

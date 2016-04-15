@@ -1,0 +1,254 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>图片切换</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			color: red;
+			float: right;
+		}
+	</style>
+	<style type="text/css">
+		section{
+			/* border: 1px solid red; */
+			width:100%;
+			/* max-width: 1200px; */
+			height: 300px;
+			position:absolute;
+			top:40%;
+			margin-top:-150px;
+			left:0;
+		}
+		#imgs{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		#scroll{
+			width:9999px;
+			height:100%;
+			overflow:hidden;
+		}
+		#scroll>div{
+			/*width: 253px;
+			height: 508px;
+			width: 100%;
+			height: 100%;*/
+			float: left;
+			height:100%;
+			width:1000px;
+		}
+		#imgs div img{
+			height: 100%;
+			float:left;
+			margin-left:-30px;
+		}
+		#pre{
+			width: 39px;
+			height: 44px;
+			display: block;
+			position: absolute;
+			top: 45%;
+			background: url('img/pre.png');
+			z-index: 99;
+		}
+		#next{
+			width: 39px;
+			height: 44px;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 45%;
+			background: url('img/next.png');
+		}
+		/* 影藏 */
+		.showDiv{
+			display: none;
+			width:230px;
+			float:left;
+			height:100%;
+		}
+		.boxa{
+			display:block; 	
+			background:#000;
+			height:70px;
+			width:230px;
+			opacity:1;
+			text-align:left;
+			color:white;
+			margin-top:90%;
+			text-decoration:none;
+			padding-top:1px;
+		}
+		.address{
+			margin-bottom: 5px;
+			margin-left: 10%;
+			font-size: 18px;
+		}
+		.time{
+			margin-top: 0;
+			margin-left: 10%;
+			font-size: 14px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var pre = $("#pre");
+			var next = $("#next");
+			var divs = $("#scroll");
+			var items = $(".item");
+			items.last().insertBefore(items.first());
+			divs.css({marginLeft:"-480px"});
+			pre.click(function(){
+				var items = $(".item");	
+				items.last().insertBefore(items.first());
+				divs.css({marginLeft:"-1480px"});
+				divs.animate({
+					marginLeft: "-480px"
+				},1000);
+			});
+			var lastToLeft = 0;
+			next.click(function(){
+				divs.animate({
+					marginLeft: "-1480px"
+				},1000,function(){
+					var items = $(".item");	
+					items.first().insertAfter(items.last());
+					divs.css({marginLeft:"-480px"});
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：图片切换</h1>
+	</header>
+	<section>
+        <a id="pre" href="javascript:void(0)" ></a>
+        <div id="imgs">
+        	<div id="scroll">
+            <div class="item">
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="成都站">
+                      <h3 class="address">今天成都站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/1.png" alt="成都.jpg" title="成都.jpg" >
+            </div>
+            <div class="item">
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="杭州站">
+                      <h3 class="address">今天杭州站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/2.png" alt="杭州.jpg" title="杭州.jpg" >
+            </div>
+            <div class="item">
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="深圳站">
+                      <h3 class="address">今天深圳站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/3.png" alt="深圳.jpg" title="深圳.jpg" >
+            </div>
+            <div class="item"> 
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="上海站">
+                      <h3 class="address">今天上海站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/5.png" alt="上海.jpg" title="上海.jpg" >
+            </div>
+            <div class="item">
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="广州站">
+                      <h3 class="address">今天广州站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/gz.jpg" alt="广州.jpg" title="广州.jpg" >
+            </div>
+            <div class="item">
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="北京站">
+                      <h3 class="address">今天北京站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/bj.jpg" alt="北京.jpg" title="北京.jpg" >
+            </div>
+            <div class="item">
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="南京站">
+                      <h3 class="address">今天南京站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/nj.jpg" alt="南京.jpg" title="南京.jpg" >
+            </div>
+            <div class="item">
+                <div class="showDiv">
+                    <a class="boxa" href="http://www.baidu.com" title="西安站">
+                      <h3 class="address">今天西安站</h3>
+                      <h2 class="time">2009-5-9</h2>
+                    </a>
+                </div>
+                <img src="img/xa.jpg" alt="西安.jpg" title="西安.jpg" >
+            </div>
+            </div>
+        </div>
+        <a id="next" href="javascript:void(0)" ></a>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p></p>
+		<p class="copy">Powered by Gavin(小牧COOL)</p>
+	</footer>
+</body>
+</html>

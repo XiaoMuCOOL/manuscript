@@ -1,0 +1,115 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>测试 变量作用域</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+			z-index: 99;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+			z-index: 1;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			float: right;
+		}
+		.copy a{
+			color: red;
+		}
+	</style>
+	<style type="text/css">
+		#div{
+			
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			/*var i = 1;
+			var timer = setInterval(function(){
+				++i;
+			},1000);
+			setTimeout(function(){
+				alert(i);
+			},5000);
+			switch(i){
+				case 1:
+					alert(1);
+				case 2:
+					alert(2);
+				case 3:
+					alert(3);
+					return;
+				case 4:
+					alert(4);
+			}*/
+			function a(index){
+				var isT = true;
+				while(isT){
+					alert("之前:"+index);
+					if(index>2){
+						isT = false;
+						continue;
+					}
+					index ++;
+					alert("之后:"+index);
+				}
+				alert("function a");
+			}
+
+			a(0);
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：测试 变量作用域</h1>
+	</header>
+	<section>
+		
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy"><a href="#" title="QQ:895355044">Powered by Gavin(小牧COOL)</a></p>
+	</footer>
+</body>
+</html>

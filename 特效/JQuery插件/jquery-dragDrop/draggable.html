@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Example</title>
+    <style>
+        #src > *
+        {
+            float: left;
+        }
+        #target, #src > img
+        {
+            border: thin solid black;
+            padding: 2px;
+            margin: 4px;
+        }
+        #target
+        {
+            height: 123px;
+            width: 220px;
+            text-align: center;
+            display: table;
+        }
+        #target > p
+        {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #target > img
+        {
+            margin: 1px;
+        }
+		img.dragged
+        {
+            background-color: Orange;
+        }
+    </style>
+    <script src="js/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <div id="src">
+        <img draggable="true" id="car1" src="img/car1.jpg" alt="car1" />
+        <img draggable="true" id="car2" src="img/car2.jpg" alt="car2" />
+        <img draggable="true" id="car3" src="img/car3.jpg" alt="car3" />
+        <a draggable="true" id="car3" ><img src="img/car3.jpg" alt="car3" /></a>
+        <div id="target">
+            <p id="msg">
+                drop here</p>
+        </div>
+    </div>
+    <script>
+        var src = document.getElementById("src");
+        var target = document.getElementById("target");
+		var msg = document.getElementById("msg");
+		//当元素拖拽开始触发
+        src.ondragstart = function (e) {
+            e.target.classList.add("dragged");
+        }
+		//元素拖拽结束时触发
+        src.ondragend = function (e) {
+            e.target.classList.remove("dragged");
+            msg.innerHTML = "drop here";
+        }
+		//在元素拖拽过程中触发
+        src.ondrag = function (e) {
+            msg.innerHTML = e.target.id;
+        }
+		
+		//
+		var draggedID;
+        target.ondragenter = handleDrag;
+        target.ondragover = handleDrag;
+        function handleDrag(e) {
+            e.preventDefault();
+        }
+        target.ondrop = function (e) {
+            var newElem = document.getElementById(draggedID).cloneNode(false);
+            target.innerHTML = "";
+            target.appendChild(newElem);
+            e.preventDefault();
+        }
+        src.ondragstart = function (e) {
+            draggedID = e.target.id;
+            e.target.classList.add("dragged");
+        }
+        src.ondragend = function (e) {
+            var elems = document.querySelectorAll(".dragged");
+            for (var i = 0; i < elems.length; i++) {
+                elems[i].classList.remove("dragged");
+            }
+        }
+    </script>
+</body>
+</html>

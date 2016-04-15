@@ -1,0 +1,37 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<!-- 设置文档模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Emulate" />
+	<title>Title</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		#div{
+			
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var a = "14.";
+			var b = a.split('.');
+			alert(b);
+		});
+	</script>
+</head>
+<body>
+	<div id="main-container">
+		<div id="main-center">
+			<a id="aPrePage" href="#" class="pre" style="margin-left: -455px;">&lt;</a>
+			<div id="main-droppable"  style="width: 512px; height: 384px;overflow: hidden ">
+				<div id="main-droppable-container" style="width:819px;height:614px;">
+					<div id="main-droppable-prev-container" style="position:static;width: 512px; height: 384px;background-color:red;float:left;"  stype="Page"></div>
+					<div id="main-droppable-center-container" style="position:static;width: 512px; height: 384px;background-color:yellow;float:left"  stype="Page"></div>
+					<div id="main-droppable-next-container" style="position:static;width: 512px; height: 384px;background-color:blue;float:left;"  stype="Page"></div>
+				</div>
+			</div>
+			<a id="aNextPage" href="#" class="next" style="margin-left: 408px;">&gt;</a>
+		</div>
+	</div>
+</body>
+</html>

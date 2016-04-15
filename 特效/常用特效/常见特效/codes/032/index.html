@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FLASH图片幻灯切换效果</title>
+<meta http-equiv="content-type" content="text/html;charset=gb2312">
+<!--把下面代码加到<head>与</head>之间-->
+<script type="text/javascript">
+function CreateFlash(idad, swfurl, wad, had, vs){
+var str = "<object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" codebase=\"http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0\" width=\"" + wad + "\" height=\"" + had + "\" id=\"" + idad + "\" align=\"middle\">";
+str += "<param name=\"allowScriptAccess\" value=\"always\">";
+str += "<param name=\"quality\" value=\"high\">";
+str += "<param name=\"movie\" value=\"" + swfurl + "\">";
+str += '<param name=\"wmode\" value=\"transparent\">';
+str += "<param name=\"flashvars\" value=\"" + vs + "\">";
+str += "<embed src=\"" + swfurl + "\" flashvars=\"" + vs + "\" wmode=\"transparent\" quality=\"high\" width=\"" + wad + "\" height=\"" + had + "\" name=\"" + idad + "\" align=\"middle\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">";
+str += "</object>";
+document.write(str);
+}
+</script> 
+</head>
+<body>
+<!--把下面代码加到<body>与</body>之间-->
+<div class="flash">
+<script type="text/javascript">    
+CreateFlash("finance_photo", "images/chinaz_player_swf.swf", 298, 250);
+function getXml() {return "<?xml version='1.0' encoding='utf-8'?><root><p u='images/chinaz_player_pic_1.jpg' a='#' n='茱莉：婚恋交友网站信赖是命脉'/><p u='images/chinaz_player_pic_2.jpg' a='#' n='孙德良：冬天论电子商务首当其冲'/><p u='images/chinaz_player_pic_3.jpg' a='#' n='俞渝：目前电子商务不必看重回报'/><p u='images/chinaz_player_pic_4.jpg' a='#' n='刘丹：华尔街关心模式能否坚持住'/><p u='images/chinaz_player_pic_5.jpg' a='#' n='戴志康：社区向SNS转化相对简单'/></root>";}
+</script>
+</div>
+</body>
+</html>

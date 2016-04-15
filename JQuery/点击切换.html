@@ -1,0 +1,99 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<title>点击切换</title>
+	<script src="js/jquery-1.9.1.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		header h1{
+			color: white;
+			text-align: center;
+		}
+		footer{
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			background: black;
+			opacity: 0.7;
+		}
+		footer p{
+			margin: 10px 0;
+			color: white;
+			text-align: center;
+		}
+		section{
+			padding: 100px 0;
+			text-align: center;
+		}
+		.copy{
+			padding: 0;
+			margin: 0 20px 5px 0;
+			height: 14px;
+			font-size: 14px;
+			color: red;
+			float: right;
+		}
+	</style>
+	<style type="text/css">
+		a{color:green;}
+		.current{
+			color:red;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#all a").click(function(){
+				$(this).addClass("current").siblings().removeClass("current");
+			});
+			setInterval(function(){
+				var i = parseInt($("#time").html()) + 1;
+				$("#time").html(i);
+			},1000);
+
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>问题：点击切换</h1>
+	</header>
+	<section>
+		<div id="all">
+			<a href="javascript::;" class="current"><b>Image1</b></a>
+			<a href="javascript::;"><b>Image2</b></a>
+			<a href="javascript::;"><b>Image3</b></a>
+			<a href="研究浮动问题、使用clearfix.html"><b>Image4</b></a>
+		</div>
+		<span id="time">0</span>
+	</section>
+	<footer>
+		<p>结论：</p>
+		<p>This is 结论.</p>
+		<p class="copy">Powered by <a href="#" title="QQ群:206683621">Gavin(小牧COOL)</a></p>
+	</footer>
+	<script type="text/javascript">
+		document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if(e && e.keyCode==116){
+            	location.reload();
+            	return false;
+            }
+        }
+    </script>
+</body>
+</html>
